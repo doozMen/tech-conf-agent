@@ -1,0 +1,2040 @@
+{
+  "conference": {
+    "id": "serverside-swift-2025",
+    "name": "ServerSide.swift Conference 2025",
+    "shortName": "ServerSide.swift 2025",
+    "description": "The premier conference for server-side Swift development, bringing together the community to share knowledge, best practices, and the future of Swift on the server.",
+    "startDate": "2025-10-15T09:00:00-05:00",
+    "endDate": "2025-10-17T18:00:00-05:00",
+    "timezone": "America/Chicago",
+    "location": {
+      "city": "Chicago",
+      "state": "IL",
+      "country": "USA",
+      "venue": "The Chicago Lakeside Convention Center",
+      "address": "301 E North Water St, Chicago, IL 60611"
+    },
+    "website": "https://www.serversideswift.info",
+    "hashtag": "#ServerSideSwift2025",
+    "tracks": [
+      "Server-Side Swift",
+      "Vapor Framework",
+      "Hummingbird",
+      "SwiftNIO",
+      "Testing & Quality",
+      "Deployment & DevOps",
+      "Architecture & Patterns",
+      "Swift 6 & Concurrency"
+    ],
+    "expectedAttendees": 800,
+    "ticketPrice": {
+      "earlyBird": 499,
+      "regular": 649,
+      "student": 299,
+      "workshop": 199
+    }
+  },
+  "speakers": [
+    {
+      "id": "speaker-001",
+      "name": "Tim Condon",
+      "title": "VP of Community",
+      "company": "Vapor",
+      "bio": "Tim is a prominent figure in the server-side Swift community and the author of 'Server-Side Swift with Vapor'. He leads community initiatives and regularly speaks at conferences worldwide.",
+      "expertise": ["Vapor", "Server-Side Swift", "API Development", "Authentication"],
+      "avatar": "https://avatars.githubusercontent.com/timcondon",
+      "social": {
+        "twitter": "@0xTim",
+        "github": "0xTim",
+        "linkedin": "timcondon"
+      }
+    },
+    {
+      "id": "speaker-002",
+      "name": "Joannis Orlandos",
+      "title": "Founder & Lead Developer",
+      "company": "MongoKitten & Vapor",
+      "bio": "Creator of MongoKitten, Vapor core team member, and expert in Swift networking and database solutions. Passionate about performance optimization and protocol design.",
+      "expertise": ["MongoDB", "Databases", "Performance", "SwiftNIO"],
+      "avatar": "https://avatars.githubusercontent.com/joannis",
+      "social": {
+        "twitter": "@joannisorlandos",
+        "github": "Joannis",
+        "linkedin": "joannisorlandos"
+      }
+    },
+    {
+      "id": "speaker-003",
+      "name": "Gwynne Raskind",
+      "title": "Core Team Member",
+      "company": "Vapor & Fluent",
+      "bio": "Long-time Vapor core team member specializing in database abstractions and ORM design. Expert in async/await patterns and Swift concurrency.",
+      "expertise": ["Fluent ORM", "Databases", "Concurrency", "API Design"],
+      "avatar": "https://avatars.githubusercontent.com/gwynne",
+      "social": {
+        "twitter": "@gwynne_raskind",
+        "github": "gwynne",
+        "linkedin": "gwynne-raskind"
+      }
+    },
+    {
+      "id": "speaker-004",
+      "name": "Franz Busch",
+      "title": "Software Engineer",
+      "company": "Apple",
+      "bio": "Member of the Swift on Server team at Apple, working on SwiftNIO and server-side infrastructure. Contributor to the Swift evolution process.",
+      "expertise": ["SwiftNIO", "Networking", "Performance", "Swift Evolution"],
+      "avatar": "https://avatars.githubusercontent.com/franzbusch",
+      "social": {
+        "twitter": "@FranzJBusch",
+        "github": "FranzBusch",
+        "linkedin": "franzbusch"
+      }
+    },
+    {
+      "id": "speaker-005",
+      "name": "Cory Benfield",
+      "title": "Principal Engineer",
+      "company": "Apple",
+      "bio": "Core contributor to SwiftNIO and the Swift standard library. Expert in network protocols, HTTP/2, and low-level systems programming.",
+      "expertise": ["SwiftNIO", "HTTP/2", "Security", "Protocols"],
+      "avatar": "https://avatars.githubusercontent.com/corybenfield",
+      "social": {
+        "twitter": "@Lukasaoz",
+        "github": "Lukasa",
+        "linkedin": "corybenfield"
+      }
+    },
+    {
+      "id": "speaker-006",
+      "name": "Adam Fowler",
+      "title": "Senior Software Engineer",
+      "company": "Apple",
+      "bio": "Maintainer of Hummingbird and Soto AWS SDK. Expert in cloud infrastructure and serverless Swift applications.",
+      "expertise": ["Hummingbird", "AWS", "Cloud Infrastructure", "Serverless"],
+      "avatar": "https://avatars.githubusercontent.com/adamfowler",
+      "social": {
+        "twitter": "@adamfowler",
+        "github": "adam-fowler",
+        "linkedin": "adamfowler"
+      }
+    },
+    {
+      "id": "speaker-007",
+      "name": "Tanner Nelson",
+      "title": "Creator",
+      "company": "Vapor",
+      "bio": "Creator of the Vapor framework and pioneer of server-side Swift. Passionate about making Swift accessible for backend development.",
+      "expertise": ["Vapor", "Framework Design", "Community Building", "Education"],
+      "avatar": "https://avatars.githubusercontent.com/tanner",
+      "social": {
+        "twitter": "@tanner0101",
+        "github": "tanner0101",
+        "linkedin": "tannernelson"
+      }
+    },
+    {
+      "id": "speaker-008",
+      "name": "Patrick Freed",
+      "title": "Software Engineer",
+      "company": "MongoDB",
+      "bio": "Lead developer of the official MongoDB Swift driver. Expert in database connectivity and driver development.",
+      "expertise": ["MongoDB", "Database Drivers", "Swift on Server", "Performance"],
+      "avatar": "https://avatars.githubusercontent.com/patrickfreed",
+      "social": {
+        "github": "patrickfreed",
+        "linkedin": "patrickfreed"
+      }
+    },
+    {
+      "id": "speaker-009",
+      "name": "Johannes Weiss",
+      "title": "Engineering Manager",
+      "company": "Apple",
+      "bio": "Engineering manager of the Swift on Server team at Apple. Core contributor to SwiftNIO and the Swift ecosystem.",
+      "expertise": ["SwiftNIO", "Systems Programming", "Team Leadership", "Architecture"],
+      "avatar": "https://avatars.githubusercontent.com/weissi",
+      "social": {
+        "twitter": "@johannesweiss",
+        "github": "weissi",
+        "linkedin": "johannesweiss"
+      }
+    },
+    {
+      "id": "speaker-010",
+      "name": "Matias Piipari",
+      "title": "Senior iOS Engineer",
+      "company": "Meta",
+      "bio": "Expert in Swift tooling, testing frameworks, and developer productivity. Advocate for type-safe API development.",
+      "expertise": ["Testing", "Developer Tools", "Code Generation", "API Design"],
+      "avatar": "https://avatars.githubusercontent.com/mpiipari",
+      "social": {
+        "twitter": "@mpiipari",
+        "github": "mpiipari",
+        "linkedin": "mpiipari"
+      }
+    },
+    {
+      "id": "speaker-011",
+      "name": "Kaitlin Mahar",
+      "title": "Software Engineer",
+      "company": "MongoDB",
+      "bio": "Core contributor to the MongoDB Swift driver and server-side Swift ecosystem. Expert in async I/O and concurrent programming.",
+      "expertise": ["MongoDB", "Async/Await", "Concurrency", "Driver Development"],
+      "avatar": "https://avatars.githubusercontent.com/kmahar",
+      "social": {
+        "twitter": "@k__mahar",
+        "github": "kmahar",
+        "linkedin": "kaitlinmahar"
+      }
+    },
+    {
+      "id": "speaker-012",
+      "name": "Konrad Malawski",
+      "title": "Principal Engineer",
+      "company": "Apple",
+      "bio": "Core contributor to Swift Distributed Actors and server-side concurrency patterns. Expert in distributed systems.",
+      "expertise": ["Distributed Actors", "Concurrency", "Distributed Systems", "Swift 6"],
+      "avatar": "https://avatars.githubusercontent.com/ktoso",
+      "social": {
+        "twitter": "@ktosopl",
+        "github": "ktoso",
+        "linkedin": "konradmalawski"
+      }
+    },
+    {
+      "id": "speaker-013",
+      "name": "Kim de Vos",
+      "title": "Backend Developer",
+      "company": "Apodini",
+      "bio": "Contributor to Apodini framework and GraphQL implementations in Swift. Passionate about API design and microservices.",
+      "expertise": ["GraphQL", "Microservices", "API Design", "Apodini"],
+      "avatar": "https://avatars.githubusercontent.com/kimdevos",
+      "social": {
+        "github": "kim-de-vos",
+        "linkedin": "kimdevos"
+      }
+    },
+    {
+      "id": "speaker-014",
+      "name": "Siemen Sikkema",
+      "title": "Senior Backend Engineer",
+      "company": "HealthTech Solutions",
+      "bio": "Production Swift backend engineer with focus on healthcare applications and HIPAA compliance. Vapor enthusiast.",
+      "expertise": ["Healthcare Tech", "Security", "Compliance", "Production Systems"],
+      "avatar": "https://avatars.githubusercontent.com/siemensikkema",
+      "social": {
+        "github": "siemensikkema",
+        "linkedin": "siemensikkema"
+      }
+    },
+    {
+      "id": "speaker-015",
+      "name": "Natan Rolnik",
+      "title": "iOS & Backend Engineer",
+      "company": "Independent",
+      "bio": "Full-stack Swift developer and educator. Creates content about server-side Swift and maintains several open-source projects.",
+      "expertise": ["Full-Stack Swift", "Education", "Open Source", "Best Practices"],
+      "avatar": "https://avatars.githubusercontent.com/natanrolnik",
+      "social": {
+        "twitter": "@natanrolnik",
+        "github": "natanrolnik",
+        "linkedin": "natanrolnik"
+      }
+    },
+    {
+      "id": "speaker-016",
+      "name": "Fabian Fett",
+      "title": "Software Engineer",
+      "company": "Apple",
+      "bio": "Core contributor to SwiftNIO and async-http-client. Expert in high-performance networking and HTTP implementations.",
+      "expertise": ["SwiftNIO", "HTTP Client", "Performance", "Networking"],
+      "avatar": "https://avatars.githubusercontent.com/fabianfett",
+      "social": {
+        "github": "fabianfett",
+        "linkedin": "fabianfett"
+      }
+    },
+    {
+      "id": "speaker-017",
+      "name": "Mathew Polzin",
+      "title": "Staff Software Engineer",
+      "company": "Chewy",
+      "bio": "Creator of OpenAPIKit and advocate for API-first development. Expert in OpenAPI specifications and code generation.",
+      "expertise": ["OpenAPI", "API Design", "Code Generation", "Documentation"],
+      "avatar": "https://avatars.githubusercontent.com/mattpolzin",
+      "social": {
+        "github": "mattpolzin",
+        "linkedin": "mathewpolzin"
+      }
+    },
+    {
+      "id": "speaker-018",
+      "name": "Bas Broek",
+      "title": "Backend Engineer",
+      "company": "SendCloud",
+      "bio": "Vapor core team member and contributor to Leaf templating engine. Expert in web development and server-side rendering.",
+      "expertise": ["Vapor", "Leaf", "Web Development", "Server-Side Rendering"],
+      "avatar": "https://avatars.githubusercontent.com/basthomas",
+      "social": {
+        "twitter": "@basthomas",
+        "github": "basthomas",
+        "linkedin": "basbroek"
+      }
+    },
+    {
+      "id": "speaker-019",
+      "name": "Ellen Shapiro",
+      "title": "Mobile Platform Lead",
+      "company": "Apollo GraphQL",
+      "bio": "Lead developer of Apollo iOS client. Expert in GraphQL, mobile-backend communication, and API design patterns.",
+      "expertise": ["GraphQL", "Apollo", "API Design", "Mobile-Backend Integration"],
+      "avatar": "https://avatars.githubusercontent.com/designatednerd",
+      "social": {
+        "twitter": "@designatednerd",
+        "github": "designatednerd",
+        "linkedin": "ellenshapiro"
+      }
+    },
+    {
+      "id": "speaker-020",
+      "name": "David Okun",
+      "title": "Developer Advocate",
+      "company": "Vonage",
+      "bio": "Former IBM Cloud advocate now at Vonage. Expert in serverless Swift, cloud platforms, and developer education.",
+      "expertise": ["Serverless", "Cloud Platforms", "Developer Advocacy", "Communications APIs"],
+      "avatar": "https://avatars.githubusercontent.com/dokun1",
+      "social": {
+        "twitter": "@dokun24",
+        "github": "dokun1",
+        "linkedin": "davidokun"
+      }
+    },
+    {
+      "id": "speaker-021",
+      "name": "Martin Vasko",
+      "title": "Backend Developer",
+      "company": "Freelance",
+      "bio": "Independent consultant specializing in Vapor applications and PostgreSQL integration. Expert in database performance tuning.",
+      "expertise": ["Vapor", "PostgreSQL", "Performance Tuning", "Consulting"],
+      "avatar": "https://avatars.githubusercontent.com/martinvasko",
+      "social": {
+        "github": "martinvasko",
+        "linkedin": "martinvasko"
+      }
+    },
+    {
+      "id": "speaker-022",
+      "name": "Tom Doron",
+      "title": "Engineering Manager",
+      "company": "Apple",
+      "bio": "Manager of Swift on Server team at Apple. Leads initiatives for Swift Package Manager and server-side tooling.",
+      "expertise": ["Swift Package Manager", "Tooling", "Team Leadership", "Server Infrastructure"],
+      "avatar": "https://avatars.githubusercontent.com/tomerd",
+      "social": {
+        "twitter": "@TomerDoron",
+        "github": "tomerd",
+        "linkedin": "tomerdoron"
+      }
+    },
+    {
+      "id": "speaker-023",
+      "name": "Tibor Bödecs",
+      "title": "Founder",
+      "company": "Binary Birds",
+      "bio": "Creator of Feather CMS and educator at theswiftdev.com. Expert in content management systems and web development with Swift.",
+      "expertise": ["CMS Development", "Web Development", "Education", "Vapor"],
+      "avatar": "https://avatars.githubusercontent.com/tib",
+      "social": {
+        "twitter": "@tiborbodecs",
+        "github": "tib",
+        "linkedin": "tiborbodecs"
+      }
+    },
+    {
+      "id": "speaker-024",
+      "name": "Max Desiatov",
+      "title": "Software Engineer",
+      "company": "WebAssembly",
+      "bio": "Core contributor to SwiftWasm and carton. Expert in WebAssembly and bringing Swift to new platforms.",
+      "expertise": ["WebAssembly", "SwiftWasm", "Cross-Platform", "Tooling"],
+      "avatar": "https://avatars.githubusercontent.com/maxdesiatov",
+      "social": {
+        "twitter": "@maxdesiatov",
+        "github": "MaxDesiatov",
+        "linkedin": "maxdesiatov"
+      }
+    },
+    {
+      "id": "speaker-025",
+      "name": "Dimitri Bouniol",
+      "title": "Software Engineer",
+      "company": "Mochi Development",
+      "bio": "Contributor to Vapor ecosystem and expert in real-time communication. Passionate about WebSockets and live data streaming.",
+      "expertise": ["WebSockets", "Real-Time", "Vapor", "Live Streaming"],
+      "avatar": "https://avatars.githubusercontent.com/dimitribouniol",
+      "social": {
+        "github": "dimitribouniol",
+        "linkedin": "dimitribouniol"
+      }
+    },
+    {
+      "id": "speaker-026",
+      "name": "Yuuki Nishiyama",
+      "title": "Research Scientist",
+      "company": "University of Oulu",
+      "bio": "Academic researcher using Swift for IoT and sensor data processing. Expert in edge computing and data pipelines.",
+      "expertise": ["IoT", "Edge Computing", "Data Processing", "Research"],
+      "avatar": "https://avatars.githubusercontent.com/yuukinishiyama",
+      "social": {
+        "github": "yuukinishiyama",
+        "linkedin": "yuukinishiyama"
+      }
+    },
+    {
+      "id": "speaker-027",
+      "name": "Nicole Jacque",
+      "title": "Release Manager",
+      "company": "Apple",
+      "bio": "Swift Release Manager coordinating Swift releases and server-side Swift initiatives. Expert in project management and community coordination.",
+      "expertise": ["Release Management", "Project Coordination", "Community", "Process"],
+      "avatar": "https://avatars.githubusercontent.com/nicolejacque",
+      "social": {
+        "github": "nicolejacque",
+        "linkedin": "nicolejacque"
+      }
+    },
+    {
+      "id": "speaker-028",
+      "name": "Chris Bailey",
+      "title": "Distinguished Engineer",
+      "company": "IBM",
+      "bio": "Lead of Kitura project and Swift on Linux initiatives at IBM. Expert in enterprise Swift deployments and cloud platforms.",
+      "expertise": ["Kitura", "Enterprise Swift", "Linux", "Cloud Platforms"],
+      "avatar": "https://avatars.githubusercontent.com/chrisbailey",
+      "social": {
+        "twitter": "@chris__bailey",
+        "github": "chrisbailey",
+        "linkedin": "chrisbailey"
+      }
+    },
+    {
+      "id": "speaker-029",
+      "name": "Jaap Wijnen",
+      "title": "Backend Developer",
+      "company": "Freelance",
+      "bio": "Contributor to Vapor and SwiftNIO projects. Expert in middleware development and request/response pipelines.",
+      "expertise": ["Vapor", "Middleware", "SwiftNIO", "Architecture"],
+      "avatar": "https://avatars.githubusercontent.com/jaapwijnen",
+      "social": {
+        "github": "Joannis",
+        "linkedin": "jaapwijnen"
+      }
+    },
+    {
+      "id": "speaker-030",
+      "name": "Anthony Castelli",
+      "title": "Senior Backend Engineer",
+      "company": "Blockchain.com",
+      "bio": "Server-side Swift engineer in the fintech space. Expert in high-availability systems and financial data processing.",
+      "expertise": ["Fintech", "High Availability", "Data Processing", "Security"],
+      "avatar": "https://avatars.githubusercontent.com/anthonycastelli",
+      "social": {
+        "github": "anthonycastelli",
+        "linkedin": "anthonycastelli"
+      }
+    },
+    {
+      "id": "speaker-031",
+      "name": "Logan Wright",
+      "title": "iOS & Backend Engineer",
+      "company": "Vapor Community",
+      "bio": "Early Vapor contributor and full-stack Swift advocate. Expert in shared code between iOS and server.",
+      "expertise": ["Full-Stack Swift", "Code Sharing", "Vapor", "iOS Integration"],
+      "avatar": "https://avatars.githubusercontent.com/loganwright",
+      "social": {
+        "twitter": "@logmaestro",
+        "github": "loganwright",
+        "linkedin": "loganwright"
+      }
+    },
+    {
+      "id": "speaker-032",
+      "name": "Paul Hudson",
+      "title": "Educator & Author",
+      "company": "Hacking with Swift",
+      "bio": "Renowned Swift educator and author. Creator of Hacking with Swift, expanding into server-side content and education.",
+      "expertise": ["Education", "Content Creation", "Swift Fundamentals", "Community"],
+      "avatar": "https://avatars.githubusercontent.com/paulhudson",
+      "social": {
+        "twitter": "@twostraws",
+        "github": "twostraws",
+        "linkedin": "paulhudson"
+      }
+    }
+  ],
+  "venues": [
+    {
+      "id": "main-hall",
+      "name": "Main Hall",
+      "capacity": 500,
+      "type": "auditorium",
+      "equipment": ["projector", "sound-system", "stage-lighting", "recording-setup"],
+      "accessibility": {
+        "wheelchairAccessible": true,
+        "hearingLoop": true,
+        "signLanguage": true,
+        "closedCaptioning": true
+      },
+      "description": "The main conference hall for keynotes and large presentations. Features state-of-the-art AV equipment and comfortable seating."
+    },
+    {
+      "id": "room-a",
+      "name": "Session Room A",
+      "capacity": 200,
+      "type": "conference-room",
+      "equipment": ["projector", "sound-system", "microphone", "recording-setup"],
+      "accessibility": {
+        "wheelchairAccessible": true,
+        "hearingLoop": true,
+        "signLanguage": false,
+        "closedCaptioning": true
+      },
+      "description": "Large conference room suitable for popular sessions and panel discussions."
+    },
+    {
+      "id": "room-b",
+      "name": "Session Room B",
+      "capacity": 150,
+      "type": "conference-room",
+      "equipment": ["projector", "sound-system", "microphone", "recording-setup"],
+      "accessibility": {
+        "wheelchairAccessible": true,
+        "hearingLoop": true,
+        "signLanguage": false,
+        "closedCaptioning": true
+      },
+      "description": "Medium-sized room perfect for technical deep-dives and advanced topics."
+    },
+    {
+      "id": "room-c",
+      "name": "Session Room C",
+      "capacity": 150,
+      "type": "conference-room",
+      "equipment": ["projector", "sound-system", "microphone", "recording-setup"],
+      "accessibility": {
+        "wheelchairAccessible": true,
+        "hearingLoop": false,
+        "signLanguage": false,
+        "closedCaptioning": true
+      },
+      "description": "Medium-sized room ideal for framework-specific sessions and tutorials."
+    },
+    {
+      "id": "room-d",
+      "name": "Session Room D",
+      "capacity": 100,
+      "type": "conference-room",
+      "equipment": ["projector", "sound-system", "microphone"],
+      "accessibility": {
+        "wheelchairAccessible": true,
+        "hearingLoop": false,
+        "signLanguage": false,
+        "closedCaptioning": false
+      },
+      "description": "Intimate setting for specialized topics and in-depth technical discussions."
+    },
+    {
+      "id": "room-e",
+      "name": "Session Room E",
+      "capacity": 100,
+      "type": "conference-room",
+      "equipment": ["projector", "sound-system", "microphone"],
+      "accessibility": {
+        "wheelchairAccessible": true,
+        "hearingLoop": false,
+        "signLanguage": false,
+        "closedCaptioning": false
+      },
+      "description": "Cozy room for community discussions and emerging topics."
+    },
+    {
+      "id": "workshop-1",
+      "name": "Workshop Space 1",
+      "capacity": 50,
+      "type": "workshop-room",
+      "equipment": ["projector", "sound-system", "power-outlets", "whiteboards", "tables"],
+      "accessibility": {
+        "wheelchairAccessible": true,
+        "hearingLoop": false,
+        "signLanguage": false,
+        "closedCaptioning": false
+      },
+      "description": "Hands-on workshop space with power outlets at every seat and collaborative table setup."
+    },
+    {
+      "id": "workshop-2",
+      "name": "Workshop Space 2",
+      "capacity": 50,
+      "type": "workshop-room",
+      "equipment": ["projector", "sound-system", "power-outlets", "whiteboards", "tables"],
+      "accessibility": {
+        "wheelchairAccessible": true,
+        "hearingLoop": false,
+        "signLanguage": false,
+        "closedCaptioning": false
+      },
+      "description": "Interactive workshop room designed for coding labs and collaborative learning."
+    },
+    {
+      "id": "workshop-3",
+      "name": "Workshop Space 3",
+      "capacity": 50,
+      "type": "workshop-room",
+      "equipment": ["projector", "sound-system", "power-outlets", "whiteboards", "tables"],
+      "accessibility": {
+        "wheelchairAccessible": true,
+        "hearingLoop": false,
+        "signLanguage": false,
+        "closedCaptioning": false
+      },
+      "description": "Practical workshop environment perfect for tutorials and hands-on exercises."
+    },
+    {
+      "id": "lightning-stage",
+      "name": "Lightning Stage",
+      "capacity": 150,
+      "type": "open-stage",
+      "equipment": ["projector", "sound-system", "timer-display"],
+      "accessibility": {
+        "wheelchairAccessible": true,
+        "hearingLoop": false,
+        "signLanguage": false,
+        "closedCaptioning": false
+      },
+      "description": "Fast-paced stage for lightning talks with visible countdown timer."
+    }
+  ],
+  "sessions": [
+    {
+      "id": "session-001",
+      "title": "Opening Keynote: The State of Server-Side Swift 2025",
+      "type": "keynote",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Join us for an inspiring opening keynote exploring the current state and future direction of server-side Swift. We'll cover recent advancements, community growth, and exciting developments coming in 2025.",
+      "abstract": "Server-side Swift has matured significantly over the past year. This keynote will highlight major framework updates, new tooling, Swift 6 adoption patterns, and real-world success stories from production deployments. We'll also preview upcoming features and discuss how the community is shaping the future of Swift on the server.",
+      "learningOutcomes": [
+        "Understand the current state of server-side Swift ecosystem",
+        "Learn about Swift 6 adoption patterns in server environments",
+        "Discover upcoming features and roadmap",
+        "Hear real-world production success stories"
+      ],
+      "startTime": "2025-10-15T09:00:00-05:00",
+      "endTime": "2025-10-15T10:00:00-05:00",
+      "venueId": "main-hall",
+      "speakerIds": ["speaker-009", "speaker-022", "speaker-027"],
+      "tags": ["keynote", "community", "ecosystem", "future"],
+      "level": "all",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-002",
+      "title": "Building Your First Vapor Application",
+      "type": "workshop",
+      "track": "Vapor Framework",
+      "difficulty": "beginner",
+      "description": "A comprehensive hands-on workshop for developers new to Vapor. Build a complete REST API from scratch and deploy it to production.",
+      "abstract": "This workshop will take you from zero to deploying a production-ready Vapor application. You'll learn routing, controllers, models, database integration with Fluent, authentication, and testing. By the end, you'll have a fully functional API deployed to the cloud.",
+      "learningOutcomes": [
+        "Set up a Vapor project with Swift Package Manager",
+        "Create RESTful routes and controllers",
+        "Integrate PostgreSQL with Fluent ORM",
+        "Implement authentication and authorization",
+        "Write tests for your API",
+        "Deploy to a cloud platform"
+      ],
+      "startTime": "2025-10-15T10:30:00-05:00",
+      "endTime": "2025-10-15T13:00:00-05:00",
+      "venueId": "workshop-1",
+      "speakerIds": ["speaker-001", "speaker-015"],
+      "tags": ["vapor", "beginners", "workshop", "rest-api", "deployment"],
+      "level": "beginner",
+      "recordingAvailable": false,
+      "prerequisites": ["Basic Swift knowledge", "Laptop with Xcode or VS Code installed", "Docker Desktop installed"],
+      "materialsUrl": "https://github.com/serversideswift/vapor-workshop-2025"
+    },
+    {
+      "id": "session-003",
+      "title": "SwiftNIO Deep Dive: Building High-Performance Network Applications",
+      "type": "talk",
+      "track": "SwiftNIO",
+      "difficulty": "advanced",
+      "description": "An in-depth exploration of SwiftNIO's architecture, event loop model, and how to build custom network protocols for maximum performance.",
+      "abstract": "SwiftNIO is the foundation of server-side Swift's performance. This talk dives deep into the event-driven architecture, channel pipelines, ByteBuffer management, and backpressure handling. You'll learn how to build custom protocol handlers and optimize network application performance.",
+      "learningOutcomes": [
+        "Understand SwiftNIO's event loop architecture",
+        "Master channel pipelines and handlers",
+        "Build custom network protocols",
+        "Optimize ByteBuffer usage for performance",
+        "Handle backpressure and flow control"
+      ],
+      "startTime": "2025-10-15T10:30:00-05:00",
+      "endTime": "2025-10-15T11:15:00-05:00",
+      "venueId": "room-a",
+      "speakerIds": ["speaker-004", "speaker-016"],
+      "tags": ["swiftnio", "networking", "performance", "advanced", "protocols"],
+      "level": "advanced",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-004",
+      "title": "Hummingbird: The Lightweight Alternative for Modern Swift Servers",
+      "type": "talk",
+      "track": "Hummingbird",
+      "difficulty": "intermediate",
+      "description": "Discover Hummingbird, a lightweight and flexible server framework built on SwiftNIO, and learn when and why you might choose it over Vapor.",
+      "abstract": "Hummingbird offers a minimalist approach to server-side Swift with excellent performance characteristics. This session covers Hummingbird's architecture, middleware system, and how it leverages modern Swift features. We'll build a sample application and compare approaches with other frameworks.",
+      "learningOutcomes": [
+        "Understand Hummingbird's design philosophy",
+        "Build applications with Hummingbird's middleware system",
+        "Leverage Swift 6 features in Hummingbird",
+        "Compare Hummingbird with Vapor for different use cases",
+        "Integrate with AWS services using Soto"
+      ],
+      "startTime": "2025-10-15T10:30:00-05:00",
+      "endTime": "2025-10-15T11:15:00-05:00",
+      "venueId": "room-b",
+      "speakerIds": ["speaker-006"],
+      "tags": ["hummingbird", "framework", "performance", "aws", "middleware"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-005",
+      "title": "Swift 6 Concurrency Patterns for Server Applications",
+      "type": "talk",
+      "track": "Swift 6 & Concurrency",
+      "difficulty": "intermediate",
+      "description": "Learn how to leverage Swift 6's strict concurrency model to build safer, more efficient server applications with async/await and actors.",
+      "abstract": "Swift 6 brings strict concurrency checking to eliminate data races. This talk explores practical patterns for server-side development: actor-based state management, async request handlers, structured concurrency, and migrating existing codebases. See how concurrency annotations improve code safety without sacrificing performance.",
+      "learningOutcomes": [
+        "Apply strict concurrency checking in server code",
+        "Use actors for thread-safe state management",
+        "Implement structured concurrency patterns",
+        "Migrate existing code to Swift 6 concurrency model",
+        "Avoid common concurrency pitfalls"
+      ],
+      "startTime": "2025-10-15T10:30:00-05:00",
+      "endTime": "2025-10-15T11:15:00-05:00",
+      "venueId": "room-c",
+      "speakerIds": ["speaker-012"],
+      "tags": ["swift6", "concurrency", "async-await", "actors", "safety"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-006",
+      "title": "MongoDB and Swift: Modern Database Integration",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "A practical guide to integrating MongoDB in your Swift server applications using the official MongoDB Swift driver and MongoKitten.",
+      "abstract": "MongoDB is a popular choice for Swift server applications. This session covers the official MongoDB Swift driver, MongoKitten alternatives, CRUD operations, aggregation pipelines, and async/await patterns. Learn best practices for schema design and query optimization.",
+      "learningOutcomes": [
+        "Connect to MongoDB from Swift applications",
+        "Perform CRUD operations with async/await",
+        "Use aggregation pipelines for complex queries",
+        "Understand MongoKitten vs official driver",
+        "Optimize queries and indexes"
+      ],
+      "startTime": "2025-10-15T11:30:00-05:00",
+      "endTime": "2025-10-15T12:15:00-05:00",
+      "venueId": "room-a",
+      "speakerIds": ["speaker-008", "speaker-011"],
+      "tags": ["mongodb", "database", "async-await", "nosql"],
+      "level": "beginner",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-007",
+      "title": "Advanced Fluent ORM: Relationships, Migrations, and Performance",
+      "type": "talk",
+      "track": "Vapor Framework",
+      "difficulty": "advanced",
+      "description": "Master Fluent ORM's advanced features including complex relationships, database migrations, query optimization, and performance tuning.",
+      "abstract": "Fluent is Vapor's powerful ORM, but there's more than basic CRUD. This advanced session covers eager loading, pivot tables, polymorphic relationships, custom migrations, transaction management, and query performance optimization. Learn to build complex data models efficiently.",
+      "learningOutcomes": [
+        "Model complex relationships and pivots",
+        "Write robust database migrations",
+        "Optimize queries with eager loading",
+        "Use transactions for data consistency",
+        "Profile and improve query performance"
+      ],
+      "startTime": "2025-10-15T11:30:00-05:00",
+      "endTime": "2025-10-15T12:15:00-05:00",
+      "venueId": "room-b",
+      "speakerIds": ["speaker-003"],
+      "tags": ["fluent", "orm", "database", "performance", "advanced"],
+      "level": "advanced",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-008",
+      "title": "Testing Server-Side Swift: Strategies and Tools",
+      "type": "talk",
+      "track": "Testing & Quality",
+      "difficulty": "intermediate",
+      "description": "Comprehensive testing strategies for server applications: unit tests, integration tests, API testing, and continuous integration setup.",
+      "abstract": "Quality server-side code requires comprehensive testing. Learn how to use Swift Testing framework, XCTVapor for integration tests, mock dependencies, test databases, and set up CI/CD pipelines. We'll cover test organization, coverage goals, and testing async code.",
+      "learningOutcomes": [
+        "Write effective unit tests for server code",
+        "Use Swift Testing framework features",
+        "Create integration tests with XCTVapor",
+        "Mock dependencies and external services",
+        "Set up CI/CD testing pipelines"
+      ],
+      "startTime": "2025-10-15T11:30:00-05:00",
+      "endTime": "2025-10-15T12:15:00-05:00",
+      "venueId": "room-c",
+      "speakerIds": ["speaker-010"],
+      "tags": ["testing", "quality", "ci-cd", "swift-testing", "integration-tests"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-009",
+      "title": "Lunch & Networking",
+      "type": "break",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Enjoy lunch and network with fellow server-side Swift developers.",
+      "abstract": "Take a break to enjoy catered lunch and connect with speakers, sponsors, and other attendees. Great opportunity for informal discussions and making connections.",
+      "learningOutcomes": [],
+      "startTime": "2025-10-15T12:15:00-05:00",
+      "endTime": "2025-10-15T13:30:00-05:00",
+      "venueId": "main-hall",
+      "speakerIds": [],
+      "tags": ["networking", "lunch"],
+      "level": "all",
+      "recordingAvailable": false
+    },
+    {
+      "id": "session-010",
+      "title": "GraphQL in Swift: From Schema to Production",
+      "type": "talk",
+      "track": "Architecture & Patterns",
+      "difficulty": "intermediate",
+      "description": "Build GraphQL APIs in Swift with Graphiti and integrate with Apollo iOS. Learn schema design, resolvers, and full-stack GraphQL development.",
+      "abstract": "GraphQL offers powerful APIs for modern applications. This session covers building GraphQL servers in Swift with Graphiti, designing schemas, implementing resolvers, handling subscriptions, and integrating with Apollo iOS client for full-stack Swift GraphQL.",
+      "learningOutcomes": [
+        "Design GraphQL schemas for Swift APIs",
+        "Implement resolvers and data loaders",
+        "Handle queries, mutations, and subscriptions",
+        "Integrate with Apollo iOS client",
+        "Optimize GraphQL query performance"
+      ],
+      "startTime": "2025-10-15T13:30:00-05:00",
+      "endTime": "2025-10-15T14:15:00-05:00",
+      "venueId": "room-a",
+      "speakerIds": ["speaker-019", "speaker-013"],
+      "tags": ["graphql", "api-design", "apollo", "full-stack"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-011",
+      "title": "Docker and Kubernetes for Swift Applications",
+      "type": "talk",
+      "track": "Deployment & DevOps",
+      "difficulty": "intermediate",
+      "description": "Containerize and orchestrate Swift server applications with Docker and Kubernetes. Learn best practices for production deployments.",
+      "abstract": "Modern deployment requires containerization and orchestration. This talk covers creating optimized Docker images for Swift, multi-stage builds, Kubernetes deployment strategies, health checks, scaling, monitoring, and CI/CD integration for Swift server apps.",
+      "learningOutcomes": [
+        "Create optimized Docker images for Swift",
+        "Write Kubernetes manifests for deployments",
+        "Implement health checks and readiness probes",
+        "Configure auto-scaling and rolling updates",
+        "Set up monitoring and logging"
+      ],
+      "startTime": "2025-10-15T13:30:00-05:00",
+      "endTime": "2025-10-15T14:15:00-05:00",
+      "venueId": "room-b",
+      "speakerIds": ["speaker-028"],
+      "tags": ["docker", "kubernetes", "deployment", "devops", "containers"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-012",
+      "title": "OpenAPI and Code Generation for Type-Safe APIs",
+      "type": "talk",
+      "track": "Architecture & Patterns",
+      "difficulty": "intermediate",
+      "description": "Use OpenAPI specifications to generate type-safe Swift client and server code. Learn API-first development with OpenAPIKit.",
+      "abstract": "OpenAPI specifications enable API-first development and type-safe code generation. This session covers OpenAPIKit for Swift, generating server routes and client SDKs, maintaining spec-code sync, and building robust API contracts.",
+      "learningOutcomes": [
+        "Write OpenAPI specifications for Swift APIs",
+        "Generate type-safe server and client code",
+        "Implement API-first development workflow",
+        "Validate requests against OpenAPI specs",
+        "Maintain spec-code consistency"
+      ],
+      "startTime": "2025-10-15T13:30:00-05:00",
+      "endTime": "2025-10-15T14:15:00-05:00",
+      "venueId": "room-c",
+      "speakerIds": ["speaker-017"],
+      "tags": ["openapi", "code-generation", "api-design", "type-safety"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-013",
+      "title": "Real-Time Communication with WebSockets",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "intermediate",
+      "description": "Build real-time features with WebSockets in Vapor and SwiftNIO. Learn bi-directional communication, connection management, and scaling strategies.",
+      "abstract": "WebSockets enable real-time bidirectional communication. This talk covers WebSocket implementation in Vapor, connection lifecycle management, broadcasting to multiple clients, authentication, and scaling WebSocket servers across multiple instances.",
+      "learningOutcomes": [
+        "Implement WebSocket endpoints in Vapor",
+        "Manage WebSocket connection lifecycle",
+        "Broadcast messages to multiple clients",
+        "Authenticate WebSocket connections",
+        "Scale WebSocket servers horizontally"
+      ],
+      "startTime": "2025-10-15T14:30:00-05:00",
+      "endTime": "2025-10-15T15:15:00-05:00",
+      "venueId": "room-a",
+      "speakerIds": ["speaker-025"],
+      "tags": ["websockets", "real-time", "vapor", "communication"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-014",
+      "title": "Authentication and Authorization Best Practices",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "intermediate",
+      "description": "Implement secure authentication and authorization in Swift servers using JWT, OAuth2, and role-based access control.",
+      "abstract": "Security is paramount in server applications. Learn to implement JWT authentication, OAuth2 flows, refresh tokens, password hashing with bcrypt, role-based access control, and security best practices for Swift server applications.",
+      "learningOutcomes": [
+        "Implement JWT authentication in Vapor",
+        "Handle OAuth2 authorization flows",
+        "Secure passwords with bcrypt",
+        "Build role-based access control systems",
+        "Follow authentication security best practices"
+      ],
+      "startTime": "2025-10-15T14:30:00-05:00",
+      "endTime": "2025-10-15T15:15:00-05:00",
+      "venueId": "room-b",
+      "speakerIds": ["speaker-001"],
+      "tags": ["authentication", "authorization", "security", "jwt", "oauth2"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-015",
+      "title": "Building a CMS with Swift: Feather CMS Deep Dive",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "intermediate",
+      "description": "Explore building content management systems with Swift. Learn from Feather CMS architecture and build extensible, modular web applications.",
+      "abstract": "Content management systems require modular architecture. This session explores Feather CMS's design, module system, Leaf templating, admin interfaces, and how to build similar extensible systems in Swift for content-driven applications.",
+      "learningOutcomes": [
+        "Understand modular CMS architecture",
+        "Build with Feather CMS module system",
+        "Create Leaf templates and components",
+        "Design extensible plugin architectures",
+        "Build admin interfaces with Swift"
+      ],
+      "startTime": "2025-10-15T14:30:00-05:00",
+      "endTime": "2025-10-15T15:15:00-05:00",
+      "venueId": "room-c",
+      "speakerIds": ["speaker-023"],
+      "tags": ["cms", "feather", "leaf", "web-development", "architecture"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-016",
+      "title": "Coffee Break & Sponsor Showcase",
+      "type": "break",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Afternoon coffee break with sponsor booths and demos.",
+      "abstract": "Recharge with coffee and snacks while exploring sponsor booths showcasing tools, platforms, and services for server-side Swift development.",
+      "learningOutcomes": [],
+      "startTime": "2025-10-15T15:15:00-05:00",
+      "endTime": "2025-10-15T15:45:00-05:00",
+      "venueId": "main-hall",
+      "speakerIds": [],
+      "tags": ["networking", "sponsors", "break"],
+      "level": "all",
+      "recordingAvailable": false
+    },
+    {
+      "id": "session-017",
+      "title": "Distributed Actors: Building Distributed Systems in Swift",
+      "type": "talk",
+      "track": "Swift 6 & Concurrency",
+      "difficulty": "advanced",
+      "description": "Explore Swift's distributed actor system for building resilient, scalable distributed applications across multiple nodes.",
+      "abstract": "Swift's distributed actors enable building distributed systems with location transparency. Learn the distributed actor model, cluster membership, remote calls, failure handling, and building resilient microservices with Swift distributed actors.",
+      "learningOutcomes": [
+        "Understand distributed actor fundamentals",
+        "Build distributed systems in Swift",
+        "Handle network failures and recovery",
+        "Implement cluster membership",
+        "Design distributed microservices"
+      ],
+      "startTime": "2025-10-15T15:45:00-05:00",
+      "endTime": "2025-10-15T16:30:00-05:00",
+      "venueId": "room-a",
+      "speakerIds": ["speaker-012"],
+      "tags": ["distributed-actors", "distributed-systems", "swift6", "microservices"],
+      "level": "advanced",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-018",
+      "title": "Performance Optimization: Profiling and Tuning Swift Servers",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "advanced",
+      "description": "Learn to profile, benchmark, and optimize Swift server applications for maximum performance and minimal resource usage.",
+      "abstract": "Performance matters in production. This session covers profiling tools, identifying bottlenecks, memory optimization, reducing allocations, async performance patterns, database query optimization, and load testing Swift server applications.",
+      "learningOutcomes": [
+        "Profile Swift server applications",
+        "Identify and fix performance bottlenecks",
+        "Optimize memory usage and allocations",
+        "Benchmark async/await performance",
+        "Load test and capacity plan"
+      ],
+      "startTime": "2025-10-15T15:45:00-05:00",
+      "endTime": "2025-10-15T16:30:00-05:00",
+      "venueId": "room-b",
+      "speakerIds": ["speaker-002", "speaker-016"],
+      "tags": ["performance", "optimization", "profiling", "benchmarking"],
+      "level": "advanced",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-019",
+      "title": "Serverless Swift with AWS Lambda",
+      "type": "talk",
+      "track": "Deployment & DevOps",
+      "difficulty": "intermediate",
+      "description": "Deploy Swift functions to AWS Lambda for serverless architectures. Learn Swift AWS Runtime, cold starts, and serverless patterns.",
+      "abstract": "Serverless computing offers scalability without infrastructure management. This talk covers Swift AWS Runtime, building Lambda functions, managing cold starts, integrating with AWS services, and when serverless makes sense for Swift.",
+      "learningOutcomes": [
+        "Build Swift functions for AWS Lambda",
+        "Use Swift AWS Runtime library",
+        "Optimize for cold start performance",
+        "Integrate with AWS services",
+        "Design serverless architectures"
+      ],
+      "startTime": "2025-10-15T15:45:00-05:00",
+      "endTime": "2025-10-15T16:30:00-05:00",
+      "venueId": "room-c",
+      "speakerIds": ["speaker-020", "speaker-006"],
+      "tags": ["serverless", "aws-lambda", "cloud", "deployment"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-020",
+      "title": "Panel: Server-Side Swift in Production - Lessons from the Trenches",
+      "type": "panel",
+      "track": "Server-Side Swift",
+      "difficulty": "intermediate",
+      "description": "Panel discussion with engineers running Swift servers in production. Real-world challenges, solutions, and lessons learned.",
+      "abstract": "Hear from teams running Swift in production environments. This panel discusses scaling challenges, monitoring strategies, incident response, team adoption, migration stories, and practical advice for production Swift deployments.",
+      "learningOutcomes": [
+        "Learn from production deployment experiences",
+        "Understand common challenges and solutions",
+        "Discover monitoring and observability strategies",
+        "Hear team adoption and migration stories",
+        "Get practical production advice"
+      ],
+      "startTime": "2025-10-15T16:45:00-05:00",
+      "endTime": "2025-10-15T17:30:00-05:00",
+      "venueId": "room-a",
+      "speakerIds": ["speaker-014", "speaker-030", "speaker-028", "speaker-021"],
+      "tags": ["panel", "production", "real-world", "lessons-learned"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-021",
+      "title": "Swift Package Manager for Server Projects",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Master Swift Package Manager for server-side development. Learn dependency management, versioning, and creating reusable packages.",
+      "abstract": "SPM is essential for Swift server projects. This session covers package structure, dependency management, semantic versioning, creating libraries, manifest best practices, and organizing multi-module server applications.",
+      "learningOutcomes": [
+        "Structure Swift packages effectively",
+        "Manage dependencies and versions",
+        "Create reusable server libraries",
+        "Organize multi-module projects",
+        "Follow SPM best practices"
+      ],
+      "startTime": "2025-10-15T16:45:00-05:00",
+      "endTime": "2025-10-15T17:30:00-05:00",
+      "venueId": "room-b",
+      "speakerIds": ["speaker-022"],
+      "tags": ["spm", "package-manager", "dependencies", "organization"],
+      "level": "beginner",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-022",
+      "title": "Lightning Talks: Community Showcase",
+      "type": "lightning",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Rapid-fire 5-minute talks from the community showcasing projects, tips, and innovations in server-side Swift.",
+      "abstract": "Ten community members share their server-side Swift projects, tips, tricks, and innovations in fast-paced 5-minute presentations. Great opportunity to discover new ideas and tools.",
+      "learningOutcomes": [
+        "Discover community projects and tools",
+        "Learn quick tips and tricks",
+        "Get inspired by innovative uses",
+        "Connect with other developers"
+      ],
+      "startTime": "2025-10-15T16:45:00-05:00",
+      "endTime": "2025-10-15T17:30:00-05:00",
+      "venueId": "lightning-stage",
+      "speakerIds": ["speaker-015", "speaker-024", "speaker-026", "speaker-029", "speaker-031"],
+      "tags": ["lightning-talks", "community", "showcase"],
+      "level": "all",
+      "recordingAvailable": false
+    },
+    {
+      "id": "session-023",
+      "title": "Day 1 Closing & Evening Reception",
+      "type": "break",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Day 1 wrap-up followed by evening reception with food, drinks, and networking.",
+      "abstract": "Join us for evening reception to unwind, network with attendees and speakers, and discuss the day's sessions over food and drinks.",
+      "learningOutcomes": [],
+      "startTime": "2025-10-15T17:30:00-05:00",
+      "endTime": "2025-10-15T19:00:00-05:00",
+      "venueId": "main-hall",
+      "speakerIds": [],
+      "tags": ["networking", "reception", "social"],
+      "level": "all",
+      "recordingAvailable": false
+    },
+    {
+      "id": "session-024",
+      "title": "Day 2 Keynote: The Future of Swift Frameworks",
+      "type": "keynote",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Keynote exploring the evolution and future of Swift server frameworks, featuring framework creators and maintainers.",
+      "abstract": "Framework creators discuss the evolution of Vapor, Hummingbird, and emerging frameworks. Topics include design philosophies, Swift 6 adoption, performance improvements, and the future roadmap of server-side Swift frameworks.",
+      "learningOutcomes": [
+        "Understand framework evolution and roadmaps",
+        "Learn design philosophies behind frameworks",
+        "Discover upcoming framework features",
+        "Compare framework approaches",
+        "Hear from framework creators"
+      ],
+      "startTime": "2025-10-16T09:00:00-05:00",
+      "endTime": "2025-10-16T10:00:00-05:00",
+      "venueId": "main-hall",
+      "speakerIds": ["speaker-007", "speaker-006", "speaker-001"],
+      "tags": ["keynote", "frameworks", "future", "vapor", "hummingbird"],
+      "level": "all",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-025",
+      "title": "Advanced Vapor Workshop: Middleware, Jobs, and Queues",
+      "type": "workshop",
+      "track": "Vapor Framework",
+      "difficulty": "advanced",
+      "description": "Hands-on workshop covering advanced Vapor features: custom middleware, background jobs, queues, and scheduling.",
+      "abstract": "Take your Vapor skills to the next level. Build custom middleware for logging, authentication, and request processing. Implement background job processing with Queues, scheduled tasks, and integrate Redis for caching and queue backends.",
+      "learningOutcomes": [
+        "Create custom middleware pipelines",
+        "Implement background job processing",
+        "Use Vapor Queues for async tasks",
+        "Schedule recurring jobs",
+        "Integrate Redis for caching and queues"
+      ],
+      "startTime": "2025-10-16T10:30:00-05:00",
+      "endTime": "2025-10-16T13:00:00-05:00",
+      "venueId": "workshop-1",
+      "speakerIds": ["speaker-018", "speaker-021"],
+      "tags": ["vapor", "workshop", "middleware", "queues", "redis", "advanced"],
+      "level": "advanced",
+      "recordingAvailable": false,
+      "prerequisites": ["Intermediate Vapor experience", "Understanding of async/await", "Laptop with Docker and Xcode"]
+    },
+    {
+      "id": "session-026",
+      "title": "Building RESTful APIs: Design Principles and Patterns",
+      "type": "talk",
+      "track": "Architecture & Patterns",
+      "difficulty": "beginner",
+      "description": "Learn REST API design principles, resource modeling, HTTP methods, status codes, and building maintainable APIs in Swift.",
+      "abstract": "REST APIs are the backbone of modern applications. This talk covers RESTful design principles, resource identification, proper HTTP method usage, status codes, versioning strategies, pagination, filtering, and error handling for maintainable Swift APIs.",
+      "learningOutcomes": [
+        "Understand REST API design principles",
+        "Model resources and endpoints effectively",
+        "Use HTTP methods and status codes correctly",
+        "Implement pagination and filtering",
+        "Design versioning strategies",
+        "Handle errors consistently"
+      ],
+      "startTime": "2025-10-16T10:30:00-05:00",
+      "endTime": "2025-10-16T11:15:00-05:00",
+      "venueId": "room-a",
+      "speakerIds": ["speaker-032"],
+      "tags": ["rest-api", "api-design", "http", "architecture"],
+      "level": "beginner",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-027",
+      "title": "Async HTTP Client: Making Network Requests Like a Pro",
+      "type": "talk",
+      "track": "SwiftNIO",
+      "difficulty": "intermediate",
+      "description": "Master async-http-client for making HTTP requests from Swift servers. Learn connection pooling, timeouts, and performance optimization.",
+      "abstract": "async-http-client is the foundation for HTTP requests in server-side Swift. This session covers making requests with async/await, connection pooling, timeout configuration, following redirects, custom headers, and building resilient client code.",
+      "learningOutcomes": [
+        "Make HTTP requests with async-http-client",
+        "Configure connection pools and timeouts",
+        "Handle redirects and error responses",
+        "Optimize client performance",
+        "Build resilient HTTP client code"
+      ],
+      "startTime": "2025-10-16T10:30:00-05:00",
+      "endTime": "2025-10-16T11:15:00-05:00",
+      "venueId": "room-b",
+      "speakerIds": ["speaker-016"],
+      "tags": ["http-client", "networking", "async-await", "swiftnio"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-028",
+      "title": "PostgreSQL Mastery for Swift Developers",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "intermediate",
+      "description": "Deep dive into PostgreSQL with Swift: advanced queries, indexing, transactions, and performance tuning with PostgresNIO and Fluent.",
+      "abstract": "PostgreSQL is a powerful database for Swift servers. Learn advanced SQL, indexes, query planning, transactions, JSON columns, full-text search, and connection pooling. Covers both raw PostgresNIO and Fluent approaches.",
+      "learningOutcomes": [
+        "Write efficient PostgreSQL queries",
+        "Design indexes for performance",
+        "Use transactions and isolation levels",
+        "Work with JSON columns and full-text search",
+        "Optimize connection pooling"
+      ],
+      "startTime": "2025-10-16T10:30:00-05:00",
+      "endTime": "2025-10-16T11:15:00-05:00",
+      "venueId": "room-c",
+      "speakerIds": ["speaker-021"],
+      "tags": ["postgresql", "database", "sql", "performance"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-029",
+      "title": "Leaf Templating: Server-Side Rendering in Swift",
+      "type": "talk",
+      "track": "Vapor Framework",
+      "difficulty": "beginner",
+      "description": "Build dynamic web pages with Leaf templating engine. Learn syntax, components, layouts, and server-side rendering patterns.",
+      "abstract": "Server-side rendering offers SEO benefits and fast initial loads. This session covers Leaf templating syntax, creating reusable components, layouts and partials, passing data from routes, and building dynamic web applications with Swift.",
+      "learningOutcomes": [
+        "Write Leaf templates and syntax",
+        "Create reusable components and layouts",
+        "Pass data from routes to templates",
+        "Build dynamic web pages",
+        "Optimize server-side rendering"
+      ],
+      "startTime": "2025-10-16T11:30:00-05:00",
+      "endTime": "2025-10-16T12:15:00-05:00",
+      "venueId": "room-a",
+      "speakerIds": ["speaker-018", "speaker-023"],
+      "tags": ["leaf", "templating", "server-side-rendering", "vapor"],
+      "level": "beginner",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-030",
+      "title": "Monitoring and Observability for Swift Servers",
+      "type": "talk",
+      "track": "Deployment & DevOps",
+      "difficulty": "intermediate",
+      "description": "Implement comprehensive monitoring, logging, and observability for Swift server applications using modern tools and practices.",
+      "abstract": "Production systems need visibility. Learn to implement structured logging, metrics collection, distributed tracing, health checks, and alerting. Covers integration with Prometheus, Grafana, and OpenTelemetry.",
+      "learningOutcomes": [
+        "Implement structured logging",
+        "Collect and export metrics",
+        "Set up distributed tracing",
+        "Create health check endpoints",
+        "Integrate with monitoring tools"
+      ],
+      "startTime": "2025-10-16T11:30:00-05:00",
+      "endTime": "2025-10-16T12:15:00-05:00",
+      "venueId": "room-b",
+      "speakerIds": ["speaker-028"],
+      "tags": ["monitoring", "observability", "logging", "metrics", "devops"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-031",
+      "title": "Swift on Linux: Platform-Specific Considerations",
+      "type": "talk",
+      "track": "Deployment & DevOps",
+      "difficulty": "intermediate",
+      "description": "Navigate Linux deployment for Swift servers. Learn about platform differences, system libraries, and Linux-specific optimizations.",
+      "abstract": "Most Swift servers run on Linux. This talk covers Linux-specific considerations: system library integration, file paths, signal handling, systemd integration, performance characteristics, and debugging tools on Linux platforms.",
+      "learningOutcomes": [
+        "Understand Swift on Linux differences",
+        "Integrate with Linux system libraries",
+        "Handle signals and process management",
+        "Configure systemd services",
+        "Debug Swift applications on Linux"
+      ],
+      "startTime": "2025-10-16T11:30:00-05:00",
+      "endTime": "2025-10-16T12:15:00-05:00",
+      "venueId": "room-c",
+      "speakerIds": ["speaker-022"],
+      "tags": ["linux", "deployment", "platform", "debugging"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-032",
+      "title": "Lunch & Birds of a Feather Discussions",
+      "type": "break",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Lunch with organized topic tables for focused discussions on specific server-side Swift topics.",
+      "abstract": "Enjoy lunch while participating in Birds of a Feather discussions at topic-specific tables: Vapor, Hummingbird, Testing, Deployment, Databases, and more.",
+      "learningOutcomes": [],
+      "startTime": "2025-10-16T12:15:00-05:00",
+      "endTime": "2025-10-16T13:30:00-05:00",
+      "venueId": "main-hall",
+      "speakerIds": [],
+      "tags": ["networking", "lunch", "bof"],
+      "level": "all",
+      "recordingAvailable": false
+    },
+    {
+      "id": "session-033",
+      "title": "Microservices Architecture with Swift",
+      "type": "talk",
+      "track": "Architecture & Patterns",
+      "difficulty": "advanced",
+      "description": "Design and implement microservices architectures using Swift. Learn service decomposition, communication patterns, and distributed system challenges.",
+      "abstract": "Microservices offer scalability and team autonomy but add complexity. This talk covers service boundaries, inter-service communication (REST, gRPC, messaging), service discovery, distributed tracing, and managing data consistency across services.",
+      "learningOutcomes": [
+        "Design microservices boundaries",
+        "Implement inter-service communication",
+        "Handle distributed data management",
+        "Set up service discovery",
+        "Manage distributed system complexity"
+      ],
+      "startTime": "2025-10-16T13:30:00-05:00",
+      "endTime": "2025-10-16T14:15:00-05:00",
+      "venueId": "room-a",
+      "speakerIds": ["speaker-013"],
+      "tags": ["microservices", "architecture", "distributed-systems", "grpc"],
+      "level": "advanced",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-034",
+      "title": "Caching Strategies for High-Performance APIs",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "intermediate",
+      "description": "Implement effective caching strategies to dramatically improve API performance. Learn HTTP caching, Redis, and in-memory caching patterns.",
+      "abstract": "Caching is crucial for performance. This session covers HTTP caching headers, ETags, cache-control, Redis integration, in-memory caching with Swift, cache invalidation strategies, and distributed caching patterns.",
+      "learningOutcomes": [
+        "Implement HTTP caching headers",
+        "Use Redis for distributed caching",
+        "Build in-memory caches in Swift",
+        "Design cache invalidation strategies",
+        "Optimize cache hit rates"
+      ],
+      "startTime": "2025-10-16T13:30:00-05:00",
+      "endTime": "2025-10-16T14:15:00-05:00",
+      "venueId": "room-b",
+      "speakerIds": ["speaker-002"],
+      "tags": ["caching", "performance", "redis", "optimization"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-035",
+      "title": "Error Handling and Resilience Patterns",
+      "type": "talk",
+      "track": "Architecture & Patterns",
+      "difficulty": "intermediate",
+      "description": "Build resilient server applications with proper error handling, retries, circuit breakers, and graceful degradation patterns.",
+      "abstract": "Production systems must handle failures gracefully. Learn error handling strategies, retry patterns with exponential backoff, circuit breakers, timeout management, and building resilient systems that degrade gracefully under failure.",
+      "learningOutcomes": [
+        "Implement robust error handling",
+        "Use retry patterns effectively",
+        "Build circuit breakers",
+        "Handle timeouts and deadlines",
+        "Design graceful degradation"
+      ],
+      "startTime": "2025-10-16T13:30:00-05:00",
+      "endTime": "2025-10-16T14:15:00-05:00",
+      "venueId": "room-c",
+      "speakerIds": ["speaker-014"],
+      "tags": ["error-handling", "resilience", "reliability", "patterns"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-036",
+      "title": "gRPC Services in Swift",
+      "type": "talk",
+      "track": "SwiftNIO",
+      "difficulty": "advanced",
+      "description": "Build high-performance gRPC services with Swift. Learn Protocol Buffers, code generation, streaming, and gRPC patterns.",
+      "abstract": "gRPC offers efficient, type-safe communication for microservices. This talk covers Protocol Buffers, generating Swift code, implementing unary and streaming RPCs, error handling, and integrating gRPC with SwiftNIO-based services.",
+      "learningOutcomes": [
+        "Define services with Protocol Buffers",
+        "Generate Swift gRPC code",
+        "Implement unary and streaming RPCs",
+        "Handle gRPC errors and metadata",
+        "Integrate with SwiftNIO"
+      ],
+      "startTime": "2025-10-16T14:30:00-05:00",
+      "endTime": "2025-10-16T15:15:00-05:00",
+      "venueId": "room-a",
+      "speakerIds": ["speaker-005"],
+      "tags": ["grpc", "protobuf", "rpc", "microservices", "swiftnio"],
+      "level": "advanced",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-037",
+      "title": "Full-Stack Swift: Sharing Code Between iOS and Server",
+      "type": "talk",
+      "track": "Architecture & Patterns",
+      "difficulty": "intermediate",
+      "description": "Share models, validation, and business logic between iOS and server Swift code. Learn patterns for code reuse and type safety.",
+      "abstract": "Swift on both client and server enables code sharing. This session covers sharing models and DTOs, validation logic, Swift Package organization, platform-specific code, and building type-safe full-stack Swift applications.",
+      "learningOutcomes": [
+        "Share models between iOS and server",
+        "Organize shared Swift packages",
+        "Handle platform-specific code",
+        "Implement shared validation logic",
+        "Build type-safe client-server contracts"
+      ],
+      "startTime": "2025-10-16T14:30:00-05:00",
+      "endTime": "2025-10-16T15:15:00-05:00",
+      "venueId": "room-b",
+      "speakerIds": ["speaker-031", "speaker-015"],
+      "tags": ["full-stack", "code-sharing", "ios", "type-safety"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-038",
+      "title": "Security Best Practices for Swift Servers",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "intermediate",
+      "description": "Comprehensive security practices for Swift servers: HTTPS, CORS, input validation, SQL injection prevention, and security headers.",
+      "abstract": "Security cannot be an afterthought. This talk covers HTTPS configuration, CORS policies, input validation and sanitization, preventing SQL injection, CSRF protection, security headers, and common vulnerabilities in server applications.",
+      "learningOutcomes": [
+        "Configure HTTPS and TLS properly",
+        "Implement CORS correctly",
+        "Validate and sanitize inputs",
+        "Prevent SQL injection attacks",
+        "Set security headers",
+        "Follow OWASP guidelines"
+      ],
+      "startTime": "2025-10-16T14:30:00-05:00",
+      "endTime": "2025-10-16T15:15:00-05:00",
+      "venueId": "room-c",
+      "speakerIds": ["speaker-014", "speaker-030"],
+      "tags": ["security", "https", "cors", "validation", "best-practices"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-039",
+      "title": "Coffee Break & Sponsor Demos",
+      "type": "break",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Afternoon coffee with live sponsor demos and product showcases.",
+      "abstract": "Refresh with coffee while watching sponsor demos of their latest tools, platforms, and services for Swift server development.",
+      "learningOutcomes": [],
+      "startTime": "2025-10-16T15:15:00-05:00",
+      "endTime": "2025-10-16T15:45:00-05:00",
+      "venueId": "main-hall",
+      "speakerIds": [],
+      "tags": ["networking", "sponsors", "break"],
+      "level": "all",
+      "recordingAvailable": false
+    },
+    {
+      "id": "session-040",
+      "title": "Rate Limiting and API Protection",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "intermediate",
+      "description": "Protect your APIs with rate limiting, throttling, and abuse prevention strategies. Learn algorithms and implementation in Swift.",
+      "abstract": "APIs need protection from abuse. This session covers rate limiting algorithms (token bucket, leaky bucket, fixed window), implementing middleware in Vapor, distributed rate limiting with Redis, and API key management.",
+      "learningOutcomes": [
+        "Understand rate limiting algorithms",
+        "Implement rate limiting middleware",
+        "Use Redis for distributed rate limiting",
+        "Manage API keys and quotas",
+        "Protect against API abuse"
+      ],
+      "startTime": "2025-10-16T15:45:00-05:00",
+      "endTime": "2025-10-16T16:30:00-05:00",
+      "venueId": "room-a",
+      "speakerIds": ["speaker-029"],
+      "tags": ["rate-limiting", "security", "middleware", "redis"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-041",
+      "title": "Building CLIs and Developer Tools with Swift",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Create command-line tools and developer utilities with Swift. Learn ArgumentParser, file I/O, and building great CLI experiences.",
+      "abstract": "Swift excels at building CLI tools. This talk covers Swift ArgumentParser, file system operations, terminal output formatting, progress indicators, and creating distributable command-line tools with SPM.",
+      "learningOutcomes": [
+        "Use Swift ArgumentParser effectively",
+        "Handle file I/O operations",
+        "Format terminal output",
+        "Build user-friendly CLIs",
+        "Distribute CLI tools"
+      ],
+      "startTime": "2025-10-16T15:45:00-05:00",
+      "endTime": "2025-10-16T16:30:00-05:00",
+      "venueId": "room-b",
+      "speakerIds": ["speaker-024"],
+      "tags": ["cli", "tools", "argumentparser", "developer-tools"],
+      "level": "beginner",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-042",
+      "title": "Event-Driven Architectures with Message Queues",
+      "type": "talk",
+      "track": "Architecture & Patterns",
+      "difficulty": "advanced",
+      "description": "Design event-driven systems using message queues and event streaming. Learn RabbitMQ, Kafka integration, and async messaging patterns.",
+      "abstract": "Event-driven architectures enable scalable, decoupled systems. This session covers message queue patterns, integrating RabbitMQ and Kafka with Swift, event sourcing, CQRS patterns, and building reactive systems.",
+      "learningOutcomes": [
+        "Design event-driven architectures",
+        "Integrate message queues in Swift",
+        "Implement event sourcing patterns",
+        "Use CQRS for scalability",
+        "Build reactive systems"
+      ],
+      "startTime": "2025-10-16T15:45:00-05:00",
+      "endTime": "2025-10-16T16:30:00-05:00",
+      "venueId": "room-c",
+      "speakerIds": ["speaker-026"],
+      "tags": ["event-driven", "messaging", "rabbitmq", "kafka", "architecture"],
+      "level": "advanced",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-043",
+      "title": "API Documentation and Developer Experience",
+      "type": "talk",
+      "track": "Architecture & Patterns",
+      "difficulty": "beginner",
+      "description": "Create excellent API documentation and developer experiences. Learn OpenAPI docs, examples, SDK generation, and documentation best practices.",
+      "abstract": "Great APIs need great documentation. This talk covers generating OpenAPI documentation, creating interactive API docs, providing code examples, generating SDKs, versioning documentation, and building developer portals.",
+      "learningOutcomes": [
+        "Generate OpenAPI documentation",
+        "Create interactive API docs",
+        "Provide helpful code examples",
+        "Build developer portals",
+        "Version API documentation"
+      ],
+      "startTime": "2025-10-16T16:45:00-05:00",
+      "endTime": "2025-10-16T17:30:00-05:00",
+      "venueId": "room-a",
+      "speakerIds": ["speaker-017", "speaker-032"],
+      "tags": ["documentation", "developer-experience", "openapi", "sdk"],
+      "level": "beginner",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-044",
+      "title": "Multi-Tenancy Patterns in Swift Applications",
+      "type": "talk",
+      "track": "Architecture & Patterns",
+      "difficulty": "advanced",
+      "description": "Build multi-tenant SaaS applications with Swift. Learn tenant isolation, database strategies, and scaling multi-tenant systems.",
+      "abstract": "Multi-tenant applications serve multiple customers from one deployment. This session covers tenant identification, database isolation strategies (shared database, schema per tenant, database per tenant), tenant-aware middleware, and scaling considerations.",
+      "learningOutcomes": [
+        "Design multi-tenant architectures",
+        "Implement tenant isolation",
+        "Choose database strategies",
+        "Build tenant-aware middleware",
+        "Scale multi-tenant systems"
+      ],
+      "startTime": "2025-10-16T16:45:00-05:00",
+      "endTime": "2025-10-16T17:30:00-05:00",
+      "venueId": "room-b",
+      "speakerIds": ["speaker-030"],
+      "tags": ["multi-tenancy", "saas", "architecture", "scaling"],
+      "level": "advanced",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-045",
+      "title": "Community Lightning Talks Day 2",
+      "type": "lightning",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "More rapid-fire community presentations showcasing innovative server-side Swift projects and ideas.",
+      "abstract": "Another round of 5-minute lightning talks from community members sharing their server-side Swift projects, experiments, and learnings.",
+      "learningOutcomes": [
+        "Discover more community innovations",
+        "Learn from others' experiences",
+        "Get inspired by creative solutions",
+        "Engage with the community"
+      ],
+      "startTime": "2025-10-16T16:45:00-05:00",
+      "endTime": "2025-10-16T17:30:00-05:00",
+      "venueId": "lightning-stage",
+      "speakerIds": ["speaker-019", "speaker-025", "speaker-029"],
+      "tags": ["lightning-talks", "community", "innovation"],
+      "level": "all",
+      "recordingAvailable": false
+    },
+    {
+      "id": "session-046",
+      "title": "Day 2 Closing & Sponsored Dinner",
+      "type": "break",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Day 2 wrap-up followed by sponsored dinner at a nearby restaurant.",
+      "abstract": "Join fellow attendees for a sponsored dinner at a local Chicago restaurant. Great opportunity for deeper conversations and networking.",
+      "learningOutcomes": [],
+      "startTime": "2025-10-16T18:00:00-05:00",
+      "endTime": "2025-10-16T21:00:00-05:00",
+      "venueId": "main-hall",
+      "speakerIds": [],
+      "tags": ["networking", "dinner", "social"],
+      "level": "all",
+      "recordingAvailable": false
+    },
+    {
+      "id": "session-047",
+      "title": "Day 3 Opening: Community State of the Union",
+      "type": "keynote",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Community leaders share updates, celebrate achievements, and discuss the future direction of server-side Swift.",
+      "abstract": "Join community leaders for a state of the union covering community growth, ecosystem updates, working group progress, Swift evolution proposals, and collective goals for the year ahead.",
+      "learningOutcomes": [
+        "Learn about community achievements",
+        "Understand working group progress",
+        "Discover upcoming evolution proposals",
+        "Get involved in community initiatives"
+      ],
+      "startTime": "2025-10-17T09:00:00-05:00",
+      "endTime": "2025-10-17T10:00:00-05:00",
+      "venueId": "main-hall",
+      "speakerIds": ["speaker-027", "speaker-001", "speaker-009"],
+      "tags": ["keynote", "community", "state-of-union"],
+      "level": "all",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-048",
+      "title": "SwiftNIO Workshop: Building a Custom Protocol",
+      "type": "workshop",
+      "track": "SwiftNIO",
+      "difficulty": "advanced",
+      "description": "Hands-on workshop building a custom network protocol with SwiftNIO. Learn channel handlers, codecs, and protocol state machines.",
+      "abstract": "Build a complete custom protocol with SwiftNIO. You'll implement a text-based protocol with authentication, implement channel handlers for encoding/decoding, manage connection state, and handle error cases. Advanced hands-on experience.",
+      "learningOutcomes": [
+        "Build custom SwiftNIO protocols",
+        "Implement channel handlers and codecs",
+        "Manage connection state machines",
+        "Handle protocol errors",
+        "Test network protocols"
+      ],
+      "startTime": "2025-10-17T10:30:00-05:00",
+      "endTime": "2025-10-17T13:00:00-05:00",
+      "venueId": "workshop-1",
+      "speakerIds": ["speaker-004", "speaker-009"],
+      "tags": ["swiftnio", "workshop", "protocols", "advanced", "networking"],
+      "level": "advanced",
+      "recordingAvailable": false,
+      "prerequisites": ["Strong Swift skills", "Understanding of async/await", "Basic networking knowledge", "Laptop with Xcode"]
+    },
+    {
+      "id": "session-049",
+      "title": "Database Migrations: Strategies for Zero-Downtime Deployments",
+      "type": "talk",
+      "track": "Deployment & DevOps",
+      "difficulty": "advanced",
+      "description": "Execute database schema changes in production without downtime. Learn migration strategies, backward compatibility, and rollback procedures.",
+      "abstract": "Schema changes in production require careful planning. This talk covers zero-downtime migration strategies, backward/forward compatible changes, blue-green deployments, migration rollback procedures, and coordinating schema changes with code deployments.",
+      "learningOutcomes": [
+        "Plan zero-downtime migrations",
+        "Write backward-compatible schemas",
+        "Execute safe production migrations",
+        "Handle migration rollbacks",
+        "Coordinate schema and code changes"
+      ],
+      "startTime": "2025-10-17T10:30:00-05:00",
+      "endTime": "2025-10-17T11:15:00-05:00",
+      "venueId": "room-a",
+      "speakerIds": ["speaker-003"],
+      "tags": ["migrations", "database", "deployment", "zero-downtime"],
+      "level": "advanced",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-050",
+      "title": "File Upload and Storage Strategies",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "intermediate",
+      "description": "Handle file uploads, storage, and serving in Swift applications. Learn local storage, S3 integration, and file processing patterns.",
+      "abstract": "File handling is common in web applications. This session covers accepting file uploads in Vapor, validating file types and sizes, local and cloud storage (S3), image processing, serving files efficiently, and security considerations.",
+      "learningOutcomes": [
+        "Accept and validate file uploads",
+        "Store files locally and in S3",
+        "Process images and files",
+        "Serve files securely",
+        "Handle large file uploads"
+      ],
+      "startTime": "2025-10-17T10:30:00-05:00",
+      "endTime": "2025-10-17T11:15:00-05:00",
+      "venueId": "room-b",
+      "speakerIds": ["speaker-023"],
+      "tags": ["file-upload", "storage", "s3", "vapor"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-051",
+      "title": "Email and Notifications in Server-Side Swift",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Send emails, push notifications, and SMS from Swift servers. Learn integration with SendGrid, AWS SES, and notification services.",
+      "abstract": "Communication features are essential for apps. This talk covers sending transactional emails, HTML email templates, integrating email services (SendGrid, SES), push notifications (APNs), SMS with Twilio, and managing notification preferences.",
+      "learningOutcomes": [
+        "Send transactional emails",
+        "Create email templates",
+        "Integrate email service providers",
+        "Send push notifications",
+        "Implement SMS notifications"
+      ],
+      "startTime": "2025-10-17T10:30:00-05:00",
+      "endTime": "2025-10-17T11:15:00-05:00",
+      "venueId": "room-c",
+      "speakerIds": ["speaker-020"],
+      "tags": ["email", "notifications", "sendgrid", "apns", "communications"],
+      "level": "beginner",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-052",
+      "title": "Search Functionality: Full-Text Search and Elasticsearch",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "intermediate",
+      "description": "Implement powerful search features with PostgreSQL full-text search and Elasticsearch integration in Swift applications.",
+      "abstract": "Search is crucial for content-heavy applications. This session covers PostgreSQL full-text search capabilities, Elasticsearch integration with Swift, indexing strategies, search relevance tuning, faceted search, and auto-complete features.",
+      "learningOutcomes": [
+        "Implement PostgreSQL full-text search",
+        "Integrate Elasticsearch in Swift",
+        "Design indexing strategies",
+        "Tune search relevance",
+        "Build faceted search and autocomplete"
+      ],
+      "startTime": "2025-10-17T11:30:00-05:00",
+      "endTime": "2025-10-17T12:15:00-05:00",
+      "venueId": "room-a",
+      "speakerIds": ["speaker-002"],
+      "tags": ["search", "elasticsearch", "full-text-search", "postgresql"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-053",
+      "title": "Background Processing and Scheduled Tasks",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "intermediate",
+      "description": "Implement background job processing and task scheduling in Swift servers. Learn queue patterns, cron jobs, and worker architectures.",
+      "abstract": "Many tasks shouldn't block request handling. This talk covers background job queues with Vapor Queues, scheduled tasks, worker process architectures, job retries and failure handling, and distributing work across multiple workers.",
+      "learningOutcomes": [
+        "Implement background job queues",
+        "Schedule recurring tasks",
+        "Build worker architectures",
+        "Handle job failures and retries",
+        "Distribute work across workers"
+      ],
+      "startTime": "2025-10-17T11:30:00-05:00",
+      "endTime": "2025-10-17T12:15:00-05:00",
+      "venueId": "room-b",
+      "speakerIds": ["speaker-018"],
+      "tags": ["background-jobs", "queues", "scheduling", "workers"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-054",
+      "title": "Internationalization and Localization",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Build internationalized server applications supporting multiple languages, regions, and cultures. Learn i18n patterns in Swift.",
+      "abstract": "Global applications need internationalization. This session covers Swift localization features, managing translation strings, date and number formatting for different locales, content negotiation, and building multilingual APIs and web applications.",
+      "learningOutcomes": [
+        "Implement internationalization in Swift",
+        "Manage translation strings",
+        "Format dates and numbers by locale",
+        "Handle content negotiation",
+        "Build multilingual applications"
+      ],
+      "startTime": "2025-10-17T11:30:00-05:00",
+      "endTime": "2025-10-17T12:15:00-05:00",
+      "venueId": "room-c",
+      "speakerIds": ["speaker-015"],
+      "tags": ["i18n", "localization", "internationalization", "global"],
+      "level": "beginner",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-055",
+      "title": "Final Lunch & Unconference Sessions",
+      "type": "break",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Lunch with spontaneous unconference sessions on topics proposed by attendees.",
+      "abstract": "Enjoy final lunch while participating in unconference sessions on topics that emerged during the conference. Attendees propose and vote on discussion topics.",
+      "learningOutcomes": [],
+      "startTime": "2025-10-17T12:15:00-05:00",
+      "endTime": "2025-10-17T13:30:00-05:00",
+      "venueId": "main-hall",
+      "speakerIds": [],
+      "tags": ["networking", "lunch", "unconference"],
+      "level": "all",
+      "recordingAvailable": false
+    },
+    {
+      "id": "session-056",
+      "title": "Migrating from Other Frameworks to Swift",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "intermediate",
+      "description": "Strategies for migrating existing server applications from Node.js, Python, Ruby, or Java to Swift. Learn migration patterns and case studies.",
+      "abstract": "Moving to Swift from other languages requires planning. This talk covers migration strategies, porting RESTful APIs, database migration, dependency mapping, team training, and real-world migration case studies from production systems.",
+      "learningOutcomes": [
+        "Plan framework migrations",
+        "Port APIs to Swift",
+        "Migrate data and schemas",
+        "Map dependencies to Swift ecosystem",
+        "Learn from migration case studies"
+      ],
+      "startTime": "2025-10-17T13:30:00-05:00",
+      "endTime": "2025-10-17T14:15:00-05:00",
+      "venueId": "room-a",
+      "speakerIds": ["speaker-028"],
+      "tags": ["migration", "porting", "case-studies"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-057",
+      "title": "API Versioning Strategies",
+      "type": "talk",
+      "track": "Architecture & Patterns",
+      "difficulty": "intermediate",
+      "description": "Manage API evolution with effective versioning strategies. Learn URL versioning, header versioning, and backward compatibility patterns.",
+      "abstract": "APIs evolve over time without breaking clients. This session covers versioning strategies (URL, header, content negotiation), deprecation workflows, maintaining multiple versions, and designing for backward compatibility.",
+      "learningOutcomes": [
+        "Choose appropriate versioning strategies",
+        "Manage multiple API versions",
+        "Deprecate old versions safely",
+        "Maintain backward compatibility",
+        "Communicate version changes"
+      ],
+      "startTime": "2025-10-17T13:30:00-05:00",
+      "endTime": "2025-10-17T14:15:00-05:00",
+      "venueId": "room-b",
+      "speakerIds": ["speaker-017"],
+      "tags": ["versioning", "api-design", "compatibility", "deprecation"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-058",
+      "title": "Swift on Embedded Systems and IoT",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "advanced",
+      "description": "Explore Swift on embedded systems and IoT devices. Learn about Swift for embedded, resource constraints, and edge computing.",
+      "abstract": "Swift is expanding to embedded systems. This talk covers Swift for embedded initiatives, resource-constrained environments, IoT communication protocols, edge computing with Swift, and real-world embedded Swift applications.",
+      "learningOutcomes": [
+        "Understand Swift for embedded",
+        "Work with resource constraints",
+        "Implement IoT protocols",
+        "Build edge computing solutions",
+        "Explore embedded use cases"
+      ],
+      "startTime": "2025-10-17T13:30:00-05:00",
+      "endTime": "2025-10-17T14:15:00-05:00",
+      "venueId": "room-c",
+      "speakerIds": ["speaker-026"],
+      "tags": ["embedded", "iot", "edge-computing", "hardware"],
+      "level": "advanced",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-059",
+      "title": "Graceful Shutdown and Signal Handling",
+      "type": "talk",
+      "track": "Deployment & DevOps",
+      "difficulty": "intermediate",
+      "description": "Implement graceful shutdown for Swift servers to prevent data loss and ensure clean deployments. Learn signal handling and draining connections.",
+      "abstract": "Production servers need graceful shutdown. This session covers handling SIGTERM and SIGINT signals, draining active connections, completing in-flight requests, releasing resources cleanly, and integrating with orchestration platforms.",
+      "learningOutcomes": [
+        "Handle shutdown signals properly",
+        "Drain connections gracefully",
+        "Complete in-flight requests",
+        "Release resources cleanly",
+        "Integrate with Kubernetes"
+      ],
+      "startTime": "2025-10-17T14:30:00-05:00",
+      "endTime": "2025-10-17T15:15:00-05:00",
+      "venueId": "room-a",
+      "speakerIds": ["speaker-022"],
+      "tags": ["graceful-shutdown", "signals", "deployment", "reliability"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-060",
+      "title": "Cost Optimization for Cloud Deployments",
+      "type": "talk",
+      "track": "Deployment & DevOps",
+      "difficulty": "intermediate",
+      "description": "Reduce cloud infrastructure costs while maintaining performance. Learn optimization strategies for Swift server deployments.",
+      "abstract": "Cloud costs can spiral quickly. This talk covers right-sizing instances, auto-scaling strategies, reserved capacity, spot instances, caching to reduce compute, database optimization, and monitoring costs effectively.",
+      "learningOutcomes": [
+        "Right-size cloud resources",
+        "Implement cost-effective auto-scaling",
+        "Use reserved and spot instances",
+        "Optimize database costs",
+        "Monitor and reduce expenses"
+      ],
+      "startTime": "2025-10-17T14:30:00-05:00",
+      "endTime": "2025-10-17T15:15:00-05:00",
+      "venueId": "room-b",
+      "speakerIds": ["speaker-006"],
+      "tags": ["cost-optimization", "cloud", "aws", "devops"],
+      "level": "intermediate",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-061",
+      "title": "Contributing to Server-Side Swift Open Source",
+      "type": "talk",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Get started contributing to server-side Swift projects. Learn how to find issues, submit PRs, and become part of the community.",
+      "abstract": "The server-side Swift ecosystem thrives on contributions. This session guides new contributors on finding projects, understanding codebases, submitting pull requests, review process, and becoming an active community member.",
+      "learningOutcomes": [
+        "Find good first issues",
+        "Understand contribution workflows",
+        "Submit quality pull requests",
+        "Navigate code review process",
+        "Engage with community"
+      ],
+      "startTime": "2025-10-17T14:30:00-05:00",
+      "endTime": "2025-10-17T15:15:00-05:00",
+      "venueId": "room-c",
+      "speakerIds": ["speaker-027", "speaker-031"],
+      "tags": ["open-source", "contributing", "community", "getting-started"],
+      "level": "beginner",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-062",
+      "title": "Final Coffee & Hallway Track",
+      "type": "break",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Final coffee break for last conversations and connections.",
+      "abstract": "Last chance to connect with speakers and attendees, exchange contacts, and continue conversations before the closing session.",
+      "learningOutcomes": [],
+      "startTime": "2025-10-17T15:15:00-05:00",
+      "endTime": "2025-10-17T15:45:00-05:00",
+      "venueId": "main-hall",
+      "speakerIds": [],
+      "tags": ["networking", "break"],
+      "level": "all",
+      "recordingAvailable": false
+    },
+    {
+      "id": "session-063",
+      "title": "Closing Keynote: Where Do We Go From Here?",
+      "type": "keynote",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Inspiring closing keynote looking ahead at the future of server-side Swift and the community's role in shaping it.",
+      "abstract": "As we close ServerSide.swift 2025, let's look forward. This keynote explores emerging trends, community goals, upcoming challenges, and how we can all contribute to making server-side Swift even better. Join us for an inspiring send-off.",
+      "learningOutcomes": [
+        "Understand future directions",
+        "Get inspired to contribute",
+        "Connect with community goals",
+        "Leave motivated to build"
+      ],
+      "startTime": "2025-10-17T15:45:00-05:00",
+      "endTime": "2025-10-17T16:45:00-05:00",
+      "venueId": "main-hall",
+      "speakerIds": ["speaker-007", "speaker-032", "speaker-001"],
+      "tags": ["keynote", "closing", "future", "inspiration"],
+      "level": "all",
+      "recordingAvailable": true
+    },
+    {
+      "id": "session-064",
+      "title": "Conference Wrap-Up & Farewell",
+      "type": "break",
+      "track": "Server-Side Swift",
+      "difficulty": "beginner",
+      "description": "Final thanks, prize drawings, and conference conclusion.",
+      "abstract": "Join us for closing remarks, sponsor acknowledgments, prize drawings, and a fond farewell. Thank you for being part of ServerSide.swift 2025!",
+      "learningOutcomes": [],
+      "startTime": "2025-10-17T16:45:00-05:00",
+      "endTime": "2025-10-17T17:00:00-05:00",
+      "venueId": "main-hall",
+      "speakerIds": [],
+      "tags": ["closing", "farewell"],
+      "level": "all",
+      "recordingAvailable": false
+    }
+  ]
+}
