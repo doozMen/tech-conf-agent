@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude-historian__search_conversations",
+      "mcp__claude-historian__find_similar_queries",
+      "mcp__claude-historian__list_recent_sessions",
+      "mcp__claude-historian__find_file_context",
+      "Read(//Users/stijnwillems/Developer/**)",
+      "WebSearch",
+      "Bash(swift --version)",
+      "Read(//Users/stijnwillems/Library/Application/**)",
+      "Read(//Users/stijnwillems/Library/Application Support/Claude/**)",
+      "Read(//Users/stijnwillems/.swiftpm/**)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:artemnovichkov.com)",
+      "WebFetch(domain:nshipster.com)",
+      "WebFetch(domain:adamwulf.me)",
+      "WebFetch(domain:www.cocoanetics.com)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
