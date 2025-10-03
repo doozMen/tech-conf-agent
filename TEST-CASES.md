@@ -399,6 +399,10 @@ The test suite covers 6 core MCP tools across 30+ test scenarios:
 
 ## Speaker Discovery
 
+The test suite includes comprehensive speaker data from **ServerSide.swift 2025 London** with 27+ speakers including Apple engineers, framework creators, and production experts.
+
+### Speaker Query Test Cases
+
 ### Test Case 9: Get Speaker Details by Name
 
 **Question**: "Tell me about Jane Developer"
@@ -536,6 +540,291 @@ The test suite covers 6 core MCP tools across 30+ test scenarios:
 **Result**: ✅ PASS
 
 **MCP Advantage**: Direct reference resolution vs searching
+
+---
+
+### Test Case 12: Real ServerSide.swift Speaker Data
+
+**Question**: "Tell me about Adam Fowler"
+
+**Tool Used**: `get_speaker`
+
+**Parameters**:
+```json
+{
+  "speakerName": "Adam Fowler"
+}
+```
+
+**Expected Output**:
+```json
+{
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "name": "Adam Fowler",
+  "bio": "Maintainer of Hummingbird framework and Soto AWS SDK. Expert in cloud infrastructure, serverless Swift applications, and building production-ready server-side Swift libraries.",
+  "title": "Senior Software Engineer",
+  "company": "Apple",
+  "twitter": "@adamfowler",
+  "github": "https://github.com/adam-fowler",
+  "expertise": [
+    "Hummingbird",
+    "AWS",
+    "Cloud Infrastructure",
+    "Serverless",
+    "Redis/Valkey"
+  ],
+  "sessions": [
+    {
+      "title": "Valkey-swift: Type-Safe Redis Client",
+      "description": "Using Swift's parameter packs (SE-0393) to provide compile-time type safety for Redis/Valkey commands with automatic cluster topology discovery"
+    }
+  ]
+}
+```
+
+**Verification**:
+- Full bio with professional background
+- Title: Senior Software Engineer at Apple
+- 5 expertise areas listed
+- GitHub and Twitter social links
+- Session details with description
+- Real data from ServerSide.swift 2025 London
+
+**Result**: Expected PASS
+
+**MCP Advantage**: Complete professional profile with social links vs basic speaker bio
+
+---
+
+### Test Case 13: Query by Expertise Area
+
+**Question**: "Find speakers working on Swift concurrency"
+
+**Tool Used**: `search_sessions` + `get_speaker`
+
+**Workflow**:
+1. Search for "Swift concurrency" sessions
+2. Extract speaker names from results
+3. Get detailed speaker profiles
+
+**Expected Speakers Found**:
+
+**Matt Massicotte**:
+```json
+{
+  "name": "Matt Massicotte",
+  "title": "Apple Platforms Developer",
+  "expertise": [
+    "Swift Concurrency",
+    "Swift 6",
+    "Actor Isolation",
+    "Server-Side Patterns"
+  ],
+  "github": "https://github.com/mattmassicotte",
+  "website": "https://massicotte.org",
+  "sessions": [
+    {
+      "title": "Swift 6 Concurrency for Server Applications",
+      "description": "Practical patterns for handling high-load concurrent requests with strict concurrency checking and proper actor isolation"
+    }
+  ]
+}
+```
+
+**Mikaela Caron**:
+```json
+{
+  "name": "Mikaela Caron",
+  "title": "Independent iOS Engineer",
+  "company": "Icy App Studio LLC",
+  "expertise": [
+    "Vapor",
+    "PostgreSQL",
+    "AWS S3",
+    "Redis",
+    "JWT Authentication",
+    "Swift 6 Concurrency"
+  ],
+  "github": "https://github.com/mikaelacaron",
+  "twitter": "@mikaelacaron",
+  "sessions": [
+    {
+      "title": "Building Fruitful: A Real Conference Networking App Backend",
+      "description": "Complete Vapor 4 application with PostgreSQL/Fluent, S3 presigned URLs, Redis caching, JWT authentication, and Swift 6 strict concurrency"
+    }
+  ]
+}
+```
+
+**Verification**:
+- 2+ speakers found with Swift Concurrency expertise
+- Each has detailed expertise arrays
+- Social links for networking
+- Real production experience detailed
+
+**Result**: Expected PASS
+
+**MCP Advantage**: Expertise-based discovery with full professional context
+
+---
+
+### Test Case 14: Apple Swift Server Team Discovery
+
+**Question**: "Who from Apple is speaking at the conference?"
+
+**Tool Used**: `list_sessions` with company filter or `search_sessions`
+
+**Expected Apple Speakers**:
+
+1. **Adam Fowler** - Senior Software Engineer (Hummingbird, Soto)
+2. **Franz Busch** - Software Engineer (SwiftNIO)
+3. **George Barnett** - Software Engineer (gRPC Swift)
+4. **Honza Dvorsky** - Swift Server Ecosystem Team
+5. **Ben Cohen** - Swift Core Team Manager
+6. **Si Beaumont** - Server Infrastructure
+7. **Eric Ernst** - Engineering Leader
+8. **Agam Dua** - Swift Server Ecosystem & Education
+
+**Verification**:
+- 8 Apple team members identified
+- Diverse roles: engineers, managers, educators
+- Covers SwiftNIO, gRPC, ecosystem, core team
+- Shows Apple's investment in server-side Swift
+
+**Result**: Expected PASS
+
+**MCP Advantage**: Company-based filtering reveals organizational commitment
+
+---
+
+### Test Case 15: Social Links Verification
+
+**Question**: "Get all social links for Joannis Orlandos"
+
+**Tool Used**: `get_speaker`
+
+**Parameters**:
+```json
+{
+  "speakerName": "Joannis Orlandos"
+}
+```
+
+**Expected Output**:
+```json
+{
+  "name": "Joannis Orlandos",
+  "title": "Founder & Lead Developer",
+  "company": "MongoKitten & Vapor",
+  "bio": "Creator of MongoKitten and Vapor core team member. Expert in Swift networking, database solutions, performance optimization, and protocol design with focus on zero-copy operations.",
+  "expertise": [
+    "MongoDB",
+    "Databases",
+    "Performance",
+    "SwiftNIO",
+    "Zero-Copy Networking"
+  ],
+  "github": "https://github.com/Joannis",
+  "twitter": "@joannisorlandos",
+  "sessions": [
+    {
+      "title": "Zero-Copy Networking with Span",
+      "description": "Leveraging Swift's Span feature for memory-efficient networking in MongoKitten, Hummingbird, and EdgeOS IoT systems"
+    }
+  ]
+}
+```
+
+**Verification**:
+- GitHub profile present
+- Twitter handle present
+- Multiple expertise areas (5 listed)
+- Framework creator credentials
+- Production-focused session topic
+
+**Result**: Expected PASS
+
+**MCP Advantage**: Social links enable post-conference networking
+
+---
+
+### Test Case 16: Production Experience Discovery
+
+**Question**: "Find speakers with real production deployments"
+
+**Tool Used**: `search_sessions` + `get_speaker`
+
+**Expected Production Speakers**:
+
+**Ben Rosen (SongShift)**:
+```json
+{
+  "name": "Ben Rosen",
+  "title": "Founder",
+  "company": "SongShift",
+  "expertise": [
+    "AWS Lambda",
+    "Serverless Swift",
+    "SongShift Architecture",
+    "Full-Stack Swift"
+  ],
+  "sessions": [
+    {
+      "title": "SongShift's Production Swift Lambda Architecture",
+      "description": "Complete serverless evolution from Docker/Node.js to Swift Lambda using Swift AWS Runtime, Soto, Step Functions, and Terraform"
+    }
+  ]
+}
+```
+
+**Daniel Jilg (TelemetryDeck)**:
+```json
+{
+  "name": "Daniel Jilg",
+  "title": "CTO",
+  "company": "TelemetryDeck",
+  "expertise": [
+    "Analytics",
+    "Data Processing",
+    "Privacy",
+    "Production Swift Backends"
+  ],
+  "github": "https://github.com/winsmith",
+  "twitter": "@winsmith",
+  "bio": "CTO of TelemetryDeck, building privacy-focused analytics with server-side Swift. Expert in data processing pipelines and production Swift backends."
+}
+```
+
+**Mikaela Caron (Fruitful)**:
+```json
+{
+  "name": "Mikaela Caron",
+  "company": "Icy App Studio LLC",
+  "expertise": [
+    "Vapor",
+    "PostgreSQL",
+    "AWS S3",
+    "Redis",
+    "JWT Authentication"
+  ],
+  "sessions": [
+    {
+      "title": "Building Fruitful: A Real Conference Networking App Backend",
+      "description": "Complete Vapor 4 application with PostgreSQL/Fluent, S3 presigned URLs, Redis caching, JWT authentication"
+    }
+  ]
+}
+```
+
+**Verification**:
+- 3+ speakers with production deployments
+- Real company/product names (SongShift, TelemetryDeck, Fruitful)
+- Detailed technology stacks
+- Architecture evolution stories
+
+**Result**: Expected PASS
+
+**MCP Advantage**: Discover battle-tested production experience vs theoretical talks
 
 ---
 

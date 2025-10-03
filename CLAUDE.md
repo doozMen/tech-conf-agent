@@ -244,10 +244,16 @@ CREATE TABLE conference (
 CREATE TABLE speaker (
     id TEXT PRIMARY KEY,
     name TEXT NOT NULL,
-    bio TEXT,
-    company TEXT,
-    twitter TEXT,
-    website TEXT,
+    bio TEXT,                -- Full professional biography
+    title TEXT,              -- Professional title (e.g., "Senior Software Engineer")
+    company TEXT,            -- Company/organization affiliation
+    email TEXT,              -- Contact email
+    twitter TEXT,            -- Twitter/X handle
+    github TEXT,             -- GitHub profile URL
+    linkedin TEXT,           -- LinkedIn profile URL
+    website TEXT,            -- Personal website
+    expertise TEXT,          -- JSON array of expertise areas
+    photoURL TEXT,           -- Profile photo URL
     createdAt TEXT DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -279,6 +285,52 @@ CREATE TABLE session (
     createdAt TEXT DEFAULT CURRENT_TIMESTAMP
 );
 ```
+
+### Speaker Model Structure
+
+The database includes comprehensive speaker data from **ServerSide.swift 2025 London**:
+
+**Speaker Model Example** (Adam Fowler):
+```swift
+public struct Speaker: Sendable, Codable {
+    public let id: UUID
+    public var name: String                    // "Adam Fowler"
+    public var bio: String?                    // Full professional biography
+    public var title: String?                  // "Senior Software Engineer"
+    public var company: String?                // "Apple"
+    public var email: String?                  // Contact email
+    public var twitter: String?                // "@adamfowler"
+    public var github: String?                 // "https://github.com/adam-fowler"
+    public var linkedin: String?               // LinkedIn profile
+    public var website: String?                // Personal website
+    public var expertise: [String]?            // ["Hummingbird", "AWS", "Cloud Infrastructure"]
+    public var photoURL: String?               // Profile photo
+}
+```
+
+**Real Speaker Data** (from ServerSide.swift 2025):
+```sql
+INSERT INTO speaker VALUES (
+    '550e8400-e29b-41d4-a716-446655440000',
+    'Adam Fowler',
+    'Maintainer of Hummingbird framework and Soto AWS SDK. Expert in cloud infrastructure, serverless Swift applications, and building production-ready server-side Swift libraries.',
+    'Senior Software Engineer',
+    'Apple',
+    null,
+    '@adamfowler',
+    'https://github.com/adam-fowler',
+    null,
+    null,
+    '["Hummingbird", "AWS", "Cloud Infrastructure", "Serverless", "Redis/Valkey"]',
+    '/App/Images/speakers/adam-fowler.jpg'
+);
+```
+
+**Speaker Categories**:
+- **27+ total speakers** including Apple engineers, framework creators, production experts
+- **Apple Swift Server team**: Franz Busch, George Barnett, Honza Dvorsky, Ben Cohen, Si Beaumont, Eric Ernst, Agam Dua
+- **Framework maintainers**: Adam Fowler (Hummingbird), Joannis Orlandos (MongoKitten)
+- **Production speakers**: Ben Rosen (SongShift), Mikaela Caron (Vapor), Daniel Jilg (TelemetryDeck)
 
 ### Migration Pattern
 

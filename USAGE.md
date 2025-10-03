@@ -415,14 +415,142 @@ The MCP server understands natural language queries. Here are common conversatio
 
 ### Speaker Information
 
-**User**: "Who is speaking about concurrency?"  
+**User**: "Who is speaking about concurrency?"
 **Claude**: *Uses `search_sessions` with query="concurrency" then extracts speaker info*
 
-**User**: "Tell me about John Sundell"  
+**User**: "Tell me about John Sundell"
 **Claude**: *Uses `get_speaker` with speakerName="John Sundell"*
 
-**User**: "What sessions is Sarah giving?"  
+**User**: "What sessions is Sarah giving?"
 **Claude**: *Uses `get_speaker` to find Sarah, then lists her sessions*
+
+---
+
+## Speaker Query Examples
+
+The MCP server includes comprehensive speaker data from **ServerSide.swift 2025 London** with 27+ speakers. Here are real-world query examples:
+
+### Query by Name
+
+**Find specific speaker**:
+```
+get_speaker(speakerName="Adam Fowler")
+
+Returns:
+- Name: Adam Fowler
+- Title: Senior Software Engineer at Apple
+- Bio: Maintainer of Hummingbird framework and Soto AWS SDK
+- Expertise: Hummingbird, AWS, Cloud Infrastructure, Serverless, Redis/Valkey
+- GitHub: https://github.com/adam-fowler
+- Twitter: @adamfowler
+- Sessions: "Valkey-swift: Type-Safe Redis Client"
+```
+
+**Partial name matching**:
+```
+get_speaker(speakerName="Mikaela")
+
+Returns: Mikaela Caron
+- Independent iOS Engineer, Icy App Studio LLC
+- Expertise: Vapor, PostgreSQL, AWS S3, Redis, JWT Authentication, Swift 6 Concurrency
+- Session: "Building Fruitful: A Real Conference Networking App Backend"
+```
+
+### Query by Expertise
+
+**Find Swift concurrency experts**:
+```
+search_sessions(query="Swift 6 concurrency")
+
+Returns sessions by:
+- Matt Massicotte: "Swift 6 Concurrency for Server Applications"
+- Mikaela Caron: Backend with Swift 6 strict concurrency
+```
+
+**Find AWS specialists**:
+```
+search_sessions(query="AWS")
+
+Returns sessions by:
+- Ben Rosen: "SongShift's Production Swift Lambda Architecture"
+- Mona Dierickx: "Swift Bedrock Library: Idiomatic AWS Integration"
+- Adam Fowler: Soto AWS SDK expertise
+```
+
+**Find framework creators**:
+```
+get_speaker(speakerName="Joannis Orlandos")
+
+Returns:
+- Founder & Lead Developer: MongoKitten & Vapor
+- Expertise: MongoDB, Databases, Performance, SwiftNIO, Zero-Copy Networking
+- Session: "Zero-Copy Networking with Span"
+```
+
+### Query by Company
+
+**Find Apple engineers**:
+```
+list_sessions(speaker="Apple")
+
+Returns sessions by:
+- Adam Fowler (Senior Software Engineer)
+- Franz Busch (SwiftNIO team)
+- George Barnett (gRPC Swift)
+- Honza Dvorsky (Swift Server Ecosystem)
+- Ben Cohen (Swift Core Team Manager)
+- Si Beaumont (Server Infrastructure)
+- Eric Ernst (Engineering Leader)
+- Agam Dua (Education team)
+```
+
+### Production Experience
+
+**Find real-world production speakers**:
+```
+get_speaker(speakerName="Ben Rosen")
+
+Returns:
+- Founder of SongShift
+- Production Swift Lambda architecture expert
+- Session: Complete serverless evolution from Docker/Node.js to Swift Lambda
+```
+
+```
+get_speaker(speakerName="Daniel Jilg")
+
+Returns:
+- CTO of TelemetryDeck
+- Expertise: Analytics, Data Processing, Privacy, Production Swift Backends
+- Building privacy-focused analytics with server-side Swift
+```
+
+### Social Links Discovery
+
+Every speaker profile includes social links for networking:
+
+```
+get_speaker(speakerName="Matt Massicotte")
+
+Returns:
+- GitHub: https://github.com/mattmassicotte
+- Website: https://massicotte.org
+- Expertise: Swift Concurrency, Swift 6, Actor Isolation, Server-Side Patterns
+```
+
+### Conference Role Filtering
+
+**Workshop instructors**:
+- Daniel Steinberg (MC & Workshop)
+- Matt Massicotte (Swift 6 Concurrency)
+- Frank Lefebvre (Training)
+- Agam Dua (Apple Education team)
+
+**Framework maintainers**:
+- Adam Fowler (Hummingbird, Soto)
+- Joannis Orlandos (MongoKitten, Vapor core team)
+
+**See full speaker list**: [docs/Speakers | ServerSide.md](docs/Speakers%20|%20ServerSide.md)
 
 ### Schedule Queries
 

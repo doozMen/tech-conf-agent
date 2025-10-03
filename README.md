@@ -167,12 +167,37 @@ The MCP server understands various date/time formats:
 - Time ranges: "2pm-4pm", "14:00-16:00", "afternoon"
 - Day parts: "morning", "afternoon", "evening"
 
+## Speaker Discovery
+
+The MCP server includes comprehensive speaker profiles from **ServerSide.swift 2025 London**:
+
+- **27+ speakers** with full bios, expertise areas, and professional backgrounds
+- **Apple Swift Server team members**: Franz Busch, George Barnett, Honza Dvorsky, Ben Cohen, Si Beaumont, Eric Ernst, Agam Dua
+- **Framework creators**: Adam Fowler (Hummingbird, Soto), Joannis Orlandos (MongoKitten)
+- **Production experts**: Ben Rosen (SongShift), Mikaela Caron (Vapor backends), Daniel Jilg (TelemetryDeck)
+- **Social links**: GitHub, Twitter, LinkedIn, personal websites
+
+### Example Speaker Queries
+
+```
+"Who is Adam Fowler and what is he talking about?"
+→ Returns: Senior Apple engineer, Hummingbird maintainer, speaking on Valkey-swift with type-safe Redis
+
+"Show me all sessions by Mikaela Caron"
+→ Returns: "Building Fruitful" - Vapor 4 backend with PostgreSQL, S3, Redis, JWT auth
+
+"Find speakers working on Swift concurrency"
+→ Returns: Matt Massicotte (Swift 6 patterns), Mikaela Caron (strict concurrency in Vapor)
+```
+
+**Full speaker documentation**: See [docs/Speakers | ServerSide.md](docs/Speakers%20|%20ServerSide.md) for complete profiles with expertise, social links, and session topics.
+
 ## Sample Data
 
 The server includes sample data from **ServerSide.swift 2025** conference:
 
 - **50+ sessions** covering Swift on the server, iOS, and tooling
-- **30+ speakers** including community leaders and framework authors
+- **27+ speakers** including Apple engineers, framework authors, and production experts
 - **Multiple tracks** across 3 days (Oct 15-17, 2025)
 - **6 venues** with detailed room information
 
