@@ -244,6 +244,67 @@ sqlite3 Data/conferences.sqlite "SELECT title, startTime FROM sessions;"
 cp Data/conferences.sqlite Data/conferences.backup.sqlite
 ```
 
+### Automation Scripts
+
+The `Scripts/` directory contains automation tools for development and release:
+
+#### Release Script
+Install the MCP server to `~/.swiftpm/bin` and generate Claude Desktop configuration:
+
+```bash
+./Scripts/release.sh
+```
+
+This will:
+1. Remove any existing installation
+2. Build and install the latest version
+3. Verify the installation
+4. Generate MCP configuration JSON
+5. Print next steps for Claude Desktop setup
+
+#### JSON-RPC Testing
+Test the MCP server using `swift run` (tests current source code, NOT installed binary):
+
+```bash
+./Scripts/test-mcp-jsonrpc.sh
+```
+
+⚠️ **Critical**: This script uses `xcrun swift run tech-conf-mcp` to test the **latest source code**. This ensures you're always testing your current changes, not an old installed binary.
+
+Test output includes:
+- ✅ Passed tests (green)
+- ❌ Failed tests (red)
+- JSON-RPC responses for each tool
+- Final summary with pass/fail count
+
+#### Version Management
+Bump version across all files and update changelog:
+
+```bash
+./Scripts/bump-version.sh 1.1.0
+```
+
+This will:
+1. Extract current version from source
+2. Update `TechConfMCP.swift` version
+3. Update `CLAUDE.md` and `README.md` references
+4. Add new section to `CHANGELOG.md`
+5. Print git commit commands
+
+### Testing Patterns
+
+**Development Testing** (current source code):
+```bash
+./Scripts/test-mcp-jsonrpc.sh  # Tests with `swift run`
+```
+
+**Production Verification** (installed binary):
+```bash
+./test-mcp.py  # Tests ~/.swiftpm/bin/tech-conf-mcp
+```
+
+Use `test-mcp-jsonrpc.sh` during development to test changes before installation.
+
 ## Credits
 
 This project was inspired by and learned from:
