@@ -1,16 +1,34 @@
-# Tech Conference MCP Server
+# ServerSide.swift 2025 Conference Navigator
 
-A Model Context Protocol (MCP) server for managing and querying technical conference data. Built with Swift 6.2, this server provides intelligent access to conference schedules, sessions, speakers, and venues through natural language queries.
+A Model Context Protocol (MCP) server built specifically for **ServerSide.swift 2025 London** (October 2-3, 2025). Navigate the conference with AI-powered queries about sessions, speakers, and schedules through Claude Desktop.
+
+Built with Swift 6.2 and actor-based concurrency, this MCP server provides comprehensive access to the ServerSide.swift conference data including 27+ speakers, session schedules, and venue information.
 
 ## Overview
 
-Tech Conference MCP Server enables AI assistants like Claude to help you navigate technical conferences by providing structured access to:
+This MCP server is tailored specifically for **ServerSide.swift 2025 London**, featuring:
 
-- **Session Information**: Browse talks, workshops, and keynotes with detailed metadata
-- **Speaker Profiles**: Access speaker bios, expertise, and session history
-- **Schedule Management**: Query conference schedules with time-aware filtering
-- **Venue Navigation**: Find rooms, tracks, and physical locations
-- **Smart Search**: Natural language queries across all conference data
+- **27+ Speaker Profiles**: Apple Swift Server team members (Franz Busch, George Barnett, Ben Cohen), framework creators (Adam Fowler - Hummingbird, Joannis Orlandos - MongoKitten), and production experts
+- **Complete Conference Schedule**: All sessions from October 2-3, 2025 with tracks, difficulty levels, and formats
+- **Natural Language Queries**: Ask about sessions, speakers, and topics in plain English
+- **Real Conference Data**: Authentic speaker bios, GitHub profiles, expertise areas, and session topics
+
+### Use Cases
+
+- **Conference Attendees**: Find sessions matching your interests, discover speakers, plan your schedule
+- **Speaker Networking**: Learn about speakers' backgrounds, expertise, and projects before the conference
+- **Session Discovery**: Search by topic (Swift 6, concurrency, Vapor, Hummingbird, AWS Lambda, etc.)
+- **Schedule Planning**: Query sessions by day, time, track, or difficulty level
+
+### Could This Work for Other Conferences?
+
+While this MCP server is specifically built for ServerSide.swift 2025, the architecture could be adapted for other technical conferences. The database schema and MCP tools are general enough to support any conference with sessions, speakers, and schedules. You would need to:
+
+1. Replace the sample data in `Resources/Conferences/` with your conference data
+2. Update speaker profiles, session schedules, and venue information
+3. Optionally customize the database schema for conference-specific needs
+
+The Swift 6.2 codebase, actor-based concurrency, and MCP protocol implementation are conference-agnostic.
 
 ## Features
 
@@ -23,14 +41,16 @@ Tech Conference MCP Server enables AI assistants like Claude to help you navigat
 5. **`find_room`** - Locate rooms and check their schedules
 6. **`get_session_details`** - Get comprehensive details about a specific session
 
-### Sample Queries
+### Sample Queries for ServerSide.swift 2025
 
 ```
-"Show me all Swift talks tomorrow"
-"Who is speaking about concurrency?"
-"What's in the main hall at 2pm?"
-"Find sessions about server-side Swift"
-"Show me Sarah's talk details"
+"Show me all sessions on October 2nd"
+"Who is Adam Fowler and what is he talking about?"
+"Find all sessions about Vapor and Hummingbird"
+"What Swift 6 concurrency sessions are there?"
+"Show me speakers from the Apple Swift Server team"
+"Which sessions cover AWS Lambda with Swift?"
+"Tell me about Joannis Orlandos' MongoKitten talk"
 ```
 
 ## Architecture
@@ -192,16 +212,18 @@ The MCP server includes comprehensive speaker profiles from **ServerSide.swift 2
 
 **Full speaker documentation**: See [docs/Speakers | ServerSide.md](docs/Speakers%20|%20ServerSide.md) for complete profiles with expertise, social links, and session topics.
 
-## Sample Data
+## Conference Data
 
-The server includes sample data from **ServerSide.swift 2025** conference:
+The server contains **real data from ServerSide.swift 2025 London**:
 
-- **50+ sessions** covering Swift on the server, iOS, and tooling
-- **27+ speakers** including Apple engineers, framework authors, and production experts
-- **Multiple tracks** across 3 days (Oct 15-17, 2025)
-- **6 venues** with detailed room information
+- **27+ Real Speakers**: Actual speaker profiles from the conference website with verified bios, GitHub profiles, and expertise areas
+- **Complete Sessions**: All talks, workshops, and sessions from October 2-3, 2025
+- **Conference Venue**: London, UK location details
+- **Session Tracks**: Server-Side Swift, Vapor Framework, Hummingbird, SwiftNIO, Testing & Quality, Deployment & DevOps, Swift 6 & Concurrency
 
-This sample data demonstrates the server's capabilities and can be replaced with your own conference data.
+**Conference Website**: [serversideswift.info](https://www.serversideswift.info/)
+
+This is production conference data, not sample/demo data. The database is pre-populated with the actual ServerSide.swift 2025 conference schedule and speaker information.
 
 ## Development
 
