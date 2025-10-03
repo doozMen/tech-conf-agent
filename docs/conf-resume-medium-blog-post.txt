@@ -1,0 +1,185 @@
+---
+
+ServerSide Swift 2025: Two Days in London That Proved Swift Belongs on the Server
+
+The conference that showed server-side Swift is ready for production
+I just spent two days at ServerSide Swift 2025 in London, and the message was clear: Swift on the server isn't experimental anymore. Small teams are shipping production backends. Major cloud providers have first-class Swift SDKs. The tooling has matured.
+Here's what matters from the conference.
+
+## Hummingbird: Lightweight and Flexible Server Framework
+
+[@adam-fowler](https://github.com/adam-fowler) presented [Hummingbird](https://github.com/hummingbird-project/hummingbird), the lightweight server framework he maintains alongside his work on the [Soto AWS SDK](https://github.com/soto-project/soto).
+The problem with most Redis clients: you pass strings and hope the command is valid. Valkey-swift uses parameter packs to verify commands at compile time.
+Fowler was direct about the implementation: 
+"Parameter packs were quite problematic to implement." But the result is worth it - you catch type errors before deployment, not in production.
+The library handles Redis Cluster topology discovery with automatic failover. Built on [Swift NIO](https://github.com/apple/swift-nio), it integrates cleanly with async/await patterns.
+Key takeaway: Type safety isn't just for application code. Infrastructure clients benefit from Swift's type system too.
+## Swift 6 Concurrency Solves Real Server Problems
+Matt Massicotte's talk on Swift 6 concurrency focused on patterns that actually work for server-side code.
+The @Concurrent attribute solves actor isolation mismatches that plague server middleware. When you need to share state between requests, proper isolation patterns prevent data races.
+Swift 6's strict concurrency checking catches these issues at compile time. The compiler identifies potential data races before they hit production.
+Massicotte covered practical patterns for request-scoped state without sacrificing safety. Server applications have different concurrency requirements than client apps - you need patterns that handle thousands of concurrent requests, not dozens of UI updates.
+Key takeaway: Swift 6's concurrency model works for high-load server applications. The strict checking prevents entire categories of bugs.
+## Vapor vs Hummingbird: Both Work, Pick Based on Needs
+Emma compared [Vapor](https://vapor.codes) and [Hummingbird](https://github.com/hummingbird-project/hummingbird), the two major Swift server frameworks.
+What's the same:
+support Fluent ORM
+open source
+deploy to Docker and AWS Lambda
+Both have active development
+
+What differs:
+[Vapor](https://vapor.codes) provides opinionated database setup with an established community. If you want conventions and don't need exotic database choices, Vapor works.
+[Hummingbird](https://github.com/hummingbird-project/hummingbird) offers flexible drivers including Cassandra and MongoDB. The modular architecture lets you swap components. Strong documentation despite being newer.
+The choice isn't about which is "better" - it's about deployment targets and team preferences. Both frameworks are production-ready.
+Key takeaway: Framework choice depends on your database needs and architectural preferences, not technical capability.
+## SongShift Runs Production Backend on Swift Lambda
+The SongShift team shared their production architecture running entirely on Swift Lambda functions.
+Their evolution:
+2016: Client-only app with local storage
+2018: Node.js + Docker + MongoDB (unsustainable for small team)
+2020: Swift on AWS Lambda (current)
+
+Technical stack:
+Swift AWS Lambda Runtime (Swift Server Work Group)
+[Soto](https://github.com/soto-project/soto) (Swift SDK for all AWS services)
+Step Functions for workflow orchestration
+DynamoDB for state, S3 for unstructured data
+Terraform for infrastructure as code
+
+The win: They share Swift Package Manager packages between their iOS app and Lambda functions. Same data models, same validation logic, same type safety across client and server.
+For a small team without dedicated backend engineers, serverless Swift eliminated server management overhead. Lambda handles scaling. They pay per execution. Step Functions orchestrate long-running transfers across multiple Lambdas.
+Key takeaway: Small teams can ship production backends with Swift without hiring specialized backend engineers.
+## Swift Bedrock Library: Idiomatic AWS Integration
+[@monadierickx](https://github.com/monadierickx) built the [Swift Bedrock Library](https://github.com/build-on-aws/swift-bedrock-library) during her AWS internship and contributed the first Swift examples to AWS Bedrock Runtime documentation.
+The problem: Auto-generated AWS SDKs require 20+ lines of boilerplate for simple operations. The code isn't Swift-idiomatic.
+Before (raw SDK):
+// ~20+ lines of client setup
+let client = BedrockRuntimeClient(…)
+let inferenceConfig = InferenceConfiguration(…)
+// Manual parameter configuration
+// Base64 decoding requireds
+After (Swift Bedrock Library):
+let bedrock = try await BedrockService(authentication: .sso())
+let image = try await bedrock
+    .generateImage(.textPrompt, with: .nova_canvas)
+try savePNGToDisk(data: image.images[0])
+Five lines instead of twenty. Type-safe model selection (.nova_canvas instead of string literals). Direct typed responses - PNG data, not base64 strings. Native async/await throughout.
+Key takeaway: Swift needs idiomatic wrappers around auto-generated SDKs. The Bedrock library shows how to do it right.
+Resources:
+github.com/build-on-aws/swift-bedrock-library
+github.com/monadierickx
+
+## Durable Workflows with Swift Temporal SDK
+Apple's [Swift Temporal SDK](https://github.com/apple/swift-temporal-sdk) brings fault-tolerant workflow execution to server-side Swift.
+What Temporal solves: Workflows that survive crashes, restarts, and failures. Your code persists state automatically and resumes from interruption. No custom retry logic. No manual orchestration systems.
+Temporal workflows can run for years with automatic recovery. The SDK uses Swift's async/await while the Temporal runtime handles distributed systems complexity.
+Use cases:
+Payment processing pipelines
+Long-running ETL jobs
+Microservice orchestration
+Any process requiring reliability beyond single server lifetime
+
+Built on Temporal's battle-tested Rust core (sdk-core), the Swift SDK joins established clients in Go, Java, Python, TypeScript, PHP, and .NET.
+Key takeaway: Complex orchestration problems have production-ready solutions in Swift now.
+Resources:
+github.com/apple/swift-temporal-sdk
+
+## Zero-Copy Networking with Span
+[@Joannis](https://github.com/Joannis) covered networking libraries using Swift's Span feature for zero-copy operations.
+Span reduces memory allocations in hot paths. [MongoKitten](https://github.com/orlandos-nl/MongoKitten) uses these patterns for efficient JSON parsing. [Hummingbird](https://github.com/hummingbird-project/hummingbird) benefits from reduced allocations. EdgeOS (IoT systems) needs memory-efficient networking for constrained environments.
+The trade-off: complexity vs performance. Orlandos was clear - "Span is great for zero-copy networking, but you need to weigh the complexity trade-offs."
+For high-throughput message parsing or embedded systems, Span provides real benefits. For typical web applications, standard patterns work fine.
+Key takeaway: Optimization tools exist when you need them. Use them when performance requirements justify the complexity.
+## Building Real Applications: Fruitful Backend
+[@mikaelacaron](https://github.com/mikaelacaron) presented her journey building a conference networking app backend using [Vapor](https://vapor.codes).
+Technical stack:
+[Vapor](https://vapor.codes) 4 framework
+PostgreSQL with Fluent ORM
+AWS S3 with presigned URLs for direct uploads
+Redis for caching attendee lists
+JWT authentication with refresh token rotation
+Docker containers on Linux VMs
+Swift 6.0 strict concurrency mode
+
+Architecture decisions that worked:
+File uploads: AWS SDK for Swift generates presigned URLs. Clients upload directly to S3. No file data through the Vapor server. The repository pattern keeps S3 logic separated from route handlers - testable without AWS infrastructure.
+Caching: Redis for conference attendee lists. Protocol-based cache abstraction means you can swap between in-memory and Redis without code changes.
+Concurrency: Swift 6 strict concurrency catches data races at compile time. The compiler prevents entire categories of bugs before deployment.
+Resources used:
+theswiftdev.com
+swifttoolkit.dev
+serversideswift.info
+swiftonserver.com
+
+Key takeaway: Learning server-side Swift means building real projects that solve actual problems and deploying to Linux.
+
+## Key Technical Themes
+Lets go over the whole conference to distill some common topics
+### Swift 6 Concurrency Everywhere
+Multiple talks emphasized strict concurrency checking and proper isolation patterns. Server applications have different concurrency requirements than client apps. Swift 6's model handles both.
+### Type Safety Across the Stack
+Parameter packs for Redis commands. Typed model selection in AWS Bedrock. Shared SPM packages between client and server. Type safety isn't just nice - it prevents production bugs.
+### Cloud-Native Patterns
+Serverless with Lambda. Managed services (DynamoDB, S3, Redis). Infrastructure as Code (Terraform). Server-side Swift integrates cleanly with cloud platforms.
+### Production-Ready Tooling
+Mature frameworks (Vapor, Hummingbird). Battle-tested libraries (NIO, Soto, Temporal). The ecosystem has stabilized. Production deployments are running.
+### Developer Experience
+Reducing boilerplate through idiomatic wrappers. Leveraging Swift's language features (async/await, parameter packs). Clear documentation and real examples.
+## What This Means for Server-Side Swift
+For small teams: You can ship backends without dedicated backend engineers. Serverless patterns reduce operational overhead. Shared packages between client and server eliminate duplication.
+For production systems: Swift 6 strict concurrency prevents data races. Multiple framework options based on needs. Mature ecosystem with battle-tested libraries.
+For integration: Swift interops with C++ and Java ecosystems. Cloud providers have first-class Swift SDKs. Distributed system tools (gRPC, Temporal) support Swift.
+For learning: Strong community resources and documentation. Real production case studies validate approaches. Active open source development.
+
+---
+
+## What's Next
+Based on conference discussions:
+Continued concurrency improvements - Swift 6 adoption and refinement
+Cloud platform integration - More first-class AWS, Azure, GCP support
+Distributed systems tooling - Temporal SDK expansion, gRPC enhancements
+Performance optimization - Zero-copy networking, memory efficiency improvements
+Developer experience - Better tooling, clearer patterns, more examples
+
+---
+
+## The Verdict
+Server-side Swift is production-ready. The talks weren't about proof-of-concepts - they covered production systems handling real load with real users.
+Small teams ship backends without specialized infrastructure engineers. Type safety prevents bugs across the entire stack. Cloud integration is first-class. The tooling has matured.
+If you've been waiting for server-side Swift to be "ready," it is.
+
+---
+
+## Resources
+
+Frameworks:
+Vapor: vapor.codes
+Hummingbird: github.com/hummingbird-project/hummingbird
+
+Libraries:
+Swift NIO: github.com/apple/swift-nio
+Soto (AWS SDK): github.com/soto-project/soto
+Valkey-swift: Related to github.com/swift-server/RediStack
+Swift Temporal SDK: github.com/apple/swift-temporal-sdk
+Swift Bedrock Library: github.com/build-on-aws/swift-bedrock-library
+
+Learning:
+theswiftdev.com
+swifttoolkit.dev
+serversideswift.info
+swiftonserver.com
+
+Community:
+Swift Server Work Group: github.com/swift-server
+Conference: (bluesky) @serversideswift.info
+
+## Call to Action
+The conference organizers encouraged attendees to submit talks for next year. Your experience matters to the community. Production deployments. Failed experiments. Architecture decisions. All of it helps others.
+If you're building with server-side Swift, share what you're learning.
+Conference: ServerSide Swift 2025
+Location: London
+Dates: October 2–3, 2025
+Hashtags: #swiftlang #serversideSwift2025
+
+Thanks to the organizers and volunteers who made this conference possible.
