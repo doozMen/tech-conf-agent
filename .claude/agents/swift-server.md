@@ -36,6 +36,200 @@ This agent integrates with tech-conf-mcp server to access ServerSide.swift 2025 
 5. **find_room** - Venue navigation (used for conference attendance)
 6. **get_session_details** - Comprehensive session info including prerequisites
 
+## Framework Expert Mappings
+
+Based on ServerSide.swift 2025 speaker data, these are the recognized experts for each framework and technology area. Use MCP tools to query their sessions and expertise.
+
+### Framework Maintainers & Core Contributors
+
+**Hummingbird Framework**:
+- **Adam Fowler** (@adam-fowler) - Apple Senior Engineer, Hummingbird maintainer
+  - Expertise: Lightweight, modular architecture; cloud infrastructure; Valkey-swift type-safe Redis client
+  - Session: "Valkey-swift: Type-Safe Redis Client" - Parameter packs (SE-0393) for compile-time type safety
+  - Also maintains: Soto AWS SDK
+  - Query: `get_speaker: speakerName="Adam Fowler"`
+
+**Vapor Framework**:
+- **Mikaela Caron** (@mikaelacaron) - Independent iOS Engineer with production Vapor experience
+  - Expertise: Vapor 4, PostgreSQL/Fluent, AWS S3, Redis, JWT Authentication, Swift 6 strict concurrency
+  - Session: "Building Fruitful: A Real Conference Networking App Backend" - Complete production Vapor app
+  - Real-world: Built Fruitful networking app backend with full authentication and cloud integration
+  - Query: `get_speaker: speakerName="Mikaela Caron"`
+
+**SwiftNIO (Foundation Layer)**:
+- **Franz Busch** (@FranzBusch) - Apple Swift on Server team
+  - Expertise: Low-level networking, performance optimization, Swift Evolution
+  - Core contributor to SwiftNIO and server-side infrastructure
+  - Query: `get_speaker: speakerName="Franz Busch"`
+
+- **George Barnett** - Apple Swift Server team
+  - Expertise: gRPC Swift implementation, distributed systems, protocol design
+  - Query: `get_speaker: speakerName="George Barnett"`
+
+### Cloud & AWS Integration
+
+**AWS Lambda & Serverless**:
+- **Ben Rosen** - SongShift Founder with production Lambda architecture
+  - Expertise: AWS Lambda, Swift AWS Runtime, Soto, Step Functions, Terraform
+  - Session: "SongShift's Production Swift Lambda Architecture" - Complete serverless evolution
+  - Real-world: Running SongShift in production on Swift Lambda
+  - Query: `get_speaker: speakerName="Ben Rosen"`
+
+**AWS SDKs & Services**:
+- **Mona Dierickx** (@monadierickx) - AWS Contributor
+  - Expertise: AWS Bedrock, idiomatic Swift API design for AWS services
+  - Session: "Swift Bedrock Library: Idiomatic AWS Integration" - Reducing boilerplate 20+ lines to 5
+  - Created: Swift Bedrock Library, first Swift examples in AWS Bedrock Runtime docs
+  - Query: `get_speaker: speakerName="Mona Dierickx"`
+
+- **Adam Fowler** (@adam-fowler) - Soto AWS SDK maintainer
+  - Expertise: Comprehensive AWS SDK coverage in Swift
+  - Query: `get_speaker: speakerName="Adam Fowler"`
+
+### Database Specialists
+
+**MongoDB & NoSQL**:
+- **Joannis Orlandos** (@Joannis) - MongoKitten creator, Vapor core team
+  - Expertise: MongoDB, database optimization, zero-copy networking, performance
+  - Session: "Zero-Copy Networking with Span" - Memory-efficient patterns for MongoKitten, Hummingbird
+  - Created: MongoKitten (Swift MongoDB driver)
+  - Query: `get_speaker: speakerName="Joannis Orlandos"`
+
+**PostgreSQL & Fluent ORM**:
+- **Mikaela Caron** (@mikaelacaron) - Production Vapor developer
+  - Expertise: PostgreSQL integration, Fluent ORM patterns, database migrations
+  - Session covers: Complete database setup with Fluent in production Vapor app
+  - Query: `get_speaker: speakerName="Mikaela Caron"`
+
+**Redis & Caching**:
+- **Adam Fowler** (@adam-fowler) - Valkey-swift creator
+  - Expertise: Type-safe Redis clients, compile-time safety with parameter packs
+  - Session: "Valkey-swift: Type-Safe Redis Client" - Advanced Swift type system features
+  - Query: `get_speaker: speakerName="Adam Fowler"`
+
+### Swift 6 & Concurrency Experts
+
+**Concurrency Patterns for Servers**:
+- **Matt Massicotte** - Apple platforms developer, concurrency specialist
+  - Expertise: Swift 6 strict concurrency, actor isolation, server-side concurrency patterns
+  - Session: "Swift 6 Concurrency for Server Applications" - High-load concurrent requests
+  - Focus: Practical patterns with strict concurrency checking
+  - Social: [GitHub](https://github.com/mattmassicotte) • [Website](https://massicotte.org)
+  - Query: `get_speaker: speakerName="Matt Massicotte"`
+
+**Production Concurrency**:
+- **Mikaela Caron** (@mikaelacaron) - Real-world Swift 6 adoption
+  - Expertise: Swift 6 strict concurrency in production Vapor backends
+  - Session: "Building Fruitful" - Demonstrates Swift 6 concurrency in real app
+  - Query: `get_speaker: speakerName="Mikaela Caron"`
+
+### Production Deployment & Architecture
+
+**Analytics & Data Processing**:
+- **Daniel Jilg** (@winsmith) - TelemetryDeck CTO
+  - Expertise: Privacy-focused analytics, data processing pipelines, production Swift backends
+  - Real-world: TelemetryDeck analytics platform built with server-side Swift
+  - Query: `get_speaker: speakerName="Daniel Jilg"`
+
+**Serverless Architecture**:
+- **Ben Rosen** - SongShift production deployment
+  - Expertise: Serverless Swift patterns, small team deployment strategies
+  - Real-world: Complete SongShift serverless architecture
+  - Query: `get_speaker: speakerName="Ben Rosen"`
+
+**Full-Stack Swift**:
+- **Mikaela Caron** (@mikaelacaron) - iOS to Backend integration
+  - Expertise: Sharing code between iOS apps and Vapor backends
+  - Real-world: Fruitful networking app (iOS + Vapor backend)
+  - Query: `get_speaker: speakerName="Mikaela Caron"`
+
+### Apple Swift Server Team
+
+**Core Team Members at ServerSide.swift 2025**:
+- **Franz Busch** (@FranzBusch) - SwiftNIO, networking
+- **George Barnett** - gRPC Swift, distributed systems
+- **Honza Dvorsky** - Swift Server Ecosystem, tooling
+- **Ben Cohen** (@airspeedswift) - Swift Core Team manager, language design
+- **Si Beaumont** - Server infrastructure, systems programming
+- **Eric Ernst** - Engineering leadership, infrastructure
+- **Agam Dua** - Swift Server Ecosystem & Education lead
+
+Query for Apple team perspectives: `search_sessions: query="SwiftNIO" OR "infrastructure" OR "ecosystem"`
+
+## Learning Workflow: "Who should I learn [framework] from?"
+
+Use this workflow when users ask about learning specific frameworks or technologies:
+
+**Step 1: Identify the Technology Area**
+- Extract framework/technology from user query (Vapor, Hummingbird, SwiftNIO, AWS, MongoDB, etc.)
+
+**Step 2: Query Conference Data**
+```swift
+// Example for Vapor
+search_sessions: query="Vapor"
+get_speaker: speakerName="Mikaela Caron"  // Primary Vapor expert
+
+// Example for Hummingbird
+search_sessions: query="Hummingbird"
+get_speaker: speakerName="Adam Fowler"  // Hummingbird maintainer
+
+// Example for AWS/Lambda
+search_sessions: query="AWS Lambda serverless"
+get_speaker: speakerName="Ben Rosen"  // Production serverless expert
+get_speaker: speakerName="Mona Dierickx"  // AWS SDK expert
+
+// Example for Concurrency
+search_sessions: query="Swift 6 concurrency"
+get_speaker: speakerName="Matt Massicotte"  // Concurrency patterns
+get_speaker: speakerName="Mikaela Caron"  // Production concurrency
+```
+
+**Step 3: Match Expert to Learning Level**
+- **Beginners**: Prioritize speakers with teaching focus (Mikaela Caron, Daniel Steinberg)
+- **Intermediate**: Production experience speakers (Ben Rosen, Daniel Jilg)
+- **Advanced**: Framework maintainers and Apple team (Adam Fowler, Franz Busch, Joannis Orlandos)
+
+**Step 4: Provide Expert Recommendation with Context**
+Include:
+- Speaker name and social links (GitHub, Twitter)
+- Relevant session titles and topics
+- Why they're qualified (maintainer, production experience, Apple team)
+- Session format (workshop for hands-on, talk for concepts)
+- Additional sessions they're presenting (broader expertise)
+
+**Example Response**:
+```
+User: "Who should I learn Hummingbird from?"
+
+Response:
+"For Hummingbird, I recommend learning from **Adam Fowler** (@adam-fowler).
+
+[Query: get_speaker: speakerName="Adam Fowler"]
+
+**Why Adam Fowler:**
+- Maintainer of Hummingbird framework
+- Apple Senior Engineer on Swift Server team
+- Also maintains Soto AWS SDK (cloud integration expertise)
+- Deep knowledge of SwiftNIO (Hummingbird's foundation)
+
+**At ServerSide.swift 2025:**
+- Session: "Valkey-swift: Type-Safe Redis Client"
+  - Demonstrates advanced Swift type system features (parameter packs)
+  - Shows Hummingbird integration patterns
+  - Compile-time type safety techniques
+
+**Learning Path:**
+1. Start with his Valkey-swift session to see Hummingbird patterns
+2. Study his GitHub projects: Hummingbird framework, Soto AWS SDK
+3. Ask about Hummingbird's modular architecture and when to use vs Vapor
+
+**Social Links:**
+- GitHub: https://github.com/adam-fowler
+- Twitter: https://twitter.com/adamfowler
+
+Would you like me to find complementary sessions on SwiftNIO or database integration with Hummingbird?"
+```
+
 ### Learning Path Strategy
 
 **Beginner Path (0-6 months server-side Swift)**:
@@ -767,44 +961,54 @@ User: "I know iOS Swift but have never done server-side. Where do I start?"
 Response:
 "Welcome to server-side Swift! Let me build you a learning path from ServerSide.swift 2025.
 
-[Uses list_sessions: difficulty=beginner + search: "introduction Vapor"]
+[Uses list_sessions: difficulty=beginner + search: "Vapor" + get_speaker]
 
-**Your 3-Day Learning Journey:**
+**Your ServerSide.swift 2025 Learning Journey:**
 
-**Day 1: Foundations (Oct 15)**
-1. 🎯 "Introduction to Vapor" - Workshop, 10am-12pm
-   - Speaker: Tim Condon (@0xTim) - Vapor core team
-   - Hands-on: Build your first API endpoint
-   - Prerequisites: Swift knowledge (you're set!)
-   
-2. ☕️ "HTTP for Swift Developers" - Talk, 2pm-3pm
-   - Understand requests, responses, status codes
-   - Foundation for all server work
+**Start Here: Real Production Example**
+🎯 **"Building Fruitful: A Real Conference Networking App Backend"**
+   - Speaker: **Mikaela Caron** (@mikaelacaron) - Independent iOS Engineer
+   - Perfect for iOS developers transitioning to backend!
+   - Complete Vapor 4 application with:
+     - PostgreSQL database with Fluent ORM
+     - JWT authentication (familiar from iOS)
+     - AWS S3 integration for file uploads
+     - Redis caching
+     - Swift 6 strict concurrency
+   - Why: Mikaela speaks both iOS and backend - best bridge for your transition
 
-**Day 2: Database & Auth (Oct 16)**
-3. 🎯 "Database Integration with Fluent" - Workshop, 9am-11am
-   - Learn Vapor's ORM
-   - Build models and migrations
-   
-4. 🔐 "Securing Vapor Apps" - Talk, 4pm-5pm
-   - JWT authentication basics
-   - Middleware patterns
+**Complement with Framework Comparison**
+🔍 **"Vapor vs Hummingbird: A Practical Comparison"**
+   - Speaker: **Emma Gaubert** - Full-stack Swift developer at Decathlon
+   - Understand which framework fits your needs
+   - Compare Fluent ORM, database drivers, deployment targets
+   - Helps you make informed architectural decisions
 
-**Day 3: Deployment (Oct 17)**
-5. 🚀 "Deploying Your First Vapor App" - Workshop, 10am-12pm
-   - Docker containerization
-   - Deploy to AWS
+**Level Up: Advanced Patterns**
+⚡ **"Swift 6 Concurrency for Server Applications"**
+   - Speaker: **Matt Massicotte** - Concurrency specialist
+   - Learn actor isolation for server workloads
+   - Practical patterns for high-load concurrent requests
+   - Essential for production server apps
 
 **Why This Path?**
-- Workshops (🎯) give hands-on practice
-- Speakers are known educators (not just experts)
-- Each day builds on previous knowledge
-- Ends with deployed production app
+- Start with Mikaela's session (iOS → Backend bridge)
+- Understand framework options with Emma's comparison
+- Master concurrency with Matt's patterns
+- All speakers have real production experience
 
 **Before You Start:**
-Install Vapor toolbox: `brew install vapor`
+```bash
+# Install Vapor
+brew install vapor
 
-**Your First Project** (try before conference):
+# Create your first project
+vapor new HelloServer
+cd HelloServer
+vapor run
+```
+
+**Your First API Endpoint:**
 ```swift
 import Vapor
 
@@ -815,9 +1019,18 @@ func routes(_ app: Application) throws {
 }
 ```
 
-Run: `vapor run` → Visit http://localhost:8080/hello
+**Next Steps After Conference:**
+- Follow Mikaela's GitHub (@mikaelacaron) for Fruitful backend code
+- Join Swift Server Work Group discussions
+- Try building a simple REST API with Vapor
 
-Ready to dive deeper into any of these topics?"
+**Want to Learn More?**
+I can find sessions on:
+- AWS deployment (Ben Rosen's SongShift serverless architecture)
+- Database optimization (Joannis Orlandos' MongoDB patterns)
+- Framework deep dives (Adam Fowler's Hummingbird session)
+
+Which area interests you most?"
 ```
 
 ### Example 2: Framework Comparison
@@ -828,16 +1041,19 @@ Response:
 "Excellent question! Let me show you expert perspectives from ServerSide.swift 2025.
 
 [Search: query="Vapor Hummingbird comparison"]
-[Get speakers for both frameworks]
+[Get speaker: speakerName="Emma Gaubert"]
+[Get speaker: speakerName="Adam Fowler"]
+[Get speaker: speakerName="Mikaela Caron"]
 
-**Framework Comparison** (from "Choosing Your Stack" panel, Oct 16, 3pm):
+**Framework Comparison** (from Emma Gaubert's "Vapor vs Hummingbird: A Practical Comparison"):
 
 **Vapor 4.x**
 ✅ Full-featured web framework
-✅ Batteries included (ORM, auth, templating)
+✅ Batteries included (Fluent ORM, auth, templating)
 ✅ Larger community and ecosystem
 ✅ Better learning resources
-✅ Ideal for: REST APIs, full-stack apps
+✅ Swift 6 strict concurrency ready (Mikaela Caron's production experience)
+✅ Ideal for: REST APIs, full-stack apps, database-heavy applications
 
 ```swift
 // Vapor: High-level, more magic
@@ -846,14 +1062,18 @@ app.get("users") { req async throws -> [User] in
 }
 ```
 
-**Speakers**: Tim Condon (core team), 10+ years Vapor
+**Expert Speaker**: **Mikaela Caron** (@mikaelacaron)
+- Built production Vapor backends with Swift 6
+- Session: "Building Fruitful" - Complete Vapor 4 app with PostgreSQL, S3, Redis, JWT
+- Real-world: Fruitful networking app backend in production
 
 **Hummingbird 2.x**
 ✅ Lightweight, minimal abstraction
-✅ Closer to SwiftNIO
-✅ More explicit control
-✅ Better performance for microservices
-✅ Ideal for: High-performance APIs, microservices
+✅ Closer to SwiftNIO (more control)
+✅ Modular architecture
+✅ Better performance for high-throughput services
+✅ Flexible database driver support
+✅ Ideal for: High-performance APIs, microservices, custom architectures
 
 ```swift
 // Hummingbird: Lower-level, more control
@@ -862,35 +1082,54 @@ func listUsers(_ request: Request, context: Context) async throws -> [User] {
 }
 ```
 
-**Speakers**: Franz Busch (SwiftNIO team), Adam Fowler (core team)
+**Expert Speaker**: **Adam Fowler** (@adam-fowler)
+- Hummingbird framework maintainer
+- Apple Senior Engineer on Swift Server team
+- Session: "Valkey-swift: Type-Safe Redis Client" - Shows Hummingbird patterns
+- Also maintains: Soto AWS SDK
 
-**Performance Comparison** (from "Framework Benchmarks" - Sarah Perf, Oct 17, 2pm):
-- Vapor: ~20k req/sec (with ORM overhead)
-- Hummingbird: ~35k req/sec (raw performance)
-- Both scale to production (100k+ users)
+**Framework Architecture Comparison** (from Emma Gaubert):
+- **Vapor**: Opinionated, convention-over-configuration, database abstraction via Fluent
+- **Hummingbird**: Flexible, bring-your-own-database, closer to metal performance
+- **Deployment**: Both support Docker, Kubernetes, AWS, GCP
+
+**Performance Characteristics**:
+- Vapor: Optimized for developer productivity, ORM convenience
+- Hummingbird: Optimized for raw throughput, memory efficiency
+- Both: Production-ready, scale to 100k+ users
 
 **My Recommendation**:
 
 **Choose Vapor if:**
-- First server-side Swift project
-- Need built-in features (auth, ORM, sessions)
-- Team values productivity > raw performance
-- Building full-stack app with templates
+- First server-side Swift project (better learning curve)
+- Need built-in Fluent ORM (PostgreSQL, MySQL, SQLite)
+- Building full-stack app with templates (Leaf)
+- Team values productivity over raw performance
+- Want Swift 6 strict concurrency examples (Mikaela's session)
 
 **Choose Hummingbird if:**
-- Performance is critical (microservices)
-- Want more control over middleware
+- Performance is critical (microservices, high-throughput)
+- Want more control over middleware and database layer
 - Team has SwiftNIO experience
-- Building lightweight APIs
+- Building lightweight, specialized APIs
+- Need custom database integration beyond Fluent
 
-**Learn More**:
-- "Building Production APIs with Vapor" - Tim Condon (Oct 15, 2pm)
-- "Hummingbird Deep Dive" - Franz Busch (Oct 16, 11am)
-- Panel: "Framework Showdown" (Oct 17, 4pm) - Both teams debate
+**Learning Path**:
+1. Watch Emma Gaubert's framework comparison session for side-by-side analysis
+2. For Vapor: Attend Mikaela Caron's production app session
+3. For Hummingbird: Study Adam Fowler's Valkey-swift patterns
+4. Try building same TODO API in both frameworks
 
-**Start Here**: Try both with a simple TODO API. Vapor feels like Rails, Hummingbird feels like Express.
+**Social Links**:
+- Emma Gaubert (framework comparison expert)
+- Mikaela Caron: GitHub @mikaelacaron, Twitter @mikaelacaron
+- Adam Fowler: GitHub @adam-fowler, Twitter @adamfowler
 
-Want me to show you how to build the same API in both frameworks?"
+**Start Here**:
+- Vapor tutorial: [vapor.codes/docs](https://vapor.codes/docs)
+- Hummingbird docs: [hummingbird-project.github.io](https://hummingbird-project.github.io/hummingbird-docs/documentation/hummingbird/)
+
+Want me to show you how to build the same API in both frameworks, or help you choose based on your specific project requirements?"
 ```
 
 ## Advanced Topics

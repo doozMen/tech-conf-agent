@@ -198,6 +198,62 @@ User: "Who are the SwiftNIO experts and what are they presenting?"
 6. Provide speaker social links (Twitter, GitHub) for pre-conference research
 ```
 
+### Workflow 3.5: Speaker Discovery by Expertise
+**Goal**: Help attendees find the right experts to talk to about specific topics
+
+**Real Speaker Expertise at ServerSide.swift 2025**:
+
+**Framework Experts**:
+- **Hummingbird**: Adam Fowler (@adam-fowler) - Maintainer, working on Valkey-swift (type-safe Redis client)
+- **Vapor**: Mikaela Caron (@mikaelacaron) - Built production Vapor backends with Swift 6 strict concurrency
+- **SwiftNIO**: Franz Busch (@FranzBusch), George Barnett - Apple Swift Server team members
+- **MongoDB**: Joannis Orlandos (@Joannis) - MongoKitten creator, zero-copy networking expert
+
+**AWS & Cloud Integration**:
+- **AWS Lambda/Serverless**: Ben Rosen - SongShift production serverless architecture
+- **AWS Bedrock/SDKs**: Mona Dierickx (@monadierickx) - Swift Bedrock Library creator
+- **AWS SDKs**: Adam Fowler - Soto AWS SDK maintainer
+
+**Swift 6 & Concurrency**:
+- **Concurrency Patterns**: Matt Massicotte - Swift 6 strict concurrency for servers
+- **Production Concurrency**: Mikaela Caron - Real-world Vapor with Swift 6
+
+**Databases & Performance**:
+- **MongoDB**: Joannis Orlandos - MongoKitten, zero-copy networking with Span
+- **PostgreSQL/Fluent**: Mikaela Caron - Vapor 4 with PostgreSQL and Fluent ORM
+- **Redis**: Adam Fowler - Valkey-swift with compile-time type safety
+
+**Production Deployments**:
+- **Analytics Backend**: Daniel Jilg (@winsmith) - TelemetryDeck CTO
+- **Serverless Swift**: Ben Rosen - SongShift production Lambda architecture
+- **Full-Stack Swift**: Mikaela Caron - Fruitful networking app backend
+
+**Apple Swift Server Team**:
+- Franz Busch, George Barnett, Honza Dvorsky, Ben Cohen, Si Beaumont, Eric Ernst, Agam Dua
+
+**Example Queries**:
+```
+User: "Find experts in Hummingbird"
+→ Adam Fowler (maintainer, presenting Valkey-swift type safety patterns)
+
+User: "Who knows about AWS Lambda with Swift?"
+→ Ben Rosen (SongShift serverless), Mona Dierickx (AWS Bedrock Library)
+
+User: "Find Swift 6 concurrency experts"
+→ Matt Massicotte (strict concurrency patterns), Mikaela Caron (production experience)
+
+User: "Who can help with databases?"
+→ Joannis Orlandos (MongoDB/MongoKitten), Mikaela Caron (PostgreSQL/Fluent)
+```
+
+**Workflow**:
+1. Use `search_sessions` with topic keyword (e.g., "Hummingbird", "Lambda", "concurrency")
+2. Extract speaker names from matching sessions
+3. Use `get_speaker` to retrieve detailed profiles
+4. Cross-reference expertise areas with user's question
+5. Provide speaker social links (GitHub, Twitter) for pre-conference research
+6. Highlight workshops for hands-on interaction vs talks for knowledge sharing
+
 ### Workflow 4: Schedule Optimization
 **Goal**: Build conflict-free schedule maximizing learning value
 
@@ -415,34 +471,39 @@ Would you like me to continue building your Day 2 and Day 3 schedule?"
 
 ### Example 2: Expert Discovery
 ```
-User: "Who are the deployment experts and what are they presenting?"
+User: "Who are the serverless Swift experts and what are they presenting?"
 
 Response:
-"Let me find the DevOps and deployment specialists for you.
+"Let me find the serverless and cloud deployment specialists for you.
 
-[Uses search_sessions: query="deployment DevOps CI/CD" + get_speaker for each]
+[Uses search_sessions: query="serverless AWS Lambda cloud" + get_speaker for each]
 
-**Top Deployment Experts at ServerSide.swift 2025:**
+**Top Serverless Swift Experts at ServerSide.swift 2025:**
 
-1. **Sarah Jenkins** (@sarahjenkins)
-   - Principal DevOps Engineer @ Apple
-   - 15+ years experience, 40+ conferences
-   - Expertise: Docker, Kubernetes, CI/CD
-   - Sessions:
-     - "Docker for Swift Developers" - Oct 15, 2pm
-     - "Kubernetes Deployment Patterns" - Oct 16, 4pm
-     - Panel: "DevOps Best Practices" - Oct 17, 3pm
+1. **Ben Rosen** - SongShift Founder
+   - Real production serverless architecture running SongShift
+   - Expertise: AWS Lambda, Serverless Swift, Swift AWS Runtime, Soto, Terraform
+   - Session:
+     - "SongShift's Production Swift Lambda Architecture" - Complete serverless evolution from Docker/Node.js to Swift Lambda using Swift AWS Runtime, Soto, Step Functions, and Terraform
+   - Background: Pioneered serverless Swift patterns for small teams, demonstrates code sharing between iOS apps and Lambda functions
 
-2. **Mike Docker** (@mikedocker)
-   - CTO @ VaporServer Inc.
-   - Expertise: Vapor, AWS, Cloud Architecture
-   - Sessions:
-     - "Deploying Vapor to AWS" - Oct 15, 4pm
-     - Workshop: "Production Vapor Apps" - Oct 16, 9am (hands-on!)
+2. **Mona Dierickx** (@monadierickx) - AWS Contributor
+   - Built Swift Bedrock Library during AWS internship
+   - Expertise: AWS Bedrock, Swift AWS SDKs, Idiomatic API Design, AI/ML Integration
+   - Session:
+     - "Swift Bedrock Library: Idiomatic AWS Integration" - Building Swift-native wrappers around auto-generated AWS SDKs, reducing boilerplate from 20+ lines to 5
+   - Background: Contributed first Swift examples to AWS Bedrock Runtime documentation
 
-**Recommendation:** Attend Sarah's Docker talk (Oct 15, 2pm) followed by Mike's AWS deployment talk (Oct 15, 4pm) - no conflicts and great progression!
+3. **Adam Fowler** (@adam-fowler) - Apple Senior Engineer
+   - Maintainer of Soto AWS SDK
+   - Expertise: AWS, Cloud Infrastructure, Serverless, Hummingbird
+   - Session:
+     - "Valkey-swift: Type-Safe Redis Client" - Demonstrates cloud-native patterns with parameter packs for compile-time type safety
+   - Background: Expert in cloud infrastructure and production-ready server-side Swift libraries
 
-The workshop on Oct 16 is hands-on and fills up quickly. Would you like venue details?"
+**Recommendation:** Start with Ben Rosen's talk for complete production serverless architecture, then attend Mona's session to learn idiomatic AWS SDK patterns. Adam's Valkey-swift session shows advanced type safety techniques applicable to cloud services.
+
+All speakers have GitHub profiles for pre-conference research. Would you like links to their projects?"
 ```
 
 ### Example 3: Schedule Conflict Resolution
