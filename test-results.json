@@ -1,0 +1,474 @@
+{
+  "testRun": "2025-10-02T19:03:34.227668Z",
+  "tests": [
+    {
+      "name": "Initialize MCP server",
+      "status": "pass",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "protocolVersion": "2024-11-05",
+          "capabilities": {},
+          "clientInfo": {
+            "name": "test-client",
+            "version": "1.0.0"
+          }
+        }
+      },
+      "response": {
+        "id": 1,
+        "jsonrpc": "2.0",
+        "result": {
+          "capabilities": {
+            "tools": {
+              "listChanged": false
+            }
+          },
+          "protocolVersion": "2024-11-05",
+          "serverInfo": {
+            "name": "tech-conf-mcp",
+            "version": "1.0.0"
+          }
+        }
+      }
+    },
+    {
+      "name": "List all available tools",
+      "status": "pass",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "method": "tools/list",
+        "params": {}
+      },
+      "response": {
+        "id": 2,
+        "jsonrpc": "2.0",
+        "result": {
+          "tools": [
+            {
+              "description": "List conference sessions with optional filtering.\n\nFilter sessions by various criteria including track, day, speaker, difficulty level, \nand format. Returns detailed session information including timing, speakers, and venue.\n\nFILTERS:\n- track: Filter by session track (e.g., \"iOS Development\", \"Backend\")\n- day: Filter by conference day (YYYY-MM-DD format or \"today\")\n- speaker: Filter by speaker name (partial match)\n- difficulty: Filter by difficulty level (\"beginner\", \"intermediate\", \"advanced\", \"all\")\n- format: Filter by session format (\"talk\", \"workshop\", \"panel\", \"keynote\", \"lightning\")\n- isFavorited: Show only favorited sessions (true/false)\n- isUpcoming: Show only upcoming sessions (true/false)",
+              "inputSchema": {
+                "properties": {
+                  "day": {
+                    "description": "Filter by date (YYYY-MM-DD or 'today')",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "difficulty": {
+                    "description": "Filter by difficulty level",
+                    "enum": [
+                      "beginner",
+                      "intermediate",
+                      "advanced",
+                      "all"
+                    ],
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "format": {
+                    "description": "Filter by session format",
+                    "enum": [
+                      "talk",
+                      "workshop",
+                      "panel",
+                      "keynote",
+                      "lightning"
+                    ],
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "isFavorited": {
+                    "description": "Show only favorited sessions",
+                    "optional": true,
+                    "type": "boolean"
+                  },
+                  "isUpcoming": {
+                    "description": "Show only upcoming sessions",
+                    "optional": true,
+                    "type": "boolean"
+                  },
+                  "speaker": {
+                    "description": "Filter by speaker name (partial match)",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "track": {
+                    "description": "Filter by track name",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "name": "list_sessions"
+            },
+            {
+              "description": "Search sessions by title, description, or tags.\n\nPerforms a full-text search across session titles, descriptions, abstracts, \nand tags. Returns matching sessions with relevance scoring.",
+              "inputSchema": {
+                "properties": {
+                  "query": {
+                    "description": "Search query text",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "query"
+                ],
+                "type": "object"
+              },
+              "name": "search_sessions"
+            },
+            {
+              "description": "Get detailed information about a specific speaker.\n\nRetrieve speaker details including bio, company, expertise areas, social links,\nand their scheduled sessions. Search by speaker ID or name.",
+              "inputSchema": {
+                "properties": {
+                  "speakerId": {
+                    "description": "Speaker UUID",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "speakerName": {
+                    "description": "Speaker name (partial match)",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "name": "get_speaker"
+            },
+            {
+              "description": "Get the conference schedule for a specific time range.\n\nReturns all sessions within the specified time window, organized chronologically.\nUseful for planning your conference day or finding what's happening now.",
+              "inputSchema": {
+                "properties": {
+                  "date": {
+                    "description": "Date to get schedule for (YYYY-MM-DD or 'today')",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "endTime": {
+                    "description": "End time (HH:MM format)",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "startTime": {
+                    "description": "Start time (HH:MM format)",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "name": "get_schedule"
+            },
+            {
+              "description": "Find room/venue information and what's happening there.\n\nGet details about a conference venue including capacity, floor, accessibility,\nand current/upcoming sessions in that room.",
+              "inputSchema": {
+                "properties": {
+                  "roomName": {
+                    "description": "Room or venue name (partial match)",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "sessionId": {
+                    "description": "Get room for a specific session UUID",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "name": "find_room"
+            },
+            {
+              "description": "Get comprehensive details about a specific session.\n\nReturns complete session information including description, speakers, venue,\ntiming, recording availability, slides, and user interactions (favorites, notes, ratings).",
+              "inputSchema": {
+                "properties": {
+                  "sessionId": {
+                    "description": "Session UUID",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "sessionId"
+                ],
+                "type": "object"
+              },
+              "name": "get_session_details"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "List all sessions without filters",
+      "status": "pass",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 3,
+        "method": "tools/call",
+        "params": {
+          "name": "list_sessions",
+          "arguments": {}
+        }
+      },
+      "response": {
+        "id": 3,
+        "jsonrpc": "2.0",
+        "result": {
+          "content": [
+            {
+              "text": "[\n  {\n    \"capacity\" : 200,\n    \"description\" : \"Learn about Swift's modern concurrency features including async\\/await, actors, and structured concurrency. This comprehensive session covers best practices and common patterns.\",\n    \"difficultyLevel\" : \"intermediate\",\n    \"endTime\" : \"2025-10-15T05:30:00Z\",\n    \"format\" : \"talk\",\n    \"id\" : \"D64D7098-0749-4E17-887D-04F495260B0D\",\n    \"isFavorited\" : true,\n    \"speakerName\" : \"Jane Developer\",\n    \"startTime\" : \"2025-10-15T04:00:00Z\",\n    \"tags\" : [\n      \"swift\",\n      \"concurrency\",\n      \"async-await\"\n    ],\n    \"title\" : \"Swift Concurrency Deep Dive\",\n    \"track\" : \"Server-Side Swift\",\n    \"venueName\" : \"Main Hall A\"\n  },\n  {\n    \"capacity\" : 150,\n    \"description\" : \"Discover techniques for building large-scale SwiftUI applications. Topics include architecture patterns, state management, and performance optimization.\",\n    \"difficultyLevel\" : \"advanced\",\n    \"endTime\" : \"2025-10-15T10:00:00Z\",\n    \"format\" : \"talk\",\n    \"id\" : \"4CC31ECA-A546-43D9-8A92-D61D0945306A\",\n    \"isFavorited\" : false,\n    \"speakerName\" : \"Alex Swift\",\n    \"startTime\" : \"2025-10-15T09:00:00Z\",\n    \"tags\" : [\n      \"swiftui\",\n      \"architecture\",\n      \"ios\"\n    ],\n    \"title\" : \"Building SwiftUI Apps at Scale\",\n    \"track\" : \"iOS Development\",\n    \"venueName\" : \"Room 201\"\n  },\n  {\n    \"capacity\" : 50,\n    \"description\" : \"Get started with Swift Testing, the new testing framework for Swift. Learn how to write expressive, maintainable tests and migrate from XCTest.\",\n    \"difficultyLevel\" : \"beginner\",\n    \"endTime\" : \"2025-10-16T03:00:00Z\",\n    \"format\" : \"workshop\",\n    \"id\" : \"FD62F4FB-5BDB-400B-91AF-02A8BA7A1642\",\n    \"isFavorited\" : true,\n    \"speakerName\" : \"Morgan Test\",\n    \"startTime\" : \"2025-10-16T00:00:00Z\",\n    \"tags\" : [\n      \"testing\",\n      \"swift-testing\",\n      \"quality\"\n    ],\n    \"title\" : \"Introduction to Swift Testing\",\n    \"track\" : \"Testing & Quality\",\n    \"venueName\" : \"Workshop Room B\"\n  },\n  {\n    \"capacity\" : 500,\n    \"description\" : \"Join us for a keynote presentation on the future direction of Swift, including upcoming language features, tooling improvements, and ecosystem growth.\",\n    \"difficultyLevel\" : \"all\",\n    \"endTime\" : \"2025-10-15T00:00:00Z\",\n    \"format\" : \"keynote\",\n    \"id\" : \"B40E2165-D31F-41DF-85BF-E4860AC317A8\",\n    \"isFavorited\" : true,\n    \"speakerName\" : \"Chris Lattner\",\n    \"startTime\" : \"2025-10-14T23:00:00Z\",\n    \"tags\" : [\n      \"keynote\",\n      \"swift\",\n      \"future\"\n    ],\n    \"title\" : \"The Future of Swift\",\n    \"track\" : \"Keynotes\",\n    \"venueName\" : \"Grand Ballroom\"\n  },\n  {\n    \"capacity\" : 120,\n    \"description\" : \"Build powerful backend services with Vapor 4. Learn about routing, middleware, database integration, and deploying to production.\",\n    \"difficultyLevel\" : \"intermediate\",\n    \"endTime\" : \"2025-10-16T05:30:00Z\",\n    \"format\" : \"talk\",\n    \"id\" : \"52148546-FA8E-4DB1-8910-0C803402C5D7\",\n    \"isFavorited\" : false,\n    \"speakerName\" : \"Taylor Swift\",\n    \"startTime\" : \"2025-10-16T04:00:00Z\",\n    \"tags\" : [\n      \"vapor\",\n      \"backend\",\n      \"server-side\"\n    ],\n    \"title\" : \"Vapor 4: Modern Server-Side Swift\",\n    \"track\" : \"Server-Side Swift\",\n    \"venueName\" : \"Room 103\"\n  },\n  {\n    \"capacity\" : 200,\n    \"description\" : \"Master memory management in Swift. Understand ARC, retain cycles, weak\\/unowned references, and how to debug memory issues.\",\n    \"difficultyLevel\" : \"advanced\",\n    \"endTime\" : \"2025-10-16T08:00:00Z\",\n    \"format\" : \"talk\",\n    \"id\" : \"DF330B48-7CCA-45C2-AAC3-9221D06205CC\",\n    \"isFavorited\" : false,\n    \"speakerName\" : \"Jordan Memory\",\n    \"startTime\" : \"2025-10-16T07:00:00Z\",\n    \"tags\" : [\n      \"memory\",\n      \"performance\",\n      \"arc\"\n    ],\n    \"title\" : \"Memory Management in Swift\",\n    \"track\" : \"Performance\",\n    \"venueName\" : \"Main Hall A\"\n  },\n  {\n    \"capacity\" : 80,\n    \"description\" : \"A rapid-fire lightning talk showcasing powerful SwiftUI techniques that you can use immediately in your projects.\",\n    \"difficultyLevel\" : \"all\",\n    \"endTime\" : \"2025-10-17T01:15:00Z\",\n    \"format\" : \"lightning\",\n    \"id\" : \"D9FAEE39-2868-4F11-98CF-A252469EB787\",\n    \"isFavorited\" : false,\n    \"speakerName\" : \"Casey Quick\",\n    \"startTime\" : \"2025-10-17T01:00:00Z\",\n    \"tags\" : [\n      \"swiftui\",\n      \"tips\",\n      \"quick-wins\"\n    ],\n    \"title\" : \"Quick Wins: SwiftUI Tips & Tricks\",\n    \"track\" : \"iOS Development\",\n    \"venueName\" : \"Lightning Stage\"\n  },\n  {\n    \"capacity\" : 150,\n    \"description\" : \"Join our panel of experienced Swift developers as they discuss career paths, skill development, and navigating the Swift ecosystem.\",\n    \"difficultyLevel\" : \"all\",\n    \"endTime\" : \"2025-10-17T03:00:00Z\",\n    \"format\" : \"panel\",\n    \"id\" : \"0437A0A8-FCBC-407B-A20D-C635E5D67462\",\n    \"isFavorited\" : true,\n    \"speakerName\" : \"Panel of Experts\",\n    \"startTime\" : \"2025-10-17T02:00:00Z\",\n    \"tags\" : [\n      \"career\",\n      \"community\",\n      \"panel\"\n    ],\n    \"title\" : \"Panel: Career Growth in Swift Development\",\n    \"track\" : \"Career & Community\",\n    \"venueName\" : \"Room 201\"\n  }\n]",
+              "type": "text"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "List sessions filtered by track",
+      "status": "pass",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 4,
+        "method": "tools/call",
+        "params": {
+          "name": "list_sessions",
+          "arguments": {
+            "track": "Server-Side Swift"
+          }
+        }
+      },
+      "response": {
+        "id": 4,
+        "jsonrpc": "2.0",
+        "result": {
+          "content": [
+            {
+              "text": "[\n  {\n    \"capacity\" : 200,\n    \"description\" : \"Learn about Swift's modern concurrency features including async\\/await, actors, and structured concurrency. This comprehensive session covers best practices and common patterns.\",\n    \"difficultyLevel\" : \"intermediate\",\n    \"endTime\" : \"2025-10-15T05:30:00Z\",\n    \"format\" : \"talk\",\n    \"id\" : \"291D16BD-A56D-48C8-9E23-32453397CCAD\",\n    \"isFavorited\" : true,\n    \"speakerName\" : \"Jane Developer\",\n    \"startTime\" : \"2025-10-15T04:00:00Z\",\n    \"tags\" : [\n      \"swift\",\n      \"concurrency\",\n      \"async-await\"\n    ],\n    \"title\" : \"Swift Concurrency Deep Dive\",\n    \"track\" : \"Server-Side Swift\",\n    \"venueName\" : \"Main Hall A\"\n  },\n  {\n    \"capacity\" : 120,\n    \"description\" : \"Build powerful backend services with Vapor 4. Learn about routing, middleware, database integration, and deploying to production.\",\n    \"difficultyLevel\" : \"intermediate\",\n    \"endTime\" : \"2025-10-16T05:30:00Z\",\n    \"format\" : \"talk\",\n    \"id\" : \"932A1AE5-9391-420A-8017-6D22FA24F26E\",\n    \"isFavorited\" : false,\n    \"speakerName\" : \"Taylor Swift\",\n    \"startTime\" : \"2025-10-16T04:00:00Z\",\n    \"tags\" : [\n      \"vapor\",\n      \"backend\",\n      \"server-side\"\n    ],\n    \"title\" : \"Vapor 4: Modern Server-Side Swift\",\n    \"track\" : \"Server-Side Swift\",\n    \"venueName\" : \"Room 103\"\n  }\n]",
+              "type": "text"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "List sessions filtered by difficulty",
+      "status": "pass",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 5,
+        "method": "tools/call",
+        "params": {
+          "name": "list_sessions",
+          "arguments": {
+            "difficulty": "advanced"
+          }
+        }
+      },
+      "response": {
+        "id": 5,
+        "jsonrpc": "2.0",
+        "result": {
+          "content": [
+            {
+              "text": "[\n  {\n    \"capacity\" : 150,\n    \"description\" : \"Discover techniques for building large-scale SwiftUI applications. Topics include architecture patterns, state management, and performance optimization.\",\n    \"difficultyLevel\" : \"advanced\",\n    \"endTime\" : \"2025-10-15T10:00:00Z\",\n    \"format\" : \"talk\",\n    \"id\" : \"B58498AF-13E8-4A05-B124-AA9E3AD3FDB8\",\n    \"isFavorited\" : false,\n    \"speakerName\" : \"Alex Swift\",\n    \"startTime\" : \"2025-10-15T09:00:00Z\",\n    \"tags\" : [\n      \"swiftui\",\n      \"architecture\",\n      \"ios\"\n    ],\n    \"title\" : \"Building SwiftUI Apps at Scale\",\n    \"track\" : \"iOS Development\",\n    \"venueName\" : \"Room 201\"\n  },\n  {\n    \"capacity\" : 200,\n    \"description\" : \"Master memory management in Swift. Understand ARC, retain cycles, weak\\/unowned references, and how to debug memory issues.\",\n    \"difficultyLevel\" : \"advanced\",\n    \"endTime\" : \"2025-10-16T08:00:00Z\",\n    \"format\" : \"talk\",\n    \"id\" : \"FF7D4924-7A1E-4670-A8A5-271101E17D12\",\n    \"isFavorited\" : false,\n    \"speakerName\" : \"Jordan Memory\",\n    \"startTime\" : \"2025-10-16T07:00:00Z\",\n    \"tags\" : [\n      \"memory\",\n      \"performance\",\n      \"arc\"\n    ],\n    \"title\" : \"Memory Management in Swift\",\n    \"track\" : \"Performance\",\n    \"venueName\" : \"Main Hall A\"\n  }\n]",
+              "type": "text"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search sessions by query",
+      "status": "pass",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 6,
+        "method": "tools/call",
+        "params": {
+          "name": "search_sessions",
+          "arguments": {
+            "query": "Swift Concurrency"
+          }
+        }
+      },
+      "response": {
+        "id": 6,
+        "jsonrpc": "2.0",
+        "result": {
+          "content": [
+            {
+              "text": "[\n  {\n    \"capacity\" : 200,\n    \"description\" : \"Learn about Swift's modern concurrency features including async\\/await, actors, and structured concurrency. This comprehensive session covers best practices and common patterns.\",\n    \"difficultyLevel\" : \"intermediate\",\n    \"endTime\" : \"2025-10-15T05:30:00Z\",\n    \"format\" : \"talk\",\n    \"id\" : \"60AB21E6-0776-43F0-AB79-554C1ED2339B\",\n    \"isFavorited\" : true,\n    \"speakerName\" : \"Jane Developer\",\n    \"startTime\" : \"2025-10-15T04:00:00Z\",\n    \"tags\" : [\n      \"swift\",\n      \"concurrency\",\n      \"async-await\"\n    ],\n    \"title\" : \"Swift Concurrency Deep Dive\",\n    \"track\" : \"Server-Side Swift\",\n    \"venueName\" : \"Main Hall A\"\n  }\n]",
+              "type": "text"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get speaker details by name",
+      "status": "pass",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 7,
+        "method": "tools/call",
+        "params": {
+          "name": "get_speaker",
+          "arguments": {
+            "speakerName": "Jane Developer"
+          }
+        }
+      },
+      "response": {
+        "id": 7,
+        "jsonrpc": "2.0",
+        "result": {
+          "content": [
+            {
+              "text": "{\n  \"bio\" : \"Senior Swift Engineer with 10+ years of experience in iOS development. Passionate about Swift concurrency, server-side Swift, and building developer tools. Regular contributor to open-source projects and conference speaker.\",\n  \"company\" : \"Apple\",\n  \"email\" : \"jane.developer@example.com\",\n  \"expertise\" : [\n    \"Swift Concurrency\",\n    \"Server-Side Swift\",\n    \"iOS Architecture\",\n    \"Performance Optimization\",\n    \"Developer Tools\"\n  ],\n  \"github\" : \"https:\\/\\/github.com\\/janedeveloper\",\n  \"id\" : \"DC896012-76E3-47DE-82B3-17881E4DA827\",\n  \"linkedin\" : \"https:\\/\\/linkedin.com\\/in\\/jane-developer\",\n  \"name\" : \"Jane Developer\",\n  \"sessions\" : [\n    {\n      \"difficulty\" : \"advanced\",\n      \"endTime\" : \"2025-10-15T15:00:00Z\",\n      \"id\" : \"985CCE6C-FFAF-4F83-AD7F-3AE85A830B3D\",\n      \"room\" : \"Main Hall\",\n      \"startTime\" : \"2025-10-15T14:00:00Z\",\n      \"title\" : \"Swift Concurrency Deep Dive\",\n      \"track\" : \"iOS Development\"\n    },\n    {\n      \"difficulty\" : \"intermediate\",\n      \"endTime\" : \"2025-10-16T11:30:00Z\",\n      \"id\" : \"87998C0D-26DE-4AF3-89EB-9A5CFB3AC321\",\n      \"room\" : \"Workshop Room A\",\n      \"startTime\" : \"2025-10-16T10:30:00Z\",\n      \"title\" : \"Building Scalable Swift Microservices\",\n      \"track\" : \"Backend\"\n    }\n  ],\n  \"stats\" : {\n    \"conferencesSpeaker\" : 25,\n    \"totalSessions\" : 2,\n    \"yearsExperience\" : 10\n  },\n  \"title\" : \"Senior Swift Engineer\",\n  \"twitter\" : \"@janedeveloper\",\n  \"website\" : \"https:\\/\\/janedeveloper.dev\"\n}",
+              "type": "text"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get schedule for today",
+      "status": "pass",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 8,
+        "method": "tools/call",
+        "params": {
+          "name": "get_schedule",
+          "arguments": {
+            "date": "today"
+          }
+        }
+      },
+      "response": {
+        "id": 8,
+        "jsonrpc": "2.0",
+        "result": {
+          "content": [
+            {
+              "text": "{\n  \"date\" : \"2025-10-02\",\n  \"dateDescription\" : \"Today\",\n  \"endTime\" : \"2025-10-02T22:59:59Z\",\n  \"sessions\" : [\n    {\n      \"capacity\" : 500,\n      \"description\" : \"A comprehensive session covering opening keynote: the future of swift.\",\n      \"difficulty\" : \"all\",\n      \"duration\" : 60,\n      \"endTime\" : \"2025-10-02T09:00:00Z\",\n      \"format\" : \"talk\",\n      \"id\" : \"268C6A2B-0F22-4F52-A2B9-85516B3AF4EE\",\n      \"room\" : \"Main Hall\",\n      \"speaker\" : \"Tim Apple\",\n      \"startTime\" : \"2025-10-02T08:00:00Z\",\n      \"tags\" : [\n        \"Keynote\",\n        \"all\"\n      ],\n      \"title\" : \"Opening Keynote: The Future of Swift\",\n      \"track\" : \"Keynote\"\n    },\n    {\n      \"capacity\" : 100,\n      \"description\" : \"A comprehensive session covering swift concurrency patterns.\",\n      \"difficulty\" : \"intermediate\",\n      \"duration\" : 60,\n      \"endTime\" : \"2025-10-02T10:30:00Z\",\n      \"format\" : \"talk\",\n      \"id\" : \"F00B7DD5-33C7-4539-860C-D42B8C969D2E\",\n      \"room\" : \"Room A\",\n      \"speaker\" : \"Jane Developer\",\n      \"startTime\" : \"2025-10-02T09:30:00Z\",\n      \"tags\" : [\n        \"iOS Development\",\n        \"intermediate\"\n      ],\n      \"title\" : \"Swift Concurrency Patterns\",\n      \"track\" : \"iOS Development\"\n    },\n    {\n      \"capacity\" : 100,\n      \"description\" : \"A comprehensive session covering building modern uis with swiftui.\",\n      \"difficulty\" : \"beginner\",\n      \"duration\" : 60,\n      \"endTime\" : \"2025-10-02T10:30:00Z\",\n      \"format\" : \"talk\",\n      \"id\" : \"7A021035-E108-464C-BB42-806BD84F926F\",\n      \"room\" : \"Room B\",\n      \"speaker\" : \"Sarah Designer\",\n      \"startTime\" : \"2025-10-02T09:30:00Z\",\n      \"tags\" : [\n        \"UI\\/UX\",\n        \"beginner\"\n      ],\n      \"title\" : \"Building Modern UIs with SwiftUI\",\n      \"track\" : \"UI\\/UX\"\n    },\n    {\n      \"capacity\" : 100,\n      \"description\" : \"A comprehensive session covering server-side swift at scale.\",\n      \"difficulty\" : \"advanced\",\n      \"duration\" : 60,\n      \"endTime\" : \"2025-10-02T13:00:00Z\",\n      \"format\" : \"talk\",\n      \"id\" : \"C32BE8DC-B6B9-4315-8D42-56254003FFB6\",\n      \"room\" : \"Room A\",\n      \"speaker\" : \"Mike Backend\",\n      \"startTime\" : \"2025-10-02T12:00:00Z\",\n      \"tags\" : [\n        \"Backend\",\n        \"advanced\"\n      ],\n      \"title\" : \"Server-Side Swift at Scale\",\n      \"track\" : \"Backend\"\n    },\n    {\n      \"capacity\" : 100,\n      \"description\" : \"A comprehensive session covering testing strategies for ios apps.\",\n      \"difficulty\" : \"intermediate\",\n      \"duration\" : 60,\n      \"endTime\" : \"2025-10-02T14:30:00Z\",\n      \"format\" : \"talk\",\n      \"id\" : \"F3209D9E-128C-4E3D-B3C5-EE11A9949950\",\n      \"room\" : \"Room B\",\n      \"speaker\" : \"Alice Tester\",\n      \"startTime\" : \"2025-10-02T13:30:00Z\",\n      \"tags\" : [\n        \"Testing\",\n        \"intermediate\"\n      ],\n      \"title\" : \"Testing Strategies for iOS Apps\",\n      \"track\" : \"Testing\"\n    },\n    {\n      \"capacity\" : 30,\n      \"description\" : \"A comprehensive session covering performance optimization workshop.\",\n      \"difficulty\" : \"advanced\",\n      \"duration\" : 90,\n      \"endTime\" : \"2025-10-02T16:30:00Z\",\n      \"format\" : \"workshop\",\n      \"id\" : \"56E86994-22B3-4830-832F-332FC3575C1D\",\n      \"room\" : \"Workshop Room\",\n      \"speaker\" : \"Bob Performance\",\n      \"startTime\" : \"2025-10-02T15:00:00Z\",\n      \"tags\" : [\n        \"Performance\",\n        \"advanced\"\n      ],\n      \"title\" : \"Performance Optimization Workshop\",\n      \"track\" : \"Performance\"\n    }\n  ],\n  \"startTime\" : \"2025-10-01T23:00:00Z\",\n  \"totalSessions\" : 6\n}",
+              "type": "text"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Find room by name",
+      "status": "pass",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 9,
+        "method": "tools/call",
+        "params": {
+          "name": "find_room",
+          "arguments": {
+            "roomName": "Main Hall"
+          }
+        }
+      },
+      "response": {
+        "id": 9,
+        "jsonrpc": "2.0",
+        "result": {
+          "content": [
+            {
+              "text": "{\n  \"accessibility\" : {\n    \"accessibleRestrooms\" : true,\n    \"elevatorAccess\" : true,\n    \"hearingLoop\" : true,\n    \"signLanguageInterpreter\" : true,\n    \"wheelchairAccessible\" : true\n  },\n  \"accessibilityNotes\" : \"Wide aisles for wheelchair access. Accessible seating in front rows. ASL interpreter available upon request.\",\n  \"address\" : \"123 Conference Way, Tech City, TC 12345\",\n  \"building\" : \"Convention Center\",\n  \"capacity\" : 200,\n  \"capacityCategory\" : \"Large\",\n  \"coordinates\" : {\n    \"latitude\" : 37.774900000000002,\n    \"longitude\" : -122.4194\n  },\n  \"currentSession\" : {\n    \"endTime\" : \"2025-10-15T15:30:00Z\",\n    \"format\" : \"talk\",\n    \"id\" : \"FA242C1C-BA24-4A63-906B-83BA7F213BF5\",\n    \"speakers\" : [\n      {\n        \"company\" : \"Apple\",\n        \"id\" : \"EBA47722-F966-48B6-B287-0E6F255CFB1D\",\n        \"name\" : \"Dr. Sarah Johnson\",\n        \"title\" : \"Senior iOS Engineer\"\n      }\n    ],\n    \"startTime\" : \"2025-10-15T14:00:00Z\",\n    \"status\" : \"ongoing\",\n    \"title\" : \"Swift Concurrency Deep Dive\"\n  },\n  \"description\" : \"Our largest and most well-equipped conference hall, perfect for keynotes and major sessions. Features state-of-the-art AV equipment and excellent acoustics.\",\n  \"directions\" : \"Take the main elevator to the 2nd floor. Turn right after exiting, the hall is at the end of the corridor. Clear signage is available.\",\n  \"displayDescription\" : \"Main Hall A - Large capacity hall with full AV equipment and accessibility features\",\n  \"effectiveCapacity\" : 180,\n  \"equipment\" : [\n    \"4K projector\",\n    \"wireless microphone\",\n    \"lapel microphone\",\n    \"speaker system\",\n    \"video recording equipment\",\n    \"presentation remote\"\n  ],\n  \"floor\" : \"2\",\n  \"fullName\" : \"Main Hall A - Convention Center\",\n  \"hasAccessibilityFeatures\" : true,\n  \"hasEquipment\" : true,\n  \"hasLiveStream\" : true,\n  \"hasLocationInfo\" : true,\n  \"hasStandingRoom\" : true,\n  \"id\" : \"8A8DF0C3-0426-46C0-9BF0-DA6768D1FFA9\",\n  \"isFavorited\" : false,\n  \"isVirtual\" : false,\n  \"isWheelchairAccessible\" : true,\n  \"liveStreamURL\" : \"https:\\/\\/stream.conference.com\\/main-hall-a\",\n  \"name\" : \"Main Hall\",\n  \"notes\" : \"Arrive 10 minutes early for popular sessions. Coffee station available outside the hall.\",\n  \"roomNumber\" : \"205\",\n  \"seatingArrangement\" : \"Theater style with center aisle\",\n  \"shortLocation\" : \"Building A, Floor 2\",\n  \"upcomingSessions\" : [\n    {\n      \"endTime\" : \"2025-10-15T17:00:00Z\",\n      \"format\" : \"workshop\",\n      \"id\" : \"75250C38-7537-4030-AF5C-348D6C9FC1AD\",\n      \"startTime\" : \"2025-10-15T16:00:00Z\",\n      \"title\" : \"Building Scalable SwiftUI Apps\"\n    },\n    {\n      \"endTime\" : \"2025-10-15T18:30:00Z\",\n      \"format\" : \"talk\",\n      \"id\" : \"216074F8-65FD-46F9-B215-0E09EB19126C\",\n      \"startTime\" : \"2025-10-15T17:30:00Z\",\n      \"title\" : \"Advanced iOS Testing Strategies\"\n    }\n  ],\n  \"venueType\" : \"Main Conference Hall\",\n  \"wifiNetwork\" : \"ConferenceWiFi_2024\"\n}",
+              "type": "text"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get detailed session information",
+      "status": "pass",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 10,
+        "method": "tools/call",
+        "params": {
+          "name": "get_session_details",
+          "arguments": {
+            "sessionId": "test-session-123"
+          }
+        }
+      },
+      "response": {
+        "id": 10,
+        "jsonrpc": "2.0",
+        "result": {
+          "content": [
+            {
+              "text": "{\n  \"abstract\" : \"Swift's concurrency model represents a paradigm shift in how we write asynchronous code. This session covers structured concurrency fundamentals, actor isolation for thread-safe code, async sequences for stream processing, and TaskGroup for parallel operations. Includes performance profiling techniques and migration strategies from legacy patterns.\",\n  \"capacity\" : 200,\n  \"capacityStatus\" : \"nearly full\",\n  \"conferenceId\" : \"7E6EE322-98BF-4E13-A6E9-CF66E8A974F0\",\n  \"conferenceInfo\" : {\n    \"id\" : \"7E6EE322-98BF-4E13-A6E9-CF66E8A974F0\",\n    \"name\" : \"Swift Summit 2025\",\n    \"website\" : \"https:\\/\\/swiftsummit2025.com\"\n  },\n  \"description\" : \"This comprehensive session explores the depths of Swift's modern concurrency system. We'll dive into structured concurrency, async\\/await patterns, actors, and how to build robust, efficient asynchronous systems in Swift.\\n\\nAttendees will learn advanced techniques for managing concurrent operations, avoiding common pitfalls like data races and deadlocks, and optimizing performance in concurrent code. Real-world examples from production iOS and server-side Swift applications will be presented.\",\n  \"didAttend\" : false,\n  \"difficultyLabel\" : \"Advanced\",\n  \"difficultyLevel\" : \"advanced\",\n  \"durationMinutes\" : 90,\n  \"endTime\" : \"2025-10-15T15:30:00Z\",\n  \"estimatedAttendees\" : 180,\n  \"format\" : \"talk\",\n  \"formattedDuration\" : \"90 minutes\",\n  \"formattedStartTime\" : \"Oct 15, 2025 at 2:00 PM\",\n  \"formattedTimeRange\" : \"2:00 PM - 3:30 PM\",\n  \"hasQA\" : true,\n  \"id\" : \"test-session-123\",\n  \"isFavorited\" : true,\n  \"isOngoing\" : false,\n  \"isPast\" : false,\n  \"isRecorded\" : true,\n  \"isUpcoming\" : true,\n  \"learningOutcomes\" : [\n    \"Master structured concurrency patterns\",\n    \"Implement thread-safe code with actors\",\n    \"Optimize async operations for performance\",\n    \"Debug and profile concurrent Swift code\"\n  ],\n  \"notes\" : \"Don't miss the section on TaskGroup optimization! Bring questions about actor reentrancy.\",\n  \"prerequisites\" : [\n    \"Basic understanding of async\\/await\",\n    \"Familiarity with Swift 5.5+\",\n    \"Experience with concurrent programming concepts\"\n  ],\n  \"qaDuration\" : 15,\n  \"rating\" : 5,\n  \"recordingAvailableAt\" : \"2025-10-16T00:00:00Z\",\n  \"recordingURL\" : \"https:\\/\\/conference.com\\/recordings\\/swift-concurrency-2025\",\n  \"relatedSessions\" : [\n    {\n      \"id\" : \"0035CF97-6498-4997-8A63-CBC9C7AA915C\",\n      \"similarity\" : 0.94999999999999996,\n      \"startTime\" : \"2025-10-16T10:00:00Z\",\n      \"title\" : \"Actor Isolation Patterns\",\n      \"track\" : \"iOS Development\"\n    },\n    {\n      \"id\" : \"1F0BD953-0242-47C3-9438-1C71A802B3D8\",\n      \"similarity\" : 0.88,\n      \"startTime\" : \"2025-10-16T14:00:00Z\",\n      \"title\" : \"Async Sequences in Practice\",\n      \"track\" : \"iOS Development\"\n    },\n    {\n      \"id\" : \"CDEA67BE-823A-4964-AD88-8903DDBE2984\",\n      \"similarity\" : 0.75,\n      \"startTime\" : \"2025-10-15T16:30:00Z\",\n      \"title\" : \"Testing Concurrent Swift Code\",\n      \"track\" : \"Testing\"\n    }\n  ],\n  \"reminders\" : [\n    {\n      \"message\" : \"Session starts in 15 minutes\",\n      \"time\" : \"2025-10-15T13:45:00Z\"\n    }\n  ],\n  \"resourceLinks\" : [\n    {\n      \"title\" : \"Swift Concurrency Documentation\",\n      \"url\" : \"https:\\/\\/docs.swift.org\\/swift-book\\/LanguageGuide\\/Concurrency.html\"\n    },\n    {\n      \"title\" : \"WWDC Session on Concurrency\",\n      \"url\" : \"https:\\/\\/developer.apple.com\\/videos\\/play\\/wwdc2021\\/10132\\/\"\n    },\n    {\n      \"title\" : \"Sample Code Repository\",\n      \"url\" : \"https:\\/\\/github.com\\/swift-examples\\/concurrency-examples\"\n    }\n  ],\n  \"slidesURL\" : \"https:\\/\\/conference.com\\/slides\\/swift-concurrency-2025.pdf\",\n  \"speakerIds\" : [\n    \"33D7DFFE-4702-498D-8C70-1ED54FCCB28C\",\n    \"2239DC09-6AFC-4F00-9B04-BF7C6CDE8C82\"\n  ],\n  \"speakers\" : [\n    {\n      \"bio\" : \"Sarah has been working on the Swift language team for 8 years, focusing on concurrency and runtime performance. She's a regular speaker at major iOS conferences.\",\n      \"company\" : \"Apple\",\n      \"expertise\" : [\n        \"Swift Concurrency\",\n        \"iOS Development\",\n        \"Performance Optimization\"\n      ],\n      \"id\" : \"33D7DFFE-4702-498D-8C70-1ED54FCCB28C\",\n      \"name\" : \"Dr. Sarah Johnson\",\n      \"photoURL\" : \"https:\\/\\/conference.com\\/speakers\\/sarah-johnson.jpg\",\n      \"socialLinks\" : {\n        \"github\" : \"https:\\/\\/github.com\\/sarahjohnson\",\n        \"linkedin\" : \"https:\\/\\/linkedin.com\\/in\\/sarah-johnson\",\n        \"twitter\" : \"@sarahjohnson\"\n      },\n      \"title\" : \"Senior iOS Engineer\"\n    },\n    {\n      \"bio\" : \"Michael specializes in server-side Swift and has built large-scale distributed systems using Swift's concurrency features.\",\n      \"company\" : \"Google\",\n      \"expertise\" : [\n        \"Server-Side Swift\",\n        \"Distributed Systems\",\n        \"Concurrency\"\n      ],\n      \"id\" : \"2239DC09-6AFC-4F00-9B04-BF7C6CDE8C82\",\n      \"name\" : \"Michael Chen\",\n      \"photoURL\" : \"https:\\/\\/conference.com\\/speakers\\/michael-chen.jpg\",\n      \"socialLinks\" : {\n        \"github\" : \"https:\\/\\/github.com\\/michaelchen\",\n        \"twitter\" : \"@michaelchen\"\n      },\n      \"title\" : \"Staff Engineer\"\n    }\n  ],\n  \"startTime\" : \"2025-10-15T14:00:00Z\",\n  \"status\" : \"upcoming\",\n  \"tags\" : [\n    \"Swift\",\n    \"Concurrency\",\n    \"Async\\/Await\",\n    \"Actors\",\n    \"Performance\"\n  ],\n  \"tagsArray\" : [\n    \"Swift\",\n    \"Concurrency\",\n    \"Async\\/Await\",\n    \"Actors\",\n    \"Performance\"\n  ],\n  \"targetAudience\" : \"Experienced iOS and Swift developers looking to master concurrency\",\n  \"title\" : \"Swift Concurrency: Building Efficient Async Systems\",\n  \"track\" : \"iOS Development\",\n  \"venue\" : {\n    \"accessibility\" : {\n      \"hearingLoop\" : true,\n      \"wheelchairAccessible\" : true\n    },\n    \"building\" : \"Convention Center\",\n    \"capacity\" : 200,\n    \"directions\" : \"Take elevator to 2nd floor, turn right\",\n    \"equipment\" : [\n      \"4K projector\",\n      \"microphone\",\n      \"recording equipment\"\n    ],\n    \"floor\" : \"2\",\n    \"id\" : \"65A4FBB6-DD6E-4437-AA7E-3C7453571FB2\",\n    \"name\" : \"Main Hall A\"\n  },\n  \"venueId\" : \"65A4FBB6-DD6E-4437-AA7E-3C7453571FB2\"\n}",
+              "type": "text"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Test error handling with invalid tool",
+      "status": "pass",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 11,
+        "method": "tools/call",
+        "params": {
+          "name": "nonexistent_tool",
+          "arguments": {}
+        }
+      },
+      "response": {
+        "error": {
+          "code": -32601,
+          "data": {
+            "detail": "Unknown tool: nonexistent_tool"
+          },
+          "message": "Method not found: Unknown tool: nonexistent_tool"
+        },
+        "id": 11,
+        "jsonrpc": "2.0"
+      }
+    },
+    {
+      "name": "Test error handling with missing parameter",
+      "status": "pass",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 12,
+        "method": "tools/call",
+        "params": {
+          "name": "search_sessions",
+          "arguments": {}
+        }
+      },
+      "response": {
+        "error": {
+          "code": -32602,
+          "data": {
+            "detail": "Missing required parameter: query"
+          },
+          "message": "Invalid params: Missing required parameter: query"
+        },
+        "id": 12,
+        "jsonrpc": "2.0"
+      }
+    }
+  ],
+  "summary": {
+    "total": 12,
+    "passed": 12,
+    "failed": 0
+  }
+}
