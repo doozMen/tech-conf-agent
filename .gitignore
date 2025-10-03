@@ -35,3 +35,6 @@ Package.resolved
 *~
 *.swp
 *.tmp
+
+# Local Claude settings (DO NOT commit)
+.claude/settings.local.json
