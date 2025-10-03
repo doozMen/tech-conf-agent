@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "tech-conf": {
+      "command": "tech-conf-mcp",
+      "args": ["--log-level", "info"],
+      "env": {
+        "PATH": "/Users/stijnwillems/.swiftpm/bin:/usr/local/bin:/usr/bin:/bin"
+      }
+    }
+  }
+}

@@ -26,6 +26,12 @@ else
     exit 1
 fi
 
+# Install conference data
+echo "Installing conference data..."
+mkdir -p "$HOME/.tech-conf-mcp/data"
+cp -f Sources/TechConfCore/Resources/Conferences/serverside-swift-2025.json "$HOME/.tech-conf-mcp/data/"
+echo "✅ Conference data installed to ~/.tech-conf-mcp/data/"
+
 # Extract version from TechConfMCP.swift to keep it synchronized
 VERSION=$(grep 'version:' Sources/TechConfMCP/TechConfMCP.swift | sed 's/.*version: "\(.*\)".*/\1/')
 

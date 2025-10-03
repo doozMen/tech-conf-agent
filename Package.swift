@@ -25,6 +25,9 @@ let package = Package(
                 .product(name: "Logging", package: "swift-log"),
                 .product(name: "Algorithms", package: "swift-algorithms")
             ],
+            resources: [
+                .copy("Resources")
+            ],
             swiftSettings: [
                 .enableUpcomingFeature("StrictConcurrency"),
                 .enableExperimentalFeature("AccessLevelOnImport")

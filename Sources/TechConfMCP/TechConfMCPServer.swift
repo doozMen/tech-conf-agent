@@ -89,6 +89,21 @@ actor TechConfMCPServer {
     self.queries = ConferenceQueries(database: manager)
 
     logger.info("Database initialized at: \(dbPath)")
+
+    // Load conference data if database is empty
+    let importer = DataImporter(database: manager, logger: logger)
+    if try await !importer.hasData() {
+      logger.info("Database is empty, loading conference data...")
+      do {
+        try await importer.importBundledConferenceData()
+        logger.info("Conference data loaded successfully")
+      } catch {
+        logger.warning("Failed to load bundled conference data: \(error)")
+      }
+    } else {
+      logger.info("Database already contains data, skipping import")
+    }
+
     isInitialized = true
   }
 
