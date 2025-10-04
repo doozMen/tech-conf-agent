@@ -236,21 +236,21 @@ extension Date {
     func daysBetween(_ other: Date) -> Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.day], from: startOfDay, to: other.startOfDay)
-        return abs(components.day ?? 0)
+        return Swift.abs(components.day ?? 0)
     }
-    
+
     /// Get the number of hours between this date and another date
     func hoursBetween(_ other: Date) -> Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.hour], from: self, to: other)
-        return abs(components.hour ?? 0)
+        return Swift.abs(components.hour ?? 0)
     }
-    
+
     /// Get the number of minutes between this date and another date
     func minutesBetween(_ other: Date) -> Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.minute], from: self, to: other)
-        return abs(components.minute ?? 0)
+        return Swift.abs(components.minute ?? 0)
     }
 }
 

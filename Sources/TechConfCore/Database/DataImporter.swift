@@ -125,11 +125,13 @@ public actor DataImporter {
     decoder.dateDecodingStrategy = .iso8601
     let conferenceData = try decoder.decode(ConferenceJSON.self, from: jsonData)
 
-    logger.info("Decoded JSON data", metadata: [
-      "speakers": "\(conferenceData.speakers.count)",
-      "sessions": "\(conferenceData.sessions.count)",
-      "venues": "\(conferenceData.venues.count)",
-    ])
+    logger.info(
+      "Decoded JSON data",
+      metadata: [
+        "speakers": "\(conferenceData.speakers.count)",
+        "sessions": "\(conferenceData.sessions.count)",
+        "venues": "\(conferenceData.venues.count)",
+      ])
 
     // Import in order: conference -> speakers -> venues -> sessions
     // Maintain ID mappings for relationships
@@ -261,7 +263,8 @@ public actor DataImporter {
     return idMap
   }
 
-  private func importVenues(_ venues: [VenueJSON], conferenceId: UUID) async throws -> [String: UUID]
+  private func importVenues(_ venues: [VenueJSON], conferenceId: UUID) async throws -> [String:
+    UUID]
   {
     logger.info("Importing venues", metadata: ["count": "\(venues.count)"])
 
@@ -321,9 +324,11 @@ public actor DataImporter {
       guard let startTime = dateFormatter.date(from: sessionData.startTime),
         let endTime = dateFormatter.date(from: sessionData.endTime)
       else {
-        logger.warning("Skipping session with invalid dates", metadata: [
-          "sessionId": "\(sessionData.id)", "title": "\(sessionData.title)",
-        ])
+        logger.warning(
+          "Skipping session with invalid dates",
+          metadata: [
+            "sessionId": "\(sessionData.id)", "title": "\(sessionData.title)",
+          ])
         continue
       }
 
