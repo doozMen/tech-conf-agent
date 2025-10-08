@@ -38,3 +38,6 @@ Package.resolved
 
 # Local Claude settings (DO NOT commit)
 .claude/settings.local.json
+
+# Medium export/session data (contains sensitive auth tokens)
+medium-session.json
