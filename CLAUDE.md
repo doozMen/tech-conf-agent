@@ -983,6 +983,154 @@ swift format lint -s -p -r Sources Tests Package.swift
 
 ---
 
-**Last Updated**: 2025-10-02  
-**Swift Version**: 6.2  
+## Blogging Workflow with Ghost MCP
+
+### Ghost MCP Setup
+
+**Installation** (via Claude Code CLI):
+```bash
+claude mcp add ghost npx ghost-mcp \
+  -e "GHOST_URL=https://doozmen-stijn-willems.ghost.io" \
+  -e "GHOST_ADMIN_API_KEY=<from-1password>" \
+  -e "GHOST_CONTENT_API_KEY=<from-1password>"
+```
+
+**Get API Keys from 1Password**:
+```bash
+op read "op://Employee/Ghost/Saved on account.ghost.org/admin api key"
+op read "op://Employee/Ghost/Saved on account.ghost.org/content api key"
+```
+
+**Verify Connection**:
+```bash
+claude mcp list | grep ghost
+# Should show: ghost: npx ghost-mcp - ✓ Connected
+```
+
+**Available Ghost Tools**:
+- `mcp__ghost__create_post` - Publish new blog posts (supports draft/published status)
+- `mcp__ghost__update_post` - Update existing posts
+- `mcp__ghost__search_posts` - Search your Ghost blog posts
+- `mcp__ghost__get_post` - Retrieve post content by ID or slug
+- `mcp__ghost__delete_post` - Delete posts
+- `mcp__ghost__list_tags` - Manage tags
+
+### Publishing Workflow
+
+**Create blog post as draft**:
+```swift
+mcp__ghost__create_post(
+    title: "Your Blog Title",
+    content: "# Markdown content with inline links...",
+    excerpt: "Short summary...",
+    tags: ["Swift", "Server-Side Swift", "iOS"],
+    status: "draft"  // or "published"
+)
+```
+
+**Ghost accepts full markdown** including:
+- Headers: `#`, `##`, `###`
+- Code blocks: ` ```swift `
+- Links: `[text](url)`
+- Lists, bold, italic, etc.
+
+### Medium MCP Known Issues
+
+**Status**: Medium MCP has browser automation issues (October 2025)
+
+**Problem**: Playwright timeout finding `[data-testid="richTextEditor"]` element
+- Error: "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded"
+- Medium changed their editor UI/HTML structure
+- Browser automation no longer compatible
+
+**Workaround**:
+1. Format blog content without markdown syntax (`##` → plain text)
+2. Manually paste into Medium editor
+3. Use Medium's toolbar to format headers, links, code blocks
+
+**Recommendation**: Use Ghost for automated publishing, Medium as secondary manual cross-post
+
+### ServerSide.swift 2025 Blog Post Status
+
+**Published**: October 7, 2025
+**Platform**: Ghost (draft)
+**URL**: https://doozmen-stijn-willems.ghost.io/p/91a5f670-11e8-4de2-8970-24a9bdec2ae8/
+**File**: `docs/serverside-swift-2025-blog-post.md` (415 lines, 2,523 words)
+
+**Content Quality**:
+- ✅ Excellent Belgian direct writing style (95/100 score)
+- ✅ Zero AI verbosity patterns detected
+- ✅ All technical claims verified accurate
+- ✅ Comprehensive inline documentation links (Swift Evolution, GitHub repos, official docs)
+- ✅ New sections added: gRPC Swift 2, Swift Containerization, MongoKitten
+
+**Conference Details**:
+- Event: ServerSide.swift 2025 London
+- Dates: October 2-3, 2025
+- Speakers: 27+ including 7 Apple Swift Server team members
+- Topics: Swift 6 concurrency, frameworks (Vapor/Hummingbird), cloud-native patterns, production deployments
+
+**Next Steps**:
+- Review draft in Ghost Admin
+- Publish when ready
+- Consider cross-posting to Medium manually
+
+---
+
+## Swift Structured Queries Migration Status
+
+**Attempted**: October 7, 2025
+**Status**: Blocked by upstream dependency bug
+**Completion**: Partial (models ready, queries still use raw SQL)
+
+### What Was Completed
+
+1. **Package dependencies added**:
+   - `swift-structured-queries` (base package)
+   - Note: `sharing-grdb` has build error, commented out
+
+2. **Models converted to @Table**:
+   - All 4 models (Session, Speaker, Venue, Conference) have `@Table` annotations
+   - QueryRepresentable conformances added for enums (SessionFormat, DifficultyLevel)
+   - Simplified enum storage (removed private wrappers)
+
+3. **Database migrations added** (v2-v5):
+   - v2: Extended session schema (abstract, recording, slides, favorites, notes, rating)
+   - v3: Extended speaker schema (social links, expertise, previous conferences)
+   - v4: Extended venue schema (virtual platform, equipment, accessibility)
+   - v5: Extended conference schema (topics, registration, virtual platform)
+
+4. **JSON query methods added**:
+   - `findSessionsByTag()` - Query JSON tags array
+   - `findSpeakersByExpertise()` - Query JSON expertise array
+   - `findSpeakersWithSocialLink()` - Query JSON socialLinks object
+
+5. **Bug fixes**:
+   - Fixed `speakerId` vs `speakerIds` column mismatch
+   - Fixed Swift 6 `abs()` ambiguity (use `Swift.abs()`)
+
+### What's Blocked
+
+**Cannot migrate to type-safe query builders** because:
+- `sharing-grdb` package has API incompatibility with `swift-structured-queries` main branch
+- Error in `CustomFunctions.swift:21`: `[QueryBinding]` doesn't conform to `QueryDecoder`
+- All queries still use raw SQL strings
+
+### When to Complete Migration
+
+**Monitor**: https://github.com/pointfreeco/sharing-grdb for upstream fix
+
+**Once fixed**:
+1. Uncomment `sharing-grdb` package in Package.swift
+2. Add `StructuredQueriesGRDB` to dependencies
+3. Migrate ~13 simple query methods to type-safe `.where {}` syntax
+4. Keep 5 complex queries as raw SQL (JSON queries, joins, relevance scoring)
+
+**Estimated effort after fix**: 2-4 hours to migrate queries
+
+---
+
+**Last Updated**: 2025-10-07
+**Swift Version**: 6.2
 **MCP SDK**: swift-sdk (main branch)
+**Ghost MCP**: ghost-mcp v0.1.7

@@ -10,11 +10,18 @@
       "mcp__claude-historian__search_conversations",
       "Bash(git -C /Users/stijnwillems/Developer/tech-conf-agent status --short)",
       "mcp__claude-historian__list_recent_sessions",
-      "Bash(git -C /Users/stijnwillems/Developer/tech-conf-agent log --oneline -10)"
+      "Bash(git -C /Users/stijnwillems/Developer/tech-conf-agent log --oneline -10)",
+      "WebSearch",
+      "Bash(npm search:*)",
+      "Read(//Users/stijnwillems/**)",
+      "mcp__ghost__search_posts",
+      "mcp__ghost__get_analytics"
     ],
     "additionalDirectories": [
       "/Users/stijnwillems/Developer/yuki-ai-tools"
     ]
   },
-  "enabledMcpjsonServers": ["tech-conf"]
+  "enabledMcpjsonServers": [
+    "tech-conf"
+  ]
 }
