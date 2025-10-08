@@ -1034,21 +1034,25 @@ mcp__ghost__create_post(
 - Links: `[text](url)`
 - Lists, bold, italic, etc.
 
-### Medium MCP Known Issues
+### Blogging Platform Migration: Medium → Ghost
 
-**Status**: Medium MCP has browser automation issues (October 2025)
+**Status**: Transitioned to Ghost (October 2025)
 
-**Problem**: Playwright timeout finding `[data-testid="richTextEditor"]` element
-- Error: "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded"
-- Medium changed their editor UI/HTML structure
-- Browser automation no longer compatible
+**Why Ghost**:
+- Ghost MCP works reliably for automated publishing
+- Accepts full markdown (headers, code blocks, inline links)
+- Better developer experience with API-first approach
+- Self-hosted option available
 
-**Workaround**:
-1. Format blog content without markdown syntax (`##` → plain text)
-2. Manually paste into Medium editor
-3. Use Medium's toolbar to format headers, links, code blocks
+**Medium MCP Removed**:
+- Browser automation broken (Playwright timeout issues)
+- Medium editor UI changes broke compatibility
+- Not reliable for automated publishing
 
-**Recommendation**: Use Ghost for automated publishing, Medium as secondary manual cross-post
+**Migration Completed**:
+- All Medium posts exported
+- In transition to Ghost
+- Use Ghost MCP exclusively for blogging automation
 
 ### ServerSide.swift 2025 Blog Post Status
 
