@@ -32,7 +32,7 @@ Before you begin:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/tech-conf-agent.git
+git clone https://github.com/doozMen/tech-conf-agent.git
 cd tech-conf-agent
 ```
 

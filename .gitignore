@@ -41,3 +41,21 @@ Package.resolved
 
 # Medium export/session data (contains sensitive auth tokens)
 medium-session.json
+
+# Agent workspace (session-specific, not for version control)
+.agent-workspace/
+
+# Blog posts directory (contains personal blog drafts)
+blog-posts/
+
+# Ghost agent experimental files
+ghost claude sub agent claude code build instructions/
+
+# Temporary MCP files
+README-MCP-INSTALL.md
+tech-conf-mcp-config.json
+test-results.json
+verify-ghost-agents.sh
+
+# GHOST-AGENTS documentation (experimental, not part of project)
+GHOST-AGENTS-*.md

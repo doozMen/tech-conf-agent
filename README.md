@@ -110,7 +110,7 @@ The server uses SQLite with the following core tables:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/tech-conf-mcp.git
+git clone https://github.com/doozMen/tech-conf-agent.git
 cd tech-conf-mcp
 
 # Install the executable

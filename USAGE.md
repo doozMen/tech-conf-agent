@@ -28,8 +28,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/tech-conf-mcp.git
-cd tech-conf-mcp
+git clone https://github.com/doozMen/tech-conf-agent.git
+cd tech-conf-agent
 
 # Build the project
 swift build -c release
@@ -771,8 +771,8 @@ Check logs in stderr output or Claude Desktop logs directory.
 
 For issues, questions, or feature requests:
 
-- **GitHub Issues**: https://github.com/yourusername/tech-conf-mcp/issues
-- **Documentation**: https://github.com/yourusername/tech-conf-mcp/wiki
+- **GitHub Issues**: https://github.com/doozMen/tech-conf-agent/issues
+- **Documentation**: https://github.com/doozMen/tech-conf-agent
 - **Examples**: See sample queries in `/examples` directory
 
 ---
